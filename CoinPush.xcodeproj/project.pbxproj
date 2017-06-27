@@ -1,0 +1,808 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FB4966501F0304A5008CD42B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB49664F1F0304A5008CD42B /* AppDelegate.swift */; };
+		FB4966521F0304A5008CD42B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4966511F0304A5008CD42B /* ViewController.swift */; };
+		FB4966551F0304A5008CD42B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB4966531F0304A5008CD42B /* Main.storyboard */; };
+		FB4966571F0304A5008CD42B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB4966561F0304A5008CD42B /* Assets.xcassets */; };
+		FB49665A1F0304A5008CD42B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB4966581F0304A5008CD42B /* LaunchScreen.storyboard */; };
+		FB4966651F0304A5008CD42B /* CoinPushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4966641F0304A5008CD42B /* CoinPushTests.swift */; };
+		FB4966701F0304A5008CD42B /* CoinPushUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB49666F1F0304A5008CD42B /* CoinPushUITests.swift */; };
+		FB4966751F0304A5008CD42B /* CoinPush WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FB4966741F0304A5008CD42B /* CoinPush WatchKit App.app */; };
+		FB49667B1F0304A5008CD42B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB4966791F0304A5008CD42B /* Interface.storyboard */; };
+		FB49667D1F0304A5008CD42B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB49667C1F0304A5008CD42B /* Assets.xcassets */; };
+		FB4966841F0304A6008CD42B /* CoinPush WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FB4966831F0304A6008CD42B /* CoinPush WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FB4966891F0304A6008CD42B /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4966881F0304A6008CD42B /* InterfaceController.swift */; };
+		FB49668B1F0304A6008CD42B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB49668A1F0304A6008CD42B /* ExtensionDelegate.swift */; };
+		FB49668D1F0304A6008CD42B /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB49668C1F0304A6008CD42B /* NotificationController.swift */; };
+		FB49668F1F0304A6008CD42B /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB49668E1F0304A6008CD42B /* ComplicationController.swift */; };
+		FB4966911F0304A6008CD42B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB4966901F0304A6008CD42B /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FB4966611F0304A5008CD42B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB4966441F0304A5008CD42B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB49664B1F0304A5008CD42B;
+			remoteInfo = CoinPush;
+		};
+		FB49666C1F0304A5008CD42B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB4966441F0304A5008CD42B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB49664B1F0304A5008CD42B;
+			remoteInfo = CoinPush;
+		};
+		FB4966761F0304A5008CD42B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB4966441F0304A5008CD42B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB4966731F0304A5008CD42B;
+			remoteInfo = "CoinPush WatchKit App";
+		};
+		FB4966851F0304A6008CD42B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB4966441F0304A5008CD42B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB4966821F0304A6008CD42B;
+			remoteInfo = "CoinPush WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FB4966991F0304A6008CD42B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FB4966841F0304A6008CD42B /* CoinPush WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB49669D1F0304A6008CD42B /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				FB4966751F0304A5008CD42B /* CoinPush WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FB49664C1F0304A5008CD42B /* CoinPush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinPush.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB49664F1F0304A5008CD42B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FB4966511F0304A5008CD42B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FB4966541F0304A5008CD42B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FB4966561F0304A5008CD42B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB4966591F0304A5008CD42B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FB49665B1F0304A5008CD42B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB4966601F0304A5008CD42B /* CoinPushTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinPushTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB4966641F0304A5008CD42B /* CoinPushTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinPushTests.swift; sourceTree = "<group>"; };
+		FB4966661F0304A5008CD42B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB49666B1F0304A5008CD42B /* CoinPushUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinPushUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB49666F1F0304A5008CD42B /* CoinPushUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinPushUITests.swift; sourceTree = "<group>"; };
+		FB4966711F0304A5008CD42B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB4966741F0304A5008CD42B /* CoinPush WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoinPush WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB49667A1F0304A5008CD42B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		FB49667C1F0304A5008CD42B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB49667E1F0304A5008CD42B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB4966831F0304A6008CD42B /* CoinPush WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "CoinPush WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB4966881F0304A6008CD42B /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		FB49668A1F0304A6008CD42B /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		FB49668C1F0304A6008CD42B /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		FB49668E1F0304A6008CD42B /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		FB4966901F0304A6008CD42B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB4966921F0304A6008CD42B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB4966931F0304A6008CD42B /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB4966491F0304A5008CD42B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB49665D1F0304A5008CD42B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB4966681F0304A5008CD42B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB4966801F0304A6008CD42B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FB4966431F0304A5008CD42B = {
+			isa = PBXGroup;
+			children = (
+				FB49664E1F0304A5008CD42B /* CoinPush */,
+				FB4966631F0304A5008CD42B /* CoinPushTests */,
+				FB49666E1F0304A5008CD42B /* CoinPushUITests */,
+				FB4966781F0304A5008CD42B /* CoinPush WatchKit App */,
+				FB4966871F0304A6008CD42B /* CoinPush WatchKit Extension */,
+				FB49664D1F0304A5008CD42B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FB49664D1F0304A5008CD42B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB49664C1F0304A5008CD42B /* CoinPush.app */,
+				FB4966601F0304A5008CD42B /* CoinPushTests.xctest */,
+				FB49666B1F0304A5008CD42B /* CoinPushUITests.xctest */,
+				FB4966741F0304A5008CD42B /* CoinPush WatchKit App.app */,
+				FB4966831F0304A6008CD42B /* CoinPush WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB49664E1F0304A5008CD42B /* CoinPush */ = {
+			isa = PBXGroup;
+			children = (
+				FB49664F1F0304A5008CD42B /* AppDelegate.swift */,
+				FB4966511F0304A5008CD42B /* ViewController.swift */,
+				FB4966531F0304A5008CD42B /* Main.storyboard */,
+				FB4966561F0304A5008CD42B /* Assets.xcassets */,
+				FB4966581F0304A5008CD42B /* LaunchScreen.storyboard */,
+				FB49665B1F0304A5008CD42B /* Info.plist */,
+			);
+			path = CoinPush;
+			sourceTree = "<group>";
+		};
+		FB4966631F0304A5008CD42B /* CoinPushTests */ = {
+			isa = PBXGroup;
+			children = (
+				FB4966641F0304A5008CD42B /* CoinPushTests.swift */,
+				FB4966661F0304A5008CD42B /* Info.plist */,
+			);
+			path = CoinPushTests;
+			sourceTree = "<group>";
+		};
+		FB49666E1F0304A5008CD42B /* CoinPushUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FB49666F1F0304A5008CD42B /* CoinPushUITests.swift */,
+				FB4966711F0304A5008CD42B /* Info.plist */,
+			);
+			path = CoinPushUITests;
+			sourceTree = "<group>";
+		};
+		FB4966781F0304A5008CD42B /* CoinPush WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				FB4966791F0304A5008CD42B /* Interface.storyboard */,
+				FB49667C1F0304A5008CD42B /* Assets.xcassets */,
+				FB49667E1F0304A5008CD42B /* Info.plist */,
+			);
+			path = "CoinPush WatchKit App";
+			sourceTree = "<group>";
+		};
+		FB4966871F0304A6008CD42B /* CoinPush WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FB4966881F0304A6008CD42B /* InterfaceController.swift */,
+				FB49668A1F0304A6008CD42B /* ExtensionDelegate.swift */,
+				FB49668C1F0304A6008CD42B /* NotificationController.swift */,
+				FB49668E1F0304A6008CD42B /* ComplicationController.swift */,
+				FB4966901F0304A6008CD42B /* Assets.xcassets */,
+				FB4966921F0304A6008CD42B /* Info.plist */,
+				FB4966931F0304A6008CD42B /* PushNotificationPayload.apns */,
+			);
+			path = "CoinPush WatchKit Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB49664B1F0304A5008CD42B /* CoinPush */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB49669E1F0304A6008CD42B /* Build configuration list for PBXNativeTarget "CoinPush" */;
+			buildPhases = (
+				FB4966481F0304A5008CD42B /* Sources */,
+				FB4966491F0304A5008CD42B /* Frameworks */,
+				FB49664A1F0304A5008CD42B /* Resources */,
+				FB49669D1F0304A6008CD42B /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB4966771F0304A5008CD42B /* PBXTargetDependency */,
+			);
+			name = CoinPush;
+			productName = CoinPush;
+			productReference = FB49664C1F0304A5008CD42B /* CoinPush.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FB49665F1F0304A5008CD42B /* CoinPushTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB4966A11F0304A6008CD42B /* Build configuration list for PBXNativeTarget "CoinPushTests" */;
+			buildPhases = (
+				FB49665C1F0304A5008CD42B /* Sources */,
+				FB49665D1F0304A5008CD42B /* Frameworks */,
+				FB49665E1F0304A5008CD42B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB4966621F0304A5008CD42B /* PBXTargetDependency */,
+			);
+			name = CoinPushTests;
+			productName = CoinPushTests;
+			productReference = FB4966601F0304A5008CD42B /* CoinPushTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FB49666A1F0304A5008CD42B /* CoinPushUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB4966A41F0304A6008CD42B /* Build configuration list for PBXNativeTarget "CoinPushUITests" */;
+			buildPhases = (
+				FB4966671F0304A5008CD42B /* Sources */,
+				FB4966681F0304A5008CD42B /* Frameworks */,
+				FB4966691F0304A5008CD42B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB49666D1F0304A5008CD42B /* PBXTargetDependency */,
+			);
+			name = CoinPushUITests;
+			productName = CoinPushUITests;
+			productReference = FB49666B1F0304A5008CD42B /* CoinPushUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		FB4966731F0304A5008CD42B /* CoinPush WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB49669A1F0304A6008CD42B /* Build configuration list for PBXNativeTarget "CoinPush WatchKit App" */;
+			buildPhases = (
+				FB4966721F0304A5008CD42B /* Resources */,
+				FB4966991F0304A6008CD42B /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB4966861F0304A6008CD42B /* PBXTargetDependency */,
+			);
+			name = "CoinPush WatchKit App";
+			productName = "CoinPush WatchKit App";
+			productReference = FB4966741F0304A5008CD42B /* CoinPush WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		FB4966821F0304A6008CD42B /* CoinPush WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB4966961F0304A6008CD42B /* Build configuration list for PBXNativeTarget "CoinPush WatchKit Extension" */;
+			buildPhases = (
+				FB49667F1F0304A6008CD42B /* Sources */,
+				FB4966801F0304A6008CD42B /* Frameworks */,
+				FB4966811F0304A6008CD42B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CoinPush WatchKit Extension";
+			productName = "CoinPush WatchKit Extension";
+			productReference = FB4966831F0304A6008CD42B /* CoinPush WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB4966441F0304A5008CD42B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Goods and Services";
+				TargetAttributes = {
+					FB49664B1F0304A5008CD42B = {
+						CreatedOnToolsVersion = 9.0;
+					};
+					FB49665F1F0304A5008CD42B = {
+						CreatedOnToolsVersion = 9.0;
+						TestTargetID = FB49664B1F0304A5008CD42B;
+					};
+					FB49666A1F0304A5008CD42B = {
+						CreatedOnToolsVersion = 9.0;
+						TestTargetID = FB49664B1F0304A5008CD42B;
+					};
+					FB4966731F0304A5008CD42B = {
+						CreatedOnToolsVersion = 9.0;
+					};
+					FB4966821F0304A6008CD42B = {
+						CreatedOnToolsVersion = 9.0;
+					};
+				};
+			};
+			buildConfigurationList = FB4966471F0304A5008CD42B /* Build configuration list for PBXProject "CoinPush" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FB4966431F0304A5008CD42B;
+			productRefGroup = FB49664D1F0304A5008CD42B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB49664B1F0304A5008CD42B /* CoinPush */,
+				FB49665F1F0304A5008CD42B /* CoinPushTests */,
+				FB49666A1F0304A5008CD42B /* CoinPushUITests */,
+				FB4966731F0304A5008CD42B /* CoinPush WatchKit App */,
+				FB4966821F0304A6008CD42B /* CoinPush WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FB49664A1F0304A5008CD42B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB49665A1F0304A5008CD42B /* LaunchScreen.storyboard in Resources */,
+				FB4966571F0304A5008CD42B /* Assets.xcassets in Resources */,
+				FB4966551F0304A5008CD42B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB49665E1F0304A5008CD42B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB4966691F0304A5008CD42B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB4966721F0304A5008CD42B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB49667D1F0304A5008CD42B /* Assets.xcassets in Resources */,
+				FB49667B1F0304A5008CD42B /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB4966811F0304A6008CD42B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB4966911F0304A6008CD42B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB4966481F0304A5008CD42B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB4966521F0304A5008CD42B /* ViewController.swift in Sources */,
+				FB4966501F0304A5008CD42B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB49665C1F0304A5008CD42B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB4966651F0304A5008CD42B /* CoinPushTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB4966671F0304A5008CD42B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB4966701F0304A5008CD42B /* CoinPushUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB49667F1F0304A6008CD42B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB49668D1F0304A6008CD42B /* NotificationController.swift in Sources */,
+				FB49668F1F0304A6008CD42B /* ComplicationController.swift in Sources */,
+				FB49668B1F0304A6008CD42B /* ExtensionDelegate.swift in Sources */,
+				FB4966891F0304A6008CD42B /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FB4966621F0304A5008CD42B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB49664B1F0304A5008CD42B /* CoinPush */;
+			targetProxy = FB4966611F0304A5008CD42B /* PBXContainerItemProxy */;
+		};
+		FB49666D1F0304A5008CD42B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB49664B1F0304A5008CD42B /* CoinPush */;
+			targetProxy = FB49666C1F0304A5008CD42B /* PBXContainerItemProxy */;
+		};
+		FB4966771F0304A5008CD42B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB4966731F0304A5008CD42B /* CoinPush WatchKit App */;
+			targetProxy = FB4966761F0304A5008CD42B /* PBXContainerItemProxy */;
+		};
+		FB4966861F0304A6008CD42B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB4966821F0304A6008CD42B /* CoinPush WatchKit Extension */;
+			targetProxy = FB4966851F0304A6008CD42B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FB4966531F0304A5008CD42B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB4966541F0304A5008CD42B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FB4966581F0304A5008CD42B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB4966591F0304A5008CD42B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FB4966791F0304A5008CD42B /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB49667A1F0304A5008CD42B /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FB4966941F0304A6008CD42B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FB4966951F0304A6008CD42B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FB4966971F0304A6008CD42B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				INFOPLIST_FILE = "CoinPush WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Goods-and-Services.CoinPush.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Debug;
+		};
+		FB4966981F0304A6008CD42B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				INFOPLIST_FILE = "CoinPush WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Goods-and-Services.CoinPush.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Release;
+		};
+		FB49669B1F0304A6008CD42B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = CoinPush_WatchKit_Extension;
+				INFOPLIST_FILE = "CoinPush WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "Goods-and-Services.CoinPush.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Debug;
+		};
+		FB49669C1F0304A6008CD42B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = CoinPush_WatchKit_Extension;
+				INFOPLIST_FILE = "CoinPush WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "Goods-and-Services.CoinPush.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Release;
+		};
+		FB49669F1F0304A6008CD42B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CoinPush/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Goods-and-Services.CoinPush";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FB4966A01F0304A6008CD42B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CoinPush/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Goods-and-Services.CoinPush";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FB4966A21F0304A6008CD42B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CoinPushTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Goods-and-Services.CoinPushTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoinPush.app/CoinPush";
+			};
+			name = Debug;
+		};
+		FB4966A31F0304A6008CD42B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CoinPushTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Goods-and-Services.CoinPushTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoinPush.app/CoinPush";
+			};
+			name = Release;
+		};
+		FB4966A51F0304A6008CD42B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = CoinPushUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Goods-and-Services.CoinPushUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CoinPush;
+			};
+			name = Debug;
+		};
+		FB4966A61F0304A6008CD42B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = CoinPushUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Goods-and-Services.CoinPushUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CoinPush;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB4966471F0304A5008CD42B /* Build configuration list for PBXProject "CoinPush" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB4966941F0304A6008CD42B /* Debug */,
+				FB4966951F0304A6008CD42B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB4966961F0304A6008CD42B /* Build configuration list for PBXNativeTarget "CoinPush WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB4966971F0304A6008CD42B /* Debug */,
+				FB4966981F0304A6008CD42B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FB49669A1F0304A6008CD42B /* Build configuration list for PBXNativeTarget "CoinPush WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB49669B1F0304A6008CD42B /* Debug */,
+				FB49669C1F0304A6008CD42B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FB49669E1F0304A6008CD42B /* Build configuration list for PBXNativeTarget "CoinPush" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB49669F1F0304A6008CD42B /* Debug */,
+				FB4966A01F0304A6008CD42B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FB4966A11F0304A6008CD42B /* Build configuration list for PBXNativeTarget "CoinPushTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB4966A21F0304A6008CD42B /* Debug */,
+				FB4966A31F0304A6008CD42B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FB4966A41F0304A6008CD42B /* Build configuration list for PBXNativeTarget "CoinPushUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB4966A51F0304A6008CD42B /* Debug */,
+				FB4966A61F0304A6008CD42B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FB4966441F0304A5008CD42B /* Project object */;
+}
