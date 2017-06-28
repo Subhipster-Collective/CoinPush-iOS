@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,46 +22,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bB-XV-mcN">
-                                <rect key="frame" x="118" y="265" width="139" height="21"/>
+                                <rect key="frame" x="118.5" y="312" width="139" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📉When ETH has increased by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRb-hB-IeT">
-                                <rect key="frame" x="43" y="299" width="213" height="21"/>
+                                <rect key="frame" x="43.5" y="346" width="213" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14.5"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00%" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wWg-Q2-Jnw">
-                                <rect key="frame" x="264" y="294" width="67" height="30"/>
+                                <rect key="frame" x="264.5" y="341" width="67" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="send"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📈When ETH has decreased by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMG-wN-Qsm">
-                                <rect key="frame" x="43" y="337" width="213" height="21"/>
+                                <rect key="frame" x="43.5" y="384" width="213" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14.5"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00%" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wPg-Wq-PuY">
-                                <rect key="frame" x="264" y="332" width="67" height="30"/>
+                                <rect key="frame" x="264.5" y="379" width="67" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flash crashes?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ad-Jj-93I">
-                                <rect key="frame" x="102" y="375" width="114" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HVa-SE-G41">
-                                <rect key="frame" x="224" y="370" width="51" height="31"/>
-                            </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 ETH = $250.58" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8K-s3-TD3">
-                                <rect key="frame" x="43" y="211" width="288" height="46"/>
+                                <rect key="frame" x="43.5" y="258" width="288" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="38.740001678466797"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -70,27 +60,23 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wPg-Wq-PuY" firstAttribute="top" secondItem="wWg-Q2-Jnw" secondAttribute="bottom" constant="8" symbolic="YES" id="0dl-v9-CRx"/>
-                            <constraint firstItem="W8K-s3-TD3" firstAttribute="leading" secondItem="aRb-hB-IeT" secondAttribute="leading" id="1s1-5H-SP4"/>
-                            <constraint firstItem="W8K-s3-TD3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="26v-gp-Qmd"/>
-                            <constraint firstItem="W8K-s3-TD3" firstAttribute="trailing" secondItem="wWg-Q2-Jnw" secondAttribute="trailing" id="3EN-w6-fYA"/>
-                            <constraint firstItem="wPg-Wq-PuY" firstAttribute="leading" secondItem="rMG-wN-Qsm" secondAttribute="trailing" constant="8" symbolic="YES" id="7k7-QW-pbv"/>
-                            <constraint firstItem="HVa-SE-G41" firstAttribute="top" secondItem="rMG-wN-Qsm" secondAttribute="bottom" constant="12" id="BPI-I8-8Jy"/>
-                            <constraint firstItem="HVa-SE-G41" firstAttribute="top" secondItem="wPg-Wq-PuY" secondAttribute="bottom" constant="8" symbolic="YES" id="BQn-Tm-nun"/>
-                            <constraint firstItem="aRb-hB-IeT" firstAttribute="leading" secondItem="rMG-wN-Qsm" secondAttribute="leading" id="EBk-ou-a3J"/>
-                            <constraint firstItem="3Ad-Jj-93I" firstAttribute="centerY" secondItem="HVa-SE-G41" secondAttribute="centerY" id="GW9-Oh-vkK"/>
-                            <constraint firstItem="4bB-XV-mcN" firstAttribute="top" secondItem="W8K-s3-TD3" secondAttribute="bottom" constant="8" symbolic="YES" id="LKf-2q-zyx"/>
-                            <constraint firstItem="wWg-Q2-Jnw" firstAttribute="leading" secondItem="wPg-Wq-PuY" secondAttribute="leading" id="MOB-NZ-lpn"/>
-                            <constraint firstItem="rMG-wN-Qsm" firstAttribute="top" secondItem="aRb-hB-IeT" secondAttribute="bottom" constant="17" id="NLs-Ee-7B2"/>
-                            <constraint firstItem="rMG-wN-Qsm" firstAttribute="centerY" secondItem="wPg-Wq-PuY" secondAttribute="centerY" id="Rey-Ku-2p5"/>
-                            <constraint firstItem="aRb-hB-IeT" firstAttribute="top" secondItem="4bB-XV-mcN" secondAttribute="bottom" constant="13" id="Wje-n5-k6k"/>
-                            <constraint firstItem="W8K-s3-TD3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="191" id="anQ-4L-Dc2"/>
-                            <constraint firstItem="aRb-hB-IeT" firstAttribute="centerY" secondItem="wWg-Q2-Jnw" secondAttribute="centerY" id="cJQ-n0-gJX"/>
-                            <constraint firstItem="HVa-SE-G41" firstAttribute="leading" secondItem="3Ad-Jj-93I" secondAttribute="trailing" constant="8" symbolic="YES" id="gKc-xD-mRH"/>
-                            <constraint firstItem="3Ad-Jj-93I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="86" id="t2l-Q1-ahj"/>
-                            <constraint firstItem="wWg-Q2-Jnw" firstAttribute="trailing" secondItem="wPg-Wq-PuY" secondAttribute="trailing" id="t9J-RZ-waM"/>
-                            <constraint firstItem="W8K-s3-TD3" firstAttribute="centerX" secondItem="4bB-XV-mcN" secondAttribute="centerX" id="ttG-EE-TTt"/>
-                            <constraint firstItem="wWg-Q2-Jnw" firstAttribute="leading" secondItem="aRb-hB-IeT" secondAttribute="trailing" constant="8" symbolic="YES" id="xda-Sv-VNX"/>
+                            <constraint firstItem="wPg-Wq-PuY" firstAttribute="leading" secondItem="rMG-wN-Qsm" secondAttribute="trailing" constant="8" symbolic="YES" id="6bi-ge-a6H"/>
+                            <constraint firstItem="rMG-wN-Qsm" firstAttribute="top" secondItem="aRb-hB-IeT" secondAttribute="bottom" constant="17" id="DHX-wn-4pD"/>
+                            <constraint firstItem="wWg-Q2-Jnw" firstAttribute="top" secondItem="W8K-s3-TD3" secondAttribute="bottom" constant="37" id="GaX-dn-1PB"/>
+                            <constraint firstItem="wWg-Q2-Jnw" firstAttribute="trailing" secondItem="wPg-Wq-PuY" secondAttribute="trailing" id="LFg-OB-VVc"/>
+                            <constraint firstItem="aRb-hB-IeT" firstAttribute="centerY" secondItem="wWg-Q2-Jnw" secondAttribute="centerY" id="MKG-cQ-2sI"/>
+                            <constraint firstItem="4bB-XV-mcN" firstAttribute="top" secondItem="W8K-s3-TD3" secondAttribute="bottom" constant="8" symbolic="YES" id="Md4-Sg-hz9"/>
+                            <constraint firstItem="rMG-wN-Qsm" firstAttribute="centerY" secondItem="wPg-Wq-PuY" secondAttribute="centerY" id="Odv-4P-KGD"/>
+                            <constraint firstItem="W8K-s3-TD3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="238" id="TR9-UR-RgW"/>
+                            <constraint firstItem="wWg-Q2-Jnw" firstAttribute="leading" secondItem="aRb-hB-IeT" secondAttribute="trailing" constant="8" symbolic="YES" id="WKh-B6-qhl"/>
+                            <constraint firstItem="W8K-s3-TD3" firstAttribute="leading" secondItem="aRb-hB-IeT" secondAttribute="leading" id="XdR-Mx-aSr"/>
+                            <constraint firstItem="aRb-hB-IeT" firstAttribute="leading" secondItem="rMG-wN-Qsm" secondAttribute="leading" id="Zeb-oI-aja"/>
+                            <constraint firstItem="W8K-s3-TD3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eQw-7w-70F"/>
+                            <constraint firstItem="aRb-hB-IeT" firstAttribute="top" secondItem="4bB-XV-mcN" secondAttribute="bottom" constant="13" id="gTq-JU-Qhj"/>
+                            <constraint firstItem="wWg-Q2-Jnw" firstAttribute="leading" secondItem="wPg-Wq-PuY" secondAttribute="leading" id="jyX-cT-TCn"/>
+                            <constraint firstItem="W8K-s3-TD3" firstAttribute="centerX" secondItem="4bB-XV-mcN" secondAttribute="centerX" id="oUb-Pr-eBo"/>
+                            <constraint firstItem="wPg-Wq-PuY" firstAttribute="top" secondItem="wWg-Q2-Jnw" secondAttribute="bottom" constant="8" symbolic="YES" id="pxz-YK-6sj"/>
+                            <constraint firstItem="W8K-s3-TD3" firstAttribute="trailing" secondItem="wWg-Q2-Jnw" secondAttribute="trailing" id="vxX-WV-mAw"/>
                         </constraints>
                     </view>
                 </viewController>
