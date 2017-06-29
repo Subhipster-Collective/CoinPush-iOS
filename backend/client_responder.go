@@ -2,28 +2,36 @@ package main
 
 
 import (
-    "fmt"
     "net/http"
     "log"
-    "encoding/json"
     "io/ioutil"
+    "encoding/json"
+    "fmt"
 )
 
-type json_request struct {
-    Test string
+type json_request struct{
+    Type string
+    ID string
+    Pref []float32
+    Push bool
 }
 
 func requestParser(w http.ResponseWriter, r *http.Request){
+    var f json_request
     body, err := ioutil.ReadAll(r.Body)
     if err != nil {
         panic(err)
     }
 
-    var data json_request
-    json.Unmarshal(body, &data)
-    fmt.Fprintf(w, data.Test)
-    fmt.Fprintf(w, "\n")
+    err = json.Unmarshal(body,&f)
+    if err != nil {
+        panic(err)
+    }
 
+    switch f.Type{
+    case "send_price":
+        sendCurrentPrice()
+    }
 }
 
 //func sendCurrentPrice()
