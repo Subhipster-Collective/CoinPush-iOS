@@ -16,6 +16,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let myJson = try JSONSerialization.jsonObject(with: mydata, options: .mutableContainers) as AnyObject
+        print(myJson)
+        
+        var request = URLRequest(url: URL(string: "http://bijanm.me/handle_request")!)
+        request.httpMethod = "POST"
+        let postString = "{\"title\":\"Buy cheese and bread for breakfast.\"}"
+        request.httpBody = postString.data(using: .utf8)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                // Check for fundamental networking error
+                print("error=\(String(describing: error))")
+                return
+            }
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                // Check for HTTP errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(String(describing: response))")
+            }
+            let responseString = String(data: data, encoding: .utf8)
+            print("responseString = \(String(describing: responseString))")
+        }
+        task.resume()
         return true
     }
 
