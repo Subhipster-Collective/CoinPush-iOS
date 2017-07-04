@@ -11,9 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var increasedValue: UITextField!
-    
     @IBOutlet weak var decreasedValue: UITextField!
-    
     @IBAction func submitUserData(_ sender: Any) {
         
         let device = UIDevice()
