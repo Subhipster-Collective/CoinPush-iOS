@@ -1,6 +1,5 @@
 package main
 
-
 import (
     "net/http"
     "log"
@@ -9,34 +8,38 @@ import (
     "fmt"
 )
 
-type json_request struct{
+type ClientRequest struct{
     Type string
+    Coin string
     ID string
     Pref []float32
     Push bool
 }
 
 func requestParser(w http.ResponseWriter, r *http.Request){
-    var f json_request
+    var f ClientRequest
     body, err := ioutil.ReadAll(r.Body)
     if err != nil {
         panic(err)
     }
 
     err = json.Unmarshal(body,&f)
+    log.Println(f)
+
     if err != nil {
         panic(err)
     }
+    log.Println("after")
 
     switch f.Type{
-    case "send_price":
-        sendCurrentPrice()
+    case "update":
+        fmt.Fprintf(w,f.Coin)
+        fmt.Fprintf(w, "got it")
     }
 }
 
-//func sendCurrentPrice()
+
 //func updateUserPrefrences()
-//func sendUserPrefrences()
 //func clearUserPrefrences()
 
 func main() {
