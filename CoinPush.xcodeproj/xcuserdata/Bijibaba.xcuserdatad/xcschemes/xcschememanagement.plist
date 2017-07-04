@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>CoinPush Watch app (Notification).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>CoinPush Watch app.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>CoinPush WatchKit App (Complication).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>CoinPush WatchKit App (Notification).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>CoinPush WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>CoinPush.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>70F308571F0B9BA40055D9AE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FB49664B1F0304A5008CD42B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FB49665F1F0304A5008CD42B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FB49666A1F0304A5008CD42B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FB4966731F0304A5008CD42B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
