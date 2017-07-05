@@ -59,7 +59,7 @@ class CurrencyData
     {
         currencies = new HashMap<>();
         currencies.put(CURRENCY_ETH, new Currency(CURRENCY_ETH, "Etherium (ETH)", "Ξ"));
-        currencies.put(CURRENCY_BTC, new Currency(CURRENCY_BTC, "Bitcoin (BTC)", /*"\u20BF"*/ ""));
+        currencies.put(CURRENCY_BTC, new Currency(CURRENCY_BTC, "Bitcoin (BTC)", /*"\u20BF"*/ "B"));
         currencies.put(CURRENCY_USD, new Currency(CURRENCY_USD, "US Dollar (USC)", "$"));
         currencies.put(CURRENCY_EUR, new Currency(CURRENCY_EUR, "Euro (EUR)", "€"));
         currencies.put(CURRENCY_GBP, new Currency(CURRENCY_GBP, "British Pound (GBP)", "£"));
@@ -83,14 +83,14 @@ class CurrencyData
     {
         try
         {
-            InputStream is = null;
-            is = new URL(url).openStream();
-            BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
-            StringBuilder sb = new StringBuilder();
+            InputStream stream = null;
+            stream = new URL(url).openStream();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(stream, Charset.forName("UTF-8")));
+            StringBuilder strBuilder = new StringBuilder();
             int cp;
-            while((cp = rd.read()) != -1)
-                sb.append((char)cp);
-            json = new JSONObject(sb.toString()).getJSONObject("RAW");
+            while((cp = reader.read()) != -1)
+                strBuilder.append((char)cp);
+            json = new JSONObject(strBuilder.toString()).getJSONObject("RAW");
         }
         catch(IOException | JSONException e)
         {
