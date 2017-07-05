@@ -23,7 +23,7 @@ class CurrencyAdapter extends ArrayAdapter<CurrencyData>
     //private final Context context;
     private final List<CurrencyData> data;
     private LayoutInflater inflater;
-    private int updateDelay = 6000;
+    private int updateDelay = 60000;
     
     CurrencyAdapter(final Context context, final List<CurrencyData> data)
     {
@@ -57,19 +57,12 @@ class CurrencyAdapter extends ArrayAdapter<CurrencyData>
     @NonNull
     public View getView(final int position, final View convertView, @NonNull final ViewGroup parent)
     {
-        View dataView;
-        //if(convertView == null)
-            dataView = inflater.inflate(R.layout.currency_layout, parent, false);
-        //else
-        //    dataView = convertView;
-        
-        
-        CurrencyData datum = data.get(position);
-        
+        View dataView = convertView == null ? inflater.inflate(R.layout.currency_layout, parent, false) : convertView ;
         TextView textCurrency = (TextView)dataView.findViewById(R.id.textViewCurrency);
         TextView textValue = (TextView)dataView.findViewById(R.id.textViewValue);
         TextView textChange = (TextView)dataView.findViewById(R.id.textViewChange);
-        
+    
+        CurrencyData datum = data.get(position);
         textCurrency.setText(datum.currency.name);
         textValue.setText(String.format(Locale.getDefault(), "%s %.3f %s", datum.conversion.symbol, datum.getValue(), datum.conversion.code));
         
