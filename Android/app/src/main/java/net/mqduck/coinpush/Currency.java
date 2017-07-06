@@ -19,6 +19,9 @@
 
 package net.mqduck.coinpush;
 
+import android.graphics.drawable.Drawable;
+import android.support.annotation.DrawableRes;
+
 /**
  * Created by mqduck on 7/4/17.
  */
@@ -28,11 +31,33 @@ class Currency
     final String code;
     final String name;
     final String symbol;
+    @DrawableRes final int icon;
+    final String emoji;
+    
+    Currency(final String code, final String name, final String symbol, @DrawableRes final int icon)
+    {
+        this.code = code;
+        this.name = name;
+        this.symbol = symbol;
+        this.icon = icon;
+        emoji = "";
+    }
+    
+    Currency(final String code, final String name, final String symbol, final String emoji)
+    {
+        this.code = code;
+        this.name = name;
+        this.symbol = symbol;
+        icon = R.mipmap.ic_empty;
+        this.emoji = emoji;
+    }
     
     Currency(final String code, final String name, final String symbol)
     {
         this.code = code;
         this.name = name;
         this.symbol = symbol;
+        icon = R.mipmap.ic_empty;
+        emoji = "";
     }
 }

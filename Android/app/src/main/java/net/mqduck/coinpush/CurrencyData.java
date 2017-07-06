@@ -58,14 +58,14 @@ class CurrencyData
     static
     {
         currencies = new HashMap<>();
-        currencies.put(CURRENCY_ETH, new Currency(CURRENCY_ETH, "Etherium (ETH)", "Ξ"));
-        currencies.put(CURRENCY_BTC, new Currency(CURRENCY_BTC, "Bitcoin (BTC)", /*"\u20BF"*/ "B"));
-        currencies.put(CURRENCY_USD, new Currency(CURRENCY_USD, "US Dollar (USC)", "$"));
-        currencies.put(CURRENCY_EUR, new Currency(CURRENCY_EUR, "Euro (EUR)", "€"));
-        currencies.put(CURRENCY_GBP, new Currency(CURRENCY_GBP, "British Pound (GBP)", "£"));
-        currencies.put(CURRENCY_JPY, new Currency(CURRENCY_JPY, "Japanese Yen (JPY)", "¥"));
-        currencies.put(CURRENCY_CNY, new Currency(CURRENCY_CNY, "Chinese Yuan (CNY)", "¥"));
-        currencies.put(CURRENCY_LTC, new Currency(CURRENCY_LTC, "Litecoin (LTC)", "Ł"));
+        currencies.put(CURRENCY_ETH, new Currency(CURRENCY_ETH, "Etherium (ETH)", "Ξ", R.mipmap.ic_eth));
+        currencies.put(CURRENCY_BTC, new Currency(CURRENCY_BTC, "Bitcoin (BTC)", /*"\u20BF"*/ "Ƀ", R.mipmap.ic_btc));
+        currencies.put(CURRENCY_LTC, new Currency(CURRENCY_LTC, "Litecoin (LTC)", "Ł", R.mipmap.ic_ltc));
+        currencies.put(CURRENCY_USD, new Currency(CURRENCY_USD, "US Dollar (USC)", "$", "\uD83C\uDDFA\uD83C\uDDF8"));
+        currencies.put(CURRENCY_EUR, new Currency(CURRENCY_EUR, "Euro (EUR)", "€", "\uD83C\uDDEA\uD83C\uDDFA"));
+        currencies.put(CURRENCY_GBP, new Currency(CURRENCY_GBP, "British Pound (GBP)", "£", "\uD83C\uDDEC\uD83C\uDDE7"));
+        currencies.put(CURRENCY_JPY, new Currency(CURRENCY_JPY, "Japanese Yen (JPY)", "¥", "\uD83C\uDDEF\uD83C\uDDF5"));
+        currencies.put(CURRENCY_CNY, new Currency(CURRENCY_CNY, "Chinese Yuan (CNY)", "¥", "\uD83C\uDDE8\uD83C\uDDF3"));
     
         String codes = "";
         for(String code : CurrencyData.currencies.keySet())

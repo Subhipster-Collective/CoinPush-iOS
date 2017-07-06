@@ -2,13 +2,16 @@ package net.mqduck.coinpush;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.support.annotation.NonNull;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -24,6 +27,7 @@ class CurrencyAdapter extends ArrayAdapter<CurrencyData>
     private final List<CurrencyData> data;
     private LayoutInflater inflater;
     private int updateDelay = 60000;
+    private static float fontSize;
     
     CurrencyAdapter(final Context context, final List<CurrencyData> data)
     {
@@ -31,6 +35,7 @@ class CurrencyAdapter extends ArrayAdapter<CurrencyData>
         //this.context = context;
         inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.data = data;
+        fontSize = (float)0.7 * context.getResources().getDrawable(R.mipmap.ic_eth).getIntrinsicHeight();
         
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -61,17 +66,29 @@ class CurrencyAdapter extends ArrayAdapter<CurrencyData>
         TextView textCurrency = (TextView)dataView.findViewById(R.id.textViewCurrency);
         TextView textValue = (TextView)dataView.findViewById(R.id.textViewValue);
         TextView textChange = (TextView)dataView.findViewById(R.id.textViewChange);
+        ImageView iconFrom = (ImageView)dataView.findViewById(R.id.icon_from);
+        ImageView iconTo = (ImageView)dataView.findViewById(R.id.icon_to);
+        TextView emojiFrom = (TextView)dataView.findViewById(R.id.emoji_from);
+        TextView emojiTo = (TextView)dataView.findViewById(R.id.emoji_to);
     
         CurrencyData datum = data.get(position);
         textCurrency.setText(datum.currency.name);
-        textValue.setText(String.format(Locale.getDefault(), "%s %.3f %s", datum.conversion.symbol, datum.getValue(), datum.conversion.code));
-        
+        textValue.setText(String.format(Locale.getDefault(), "%s %.3f %s",
+                                        datum.conversion.symbol, datum.getValue(), datum.conversion.code));
+        emojiFrom.setTextSize(TypedValue.COMPLEX_UNIT_PX, fontSize);
+        emojiFrom.setText(datum.currency.emoji);
+        emojiTo.setTextSize(TypedValue.COMPLEX_UNIT_PX, fontSize);
+        emojiTo.setText(datum.conversion.emoji);
+    
         double change = datum.getChange();
         textChange.setText(String.format(Locale.getDefault(), "%+.4f%%", change));
         if(change < 0)
             textChange.setTextColor(Color.rgb((int)Math.round(change * -30), 0, 0));
         else
             textChange.setTextColor(Color.rgb(0, (int)Math.round(change * 30), 0));
+        
+        iconFrom.setImageResource(datum.currency.icon);
+        iconTo.setImageResource(datum.conversion.icon);
         
         return dataView;
     }
