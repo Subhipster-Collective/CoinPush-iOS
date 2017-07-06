@@ -15,17 +15,13 @@
 		70F308701F0B9BA40055D9AE /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F3086F1F0B9BA40055D9AE /* NotificationController.swift */; };
 		70F308721F0B9BA40055D9AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70F308711F0B9BA40055D9AE /* Assets.xcassets */; };
 		70F308761F0B9BA40055D9AE /* CoinPush Watch app.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 70F308581F0B9BA40055D9AE /* CoinPush Watch app.app */; };
-		70F308801F0B9C570055D9AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70F3087F1F0B9C570055D9AE /* GoogleService-Info.plist */; };
-		70F308811F0B9C570055D9AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70F3087F1F0B9C570055D9AE /* GoogleService-Info.plist */; };
-		70F308821F0B9C570055D9AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70F3087F1F0B9C570055D9AE /* GoogleService-Info.plist */; };
-		70F308831F0B9C570055D9AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70F3087F1F0B9C570055D9AE /* GoogleService-Info.plist */; };
-		70F308841F0B9C570055D9AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70F3087F1F0B9C570055D9AE /* GoogleService-Info.plist */; };
 		70FBCFE41F0DF48100DAF650 /* CryptoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FBCFE31F0DF48100DAF650 /* CryptoApi.swift */; };
 		8F2AF5341501D16F8896AFC8 /* Pods_CoinPushTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CD0C26C36C11E1D1295E063 /* Pods_CoinPushTests.framework */; };
 		922868F0E061B2AF79CAA723 /* Pods_CoinPush.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B7FF273B6904815E4D77024 /* Pods_CoinPush.framework */; };
 		B402E2BFB083388DB6E0441E /* Pods_CoinPush_Watch_app_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D03C0084DF652620C60593B /* Pods_CoinPush_Watch_app_Extension.framework */; };
 		DCBBBB9C37D95BE978B43815 /* Pods_CoinPushUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF4F7D6C02918D949C73630 /* Pods_CoinPushUITests.framework */; };
 		F922DD903CB55767034F225A /* Pods_CoinPush_Watch_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A691A7111AF3CE0B1082EB6D /* Pods_CoinPush_Watch_app.framework */; };
+		FB0F30CC1F0E252D0047396B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB0F30CB1F0E252D0047396B /* GoogleService-Info.plist */; };
 		FB4966501F0304A5008CD42B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB49664F1F0304A5008CD42B /* AppDelegate.swift */; };
 		FB4966521F0304A5008CD42B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4966511F0304A5008CD42B /* ViewController.swift */; };
 		FB4966551F0304A5008CD42B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB4966531F0304A5008CD42B /* Main.storyboard */; };
@@ -111,7 +107,6 @@
 		70F308711F0B9BA40055D9AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70F308731F0B9BA40055D9AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70F3087E1F0B9BD00055D9AE /* CoinPush Watch app Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CoinPush Watch app Extension.entitlements"; sourceTree = "<group>"; };
-		70F3087F1F0B9C570055D9AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		70FBCFE31F0DF48100DAF650 /* CryptoApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoApi.swift; sourceTree = "<group>"; };
 		7B7FF273B6904815E4D77024 /* Pods_CoinPush.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinPush.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D03C0084DF652620C60593B /* Pods_CoinPush_Watch_app_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinPush_Watch_app_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +117,7 @@
 		ABD6A05466999DBED4A467CE /* Pods-CoinPush Watch app Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinPush Watch app Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoinPush Watch app Extension/Pods-CoinPush Watch app Extension.release.xcconfig"; sourceTree = "<group>"; };
 		CA519FC4C9C3B2FF4F41E074 /* Pods-CoinPushTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinPushTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoinPushTests/Pods-CoinPushTests.release.xcconfig"; sourceTree = "<group>"; };
 		F56E22C348076E927AFCCF8A /* Pods-CoinPushTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinPushTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoinPushTests/Pods-CoinPushTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FB0F30CB1F0E252D0047396B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FB49664C1F0304A5008CD42B /* CoinPush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinPush.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB49664F1F0304A5008CD42B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB4966511F0304A5008CD42B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -291,7 +287,7 @@
 				FB4966561F0304A5008CD42B /* Assets.xcassets */,
 				FB4966581F0304A5008CD42B /* LaunchScreen.storyboard */,
 				FB49665B1F0304A5008CD42B /* Info.plist */,
-				70F3087F1F0B9C570055D9AE /* GoogleService-Info.plist */,
+				FB0F30CB1F0E252D0047396B /* GoogleService-Info.plist */,
 				70FBCFE31F0DF48100DAF650 /* CryptoApi.swift */,
 			);
 			path = CoinPush;
@@ -517,7 +513,6 @@
 			files = (
 				70F3085E1F0B9BA40055D9AE /* Assets.xcassets in Resources */,
 				70F3085C1F0B9BA40055D9AE /* Interface.storyboard in Resources */,
-				70F308831F0B9C570055D9AE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,7 +521,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				70F308721F0B9BA40055D9AE /* Assets.xcassets in Resources */,
-				70F308841F0B9C570055D9AE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,7 +529,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB49665A1F0304A5008CD42B /* LaunchScreen.storyboard in Resources */,
-				70F308801F0B9C570055D9AE /* GoogleService-Info.plist in Resources */,
+				FB0F30CC1F0E252D0047396B /* GoogleService-Info.plist in Resources */,
 				FB4966571F0304A5008CD42B /* Assets.xcassets in Resources */,
 				FB4966551F0304A5008CD42B /* Main.storyboard in Resources */,
 			);
@@ -545,7 +539,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70F308811F0B9C570055D9AE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,7 +546,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70F308821F0B9C570055D9AE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -880,6 +872,7 @@
 				DEVELOPMENT_TEAM = J22DH3ZT63;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = "CoinPush Watch app Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CoinPush.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -901,6 +894,7 @@
 				DEVELOPMENT_TEAM = J22DH3ZT63;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = "CoinPush Watch app Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CoinPush.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -923,6 +917,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				IBSC_MODULE = CoinPush_Watch_app_Extension;
 				INFOPLIST_FILE = "CoinPush Watch app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = CoinPush.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -944,6 +939,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				IBSC_MODULE = CoinPush_Watch_app_Extension;
 				INFOPLIST_FILE = "CoinPush Watch app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = CoinPush.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1103,6 +1099,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = J22DH3ZT63;
 				INFOPLIST_FILE = CoinPushTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Goods-and-Services.CoinPushTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1121,6 +1118,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = J22DH3ZT63;
 				INFOPLIST_FILE = CoinPushTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Goods-and-Services.CoinPushTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1138,7 +1136,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = J22DH3ZT63;
 				INFOPLIST_FILE = CoinPushUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Goods-and-Services.CoinPushUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1155,7 +1153,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = J22DH3ZT63;
 				INFOPLIST_FILE = CoinPushUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Goods-and-Services.CoinPushUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";

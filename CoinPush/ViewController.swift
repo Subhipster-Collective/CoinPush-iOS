@@ -8,10 +8,12 @@
 
 import UIKit
 import FirebaseDatabase
+import GoogleMobileAds
 
 class ViewController: UIViewController {
     @IBOutlet weak var increasedValue: UITextField!
     @IBOutlet weak var decreasedValue: UITextField!
+    @IBOutlet weak var bannerView: GADBannerView!
     let device = UIDevice()
     var ref: DatabaseReference!
 
@@ -29,6 +31,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/6300978111"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
     }
 
     override func didReceiveMemoryWarning() {

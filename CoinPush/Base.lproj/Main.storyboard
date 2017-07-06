@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fNU-SU-gqc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17A291m" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fNU-SU-gqc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,37 +29,37 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📈When ETH has increased by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRb-hB-IeT">
-                                <rect key="frame" x="43.5" y="346" width="213" height="21"/>
+                                <rect key="frame" x="41.5" y="346" width="213" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14.5"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00%" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wWg-Q2-Jnw">
-                                <rect key="frame" x="262.5" y="341" width="72" height="30"/>
+                                <rect key="frame" x="260.5" y="341" width="76.5" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="send"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📉When ETH has decreased by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMG-wN-Qsm">
-                                <rect key="frame" x="43.5" y="384" width="213" height="21"/>
+                                <rect key="frame" x="41.5" y="384" width="213" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14.5"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00%" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wPg-Wq-PuY">
-                                <rect key="frame" x="264.5" y="379" width="67" height="30"/>
+                                <rect key="frame" x="262.5" y="379" width="71.5" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 ETH = $250.58" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8K-s3-TD3">
-                                <rect key="frame" x="43.5" y="258" width="288" height="46"/>
+                                <rect key="frame" x="41.5" y="258" width="292.5" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="38.740001678466797"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00%" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9j5-Q4-Kz9">
-                                <rect key="frame" x="262.5" y="378" width="72" height="30"/>
+                                <rect key="frame" x="260.5" y="378" width="76.5" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -71,6 +71,14 @@
                                     <action selector="submitUserData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PaL-AD-fQn"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3BE-Te-MEL" customClass="GADBannerView">
+                                <rect key="frame" x="27" y="617" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9Fx-4V-KwU"/>
+                                    <constraint firstAttribute="width" constant="320" id="KzQ-y4-kia"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -85,11 +93,13 @@
                             <constraint firstItem="wPg-Wq-PuY" firstAttribute="top" secondItem="wWg-Q2-Jnw" secondAttribute="bottom" constant="8" symbolic="YES" id="MOq-ld-0jr"/>
                             <constraint firstItem="aRb-hB-IeT" firstAttribute="top" secondItem="4bB-XV-mcN" secondAttribute="bottom" constant="13" id="NSj-MH-uiT"/>
                             <constraint firstItem="wPg-Wq-PuY" firstAttribute="leading" secondItem="rMG-wN-Qsm" secondAttribute="trailing" constant="8" symbolic="YES" id="P4y-8e-VHl"/>
+                            <constraint firstItem="3BE-Te-MEL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RPw-Ou-bc5"/>
                             <constraint firstItem="wWg-Q2-Jnw" firstAttribute="leading" secondItem="aRb-hB-IeT" secondAttribute="trailing" constant="6" id="SD8-hF-FrG"/>
                             <constraint firstItem="9j5-Q4-Kz9" firstAttribute="centerX" secondItem="wPg-Wq-PuY" secondAttribute="centerX" id="StD-kV-zQQ"/>
                             <constraint firstItem="W8K-s3-TD3" firstAttribute="centerX" secondItem="4bB-XV-mcN" secondAttribute="centerX" id="TGx-OI-7Sn"/>
                             <constraint firstItem="wWg-Q2-Jnw" firstAttribute="leading" secondItem="9j5-Q4-Kz9" secondAttribute="leading" id="THk-PX-a5B"/>
                             <constraint firstItem="wYN-6W-8qW" firstAttribute="top" secondItem="wPg-Wq-PuY" secondAttribute="bottom" constant="8" symbolic="YES" id="UpB-Va-aFd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3BE-Te-MEL" secondAttribute="bottom" id="Xxv-I5-VHN"/>
                             <constraint firstItem="W8K-s3-TD3" firstAttribute="leading" secondItem="aRb-hB-IeT" secondAttribute="leading" id="Y24-CN-ARt"/>
                             <constraint firstItem="rMG-wN-Qsm" firstAttribute="top" secondItem="aRb-hB-IeT" secondAttribute="bottom" constant="17" id="atr-o0-8tX"/>
                             <constraint firstItem="4bB-XV-mcN" firstAttribute="top" secondItem="W8K-s3-TD3" secondAttribute="bottom" constant="8" symbolic="YES" id="dDr-Ax-XSJ"/>
@@ -101,6 +111,7 @@
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="bannerView" destination="3BE-Te-MEL" id="s5n-56-I1d"/>
                         <outlet property="decreasedValue" destination="9j5-Q4-Kz9" id="Ir0-iI-18d"/>
                         <outlet property="increasedValue" destination="wWg-Q2-Jnw" id="qtG-bg-ixM"/>
                     </connections>
@@ -128,7 +139,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ethereum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6C4-3U-NsY">
-                                                    <rect key="frame" x="18" y="21" width="105" height="21"/>
+                                                    <rect key="frame" x="18" y="21" width="107" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <nil key="textColor"/>

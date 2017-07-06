@@ -8,6 +8,7 @@ target 'CoinPush' do
   # Pods for CoinPush
 pod “Firebase/Messaging"
 pod "Firebase/Database"
+pod 'Firebase/AdMob'
   target 'CoinPushTests' do
     inherit! :search_paths
     # Pods for testing
