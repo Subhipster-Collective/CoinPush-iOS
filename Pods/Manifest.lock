@@ -1,4 +1,7 @@
 PODS:
+  - Firebase/AdMob (4.0.3):
+    - Firebase/Core
+    - Google-Mobile-Ads-SDK (= 7.21.0)
   - Firebase/Core (4.0.3):
     - FirebaseAnalytics (= 4.0.2)
     - FirebaseCore (= 4.0.3)
@@ -24,6 +27,7 @@ PODS:
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/Logger (~> 2.1)
     - Protobuf (~> 3.1)
+  - Google-Mobile-Ads-SDK (7.21.0)
   - GoogleToolboxForMac/Defines (2.1.1)
   - GoogleToolboxForMac/Logger (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
@@ -32,6 +36,7 @@ PODS:
   - Protobuf (3.3.0)
 
 DEPENDENCIES:
+  - Firebase/AdMob
   - Firebase/Database
   - Firebase/Messaging
 
@@ -42,9 +47,10 @@ SPEC CHECKSUMS:
   FirebaseDatabase: d829b3a8c3e2ac7a16773c5df226966b0805dfc2
   FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
   FirebaseMessaging: 227406c05b0dc9290702d2e9f18ab5528f0c2cf2
+  Google-Mobile-Ads-SDK: 4a6f1b43c8cc0e1e95a3b59d9f52a01671c6f9f3
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
 
-PODFILE CHECKSUM: 331992a1e7736781e7cd63ff980a5588701881cb
+PODFILE CHECKSUM: 9f85858a4ead2d7cd3a2cef664b163704692a6ac
 
 COCOAPODS: 1.2.1
