@@ -41,12 +41,19 @@ class CurrencyData
     private final static String DATUM_CHANGE = "CHANGEPCT24HOUR";
     final static String CURRENCY_ETH = "ETH";
     final static String CURRENCY_BTC = "BTC";
+    final static String CURRENCY_LTC = "LTC";
+    final static String CURRENCY_DASH = "DASH";
+    final static String CURRENCY_XMR = "XMR";
+    final static String CURRENCY_NXT = "NXT";
+    final static String CURRENCY_ZEC = "ZEC";
+    final static String CURRENCY_DGB = "DGB";
+    final static String CURRENCY_XRP = "XRP";
+    
     final static String CURRENCY_USD = "USD";
     final static String CURRENCY_EUR = "EUR";
     final static String CURRENCY_GBP = "GBP";
     final static String CURRENCY_JPY = "JPY";
     final static String CURRENCY_CNY = "CNY";
-    final static String CURRENCY_LTC = "LTC";
     
     private final static HashMap<String, Currency> currencies;
     private final static String url;
@@ -61,6 +68,13 @@ class CurrencyData
         currencies.put(CURRENCY_ETH, new Currency(CURRENCY_ETH, "Etherium (ETH)", "Ξ", R.mipmap.ic_eth));
         currencies.put(CURRENCY_BTC, new Currency(CURRENCY_BTC, "Bitcoin (BTC)", /*"\u20BF"*/ "Ƀ", R.mipmap.ic_btc));
         currencies.put(CURRENCY_LTC, new Currency(CURRENCY_LTC, "Litecoin (LTC)", "Ł", R.mipmap.ic_ltc));
+        currencies.put(CURRENCY_DASH, new Currency(CURRENCY_DASH, "DigitalCash (DASH)", "DASH", R.mipmap.ic_dash));
+        currencies.put(CURRENCY_XMR, new Currency(CURRENCY_XMR, "Monero (XMR)", "ɱ", R.mipmap.ic_xmr));
+        currencies.put(CURRENCY_NXT, new Currency(CURRENCY_NXT, "Nxt (NXT)", "NXT", R.mipmap.ic_nxt));
+        currencies.put(CURRENCY_ZEC, new Currency(CURRENCY_ZEC, "ZCash (ZEC)", "ZEC", R.mipmap.ic_zec));
+        currencies.put(CURRENCY_DGB, new Currency(CURRENCY_DGB, "DigiByte (DGB)", "", R.mipmap.ic_dgb));
+        currencies.put(CURRENCY_XRP, new Currency(CURRENCY_XRP, "Ripple (XRP)", "", R.mipmap.ic_xrp));
+        
         currencies.put(CURRENCY_USD, new Currency(CURRENCY_USD, "US Dollar (USC)", "$", "\uD83C\uDDFA\uD83C\uDDF8"));
         currencies.put(CURRENCY_EUR, new Currency(CURRENCY_EUR, "Euro (EUR)", "€", "\uD83C\uDDEA\uD83C\uDDFA"));
         currencies.put(CURRENCY_GBP, new Currency(CURRENCY_GBP, "British Pound (GBP)", "£", "\uD83C\uDDEC\uD83C\uDDE7"));

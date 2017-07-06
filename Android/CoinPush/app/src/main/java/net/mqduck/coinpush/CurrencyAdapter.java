@@ -67,18 +67,15 @@ class CurrencyAdapter extends ArrayAdapter<CurrencyData>
         TextView textValue = (TextView)dataView.findViewById(R.id.textViewValue);
         TextView textChange = (TextView)dataView.findViewById(R.id.textViewChange);
         ImageView iconFrom = (ImageView)dataView.findViewById(R.id.icon_from);
-        ImageView iconTo = (ImageView)dataView.findViewById(R.id.icon_to);
         TextView emojiFrom = (TextView)dataView.findViewById(R.id.emoji_from);
-        TextView emojiTo = (TextView)dataView.findViewById(R.id.emoji_to);
         
         CurrencyData datum = data.get(position);
         textCurrency.setText(datum.currency.name);
         textValue.setText(String.format(Locale.getDefault(), "%s %.3f %s",
                                         datum.conversion.symbol, datum.getValue(), datum.conversion.code));
+        iconFrom.setImageResource(datum.currency.icon);
         emojiFrom.setTextSize(TypedValue.COMPLEX_UNIT_PX, fontSize);
         emojiFrom.setText(datum.currency.emoji);
-        emojiTo.setTextSize(TypedValue.COMPLEX_UNIT_PX, fontSize);
-        emojiTo.setText(datum.conversion.emoji);
         
         double change = datum.getChange();
         textChange.setText(String.format(Locale.getDefault(), "%+.4f%%", change));
@@ -87,8 +84,6 @@ class CurrencyAdapter extends ArrayAdapter<CurrencyData>
         else
             textChange.setTextColor(Color.rgb(0, (int)Math.round(change * 30), 0));
         
-        iconFrom.setImageResource(datum.currency.icon);
-        iconTo.setImageResource(datum.conversion.icon);
         
         return dataView;
     }
