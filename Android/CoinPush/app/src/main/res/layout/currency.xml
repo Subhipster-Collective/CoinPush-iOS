@@ -30,7 +30,7 @@
         </FrameLayout>
 
         <TextView
-            android:id="@+id/textViewCurrency"
+            android:id="@+id/textViewCurrencyFrom"
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|start"

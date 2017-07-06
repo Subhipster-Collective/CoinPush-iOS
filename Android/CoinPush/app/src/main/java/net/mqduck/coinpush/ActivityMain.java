@@ -20,11 +20,8 @@
 package net.mqduck.coinpush;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
@@ -42,13 +39,13 @@ public class ActivityMain extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     
-        ArrayList<CurrencyData> data = new ArrayList<>();
-        data.add(new CurrencyData(CurrencyData.CURRENCY_ETH, CurrencyData.CURRENCY_USD));
-        data.add(new CurrencyData(CurrencyData.CURRENCY_BTC, CurrencyData.CURRENCY_EUR));
-        data.add(new CurrencyData(CurrencyData.CURRENCY_LTC, CurrencyData.CURRENCY_JPY));
-        data.add(new CurrencyData(CurrencyData.CURRENCY_NXT, CurrencyData.CURRENCY_BTC));
+        ConversionDataList data = new ConversionDataList();
+        data.add(new ConversionData(Currency.Code.ETH, Currency.Code.USD));
+        data.add(new ConversionData(Currency.Code.BTC, Currency.Code.EUR));
+        data.add(new ConversionData(Currency.Code.LTC, Currency.Code.JPY));
+        data.add(new ConversionData(Currency.Code.NXT, Currency.Code.BTC));
         ListView list = (ListView)findViewById(R.id.list);
-        CurrencyAdapter adapter = new CurrencyAdapter(this, data);
+        ConversionAdapter adapter = new ConversionAdapter(this, data);
         list.setAdapter(adapter);
         
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);

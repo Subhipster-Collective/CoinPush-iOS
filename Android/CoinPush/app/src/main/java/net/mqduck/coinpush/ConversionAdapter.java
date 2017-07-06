@@ -2,7 +2,6 @@ package net.mqduck.coinpush;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -21,15 +20,15 @@ import java.util.Locale;
  * Created by mqduck on 7/4/17.
  */
 
-class CurrencyAdapter extends ArrayAdapter<CurrencyData>
+class ConversionAdapter extends ArrayAdapter<ConversionData>
 {
     //private final Context context;
-    private final List<CurrencyData> data;
+    private final List<ConversionData> data;
     private LayoutInflater inflater;
     private int updateDelay = 60000;
     private static float fontSize;
     
-    CurrencyAdapter(final Context context, final List<CurrencyData> data)
+    ConversionAdapter(final Context context, final ConversionDataList data)
     {
         super(context, -1, data);
         //this.context = context;
@@ -41,11 +40,11 @@ class CurrencyAdapter extends ArrayAdapter<CurrencyData>
         handler.postDelayed(new Runnable() {
             @Override public void run()
             {
-                new AsyncTask<CurrencyData, Void, Void>() {
-                    @Override protected Void doInBackground(CurrencyData... data)
+                new AsyncTask<ConversionData, Void, Void>() {
+                    @Override protected Void doInBackground(ConversionData... data)
                     {
-                        CurrencyData.updateJson();
-                        for(CurrencyData datum : data)
+                        Currency.updateJsons();
+                        for(ConversionData datum : data)
                             datum.update();
                         return null;
                     }
@@ -53,7 +52,7 @@ class CurrencyAdapter extends ArrayAdapter<CurrencyData>
                     {
                         notifyDataSetChanged();
                     }
-                }.execute(data.toArray(new CurrencyData[0]));
+                }.execute(data.toArray(new ConversionData[0]));
                 handler.postDelayed(this, updateDelay);
             }
         }, 0);
@@ -63,19 +62,19 @@ class CurrencyAdapter extends ArrayAdapter<CurrencyData>
     public View getView(final int position, final View convertView, @NonNull final ViewGroup parent)
     {
         View dataView = convertView == null ? inflater.inflate(R.layout.currency, parent, false) : convertView ;
-        TextView textCurrency = (TextView)dataView.findViewById(R.id.textViewCurrency);
+        TextView textCurrencyFrom = (TextView)dataView.findViewById(R.id.textViewCurrencyFrom);
         TextView textValue = (TextView)dataView.findViewById(R.id.textViewValue);
         TextView textChange = (TextView)dataView.findViewById(R.id.textViewChange);
         ImageView iconFrom = (ImageView)dataView.findViewById(R.id.icon_from);
         TextView emojiFrom = (TextView)dataView.findViewById(R.id.emoji_from);
         
-        CurrencyData datum = data.get(position);
-        textCurrency.setText(datum.currency.name);
+        ConversionData datum = data.get(position);
+        textCurrencyFrom.setText(datum.currencyFrom.name);
         textValue.setText(String.format(Locale.getDefault(), "%s %.3f %s",
-                                        datum.conversion.symbol, datum.getValue(), datum.conversion.code));
-        iconFrom.setImageResource(datum.currency.icon);
+                                        datum.currencyTo.symbol, datum.getValue(), datum.currencyTo.code));
+        iconFrom.setImageResource(datum.currencyFrom.icon);
         emojiFrom.setTextSize(TypedValue.COMPLEX_UNIT_PX, fontSize);
-        emojiFrom.setText(datum.currency.emoji);
+        emojiFrom.setText(datum.currencyFrom.emoji);
         
         double change = datum.getChange();
         textChange.setText(String.format(Locale.getDefault(), "%+.4f%%", change));
@@ -83,7 +82,6 @@ class CurrencyAdapter extends ArrayAdapter<CurrencyData>
             textChange.setTextColor(Color.rgb((int)Math.round(change * -30), 0, 0));
         else
             textChange.setTextColor(Color.rgb(0, (int)Math.round(change * 30), 0));
-        
         
         return dataView;
     }
