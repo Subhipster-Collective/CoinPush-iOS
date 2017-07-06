@@ -66,7 +66,9 @@ class CurrencyData
     {
         currencies = new HashMap<>();
         currencies.put(CURRENCY_ETH, new Currency(CURRENCY_ETH, "Etherium (ETH)", "Ξ", R.mipmap.ic_eth));
-        currencies.put(CURRENCY_BTC, new Currency(CURRENCY_BTC, "Bitcoin (BTC)", /*"\u20BF"*/ "Ƀ", R.mipmap.ic_btc));
+        currencies.put(CURRENCY_BTC, new Currency(CURRENCY_BTC, "Bitcoin (BTC)",
+                                                  android.os.Build.VERSION.SDK_INT < 26 ? "Ƀ" : "\u20BF",
+                                                  R.mipmap.ic_btc));
         currencies.put(CURRENCY_LTC, new Currency(CURRENCY_LTC, "Litecoin (LTC)", "Ł", R.mipmap.ic_ltc));
         currencies.put(CURRENCY_DASH, new Currency(CURRENCY_DASH, "DigitalCash (DASH)", "DASH", R.mipmap.ic_dash));
         currencies.put(CURRENCY_XMR, new Currency(CURRENCY_XMR, "Monero (XMR)", "ɱ", R.mipmap.ic_xmr));

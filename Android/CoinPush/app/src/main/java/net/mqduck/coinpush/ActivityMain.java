@@ -46,6 +46,7 @@ public class ActivityMain extends AppCompatActivity
         data.add(new CurrencyData(CurrencyData.CURRENCY_ETH, CurrencyData.CURRENCY_USD));
         data.add(new CurrencyData(CurrencyData.CURRENCY_BTC, CurrencyData.CURRENCY_EUR));
         data.add(new CurrencyData(CurrencyData.CURRENCY_LTC, CurrencyData.CURRENCY_JPY));
+        data.add(new CurrencyData(CurrencyData.CURRENCY_NXT, CurrencyData.CURRENCY_BTC));
         ListView list = (ListView)findViewById(R.id.list);
         CurrencyAdapter adapter = new CurrencyAdapter(this, data);
         list.setAdapter(adapter);
