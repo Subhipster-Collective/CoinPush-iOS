@@ -33,10 +33,10 @@ class Conversion
     private final static String DATUM_VALUE = "PRICE";
     private final static String DATUM_CHANGE = "CHANGEPCT24HOUR";
     
-    private final static String INTENT_KEY_FROM = "net.mqduck.coinpush.ActivityConversionPreferences.currencyFrom";
-    private final static String INTENT_KEY_TO = "net.mqduck.coinpush.ActivityConversionPreferences.currencyTo";
-    private final static String INTENT_KEY_VALUE = "net.mqduck.coinpush.ActivityConversionPreferences.value";
-    private final static String INTENT_KEY_CHANGE = "net.mqduck.coinpush.ActivityConversionPreferences.change";
+    private final static String INTENT_KEY_FROM = "net.mqduck.coinpush.Conversion.currencyFrom";
+    private final static String INTENT_KEY_TO = "net.mqduck.coinpush.Conversion.currencyTo";
+    private final static String INTENT_KEY_VALUE = "net.mqduck.coinpush.Conversion.value";
+    private final static String INTENT_KEY_CHANGE = "net.mqduck.coinpush.Conversion.change";
     
     final Currency currencyFrom, currencyTo;
     private Double value = 0.0, change = 0.0;
@@ -69,9 +69,10 @@ class Conversion
     {
         try
         {
-            JSONObject mJson = currencyTo.json.getJSONObject(currencyFrom.code).getJSONObject(currencyTo.code);
-            value = mJson.getDouble(DATUM_VALUE);
-            change = mJson.getDouble(DATUM_CHANGE);
+            JSONObject json = currencyTo.json.getJSONObject(currencyFrom.code.toString())
+                                             .getJSONObject(currencyTo.code.toString());
+            value = json.getDouble(DATUM_VALUE);
+            change = json.getDouble(DATUM_CHANGE);
         }
         catch(JSONException e)
         {

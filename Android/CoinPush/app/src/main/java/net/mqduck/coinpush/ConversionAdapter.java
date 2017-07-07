@@ -58,7 +58,7 @@ class ConversionAdapter extends ArrayAdapter<Conversion>
     @NonNull
     public View getView(final int position, final View convertView, @NonNull final ViewGroup parent)
     {
-        View conversionView = convertView == null ? inflater.inflate(R.layout.conversion, parent, false) : convertView ;
+        View conversionView = convertView == null ? inflater.inflate(R.layout.conversion, parent, false) : convertView;
         TextView textCurrencyFrom = (TextView)conversionView.findViewById(R.id.textViewCurrencyFrom);
         TextView textValue = (TextView)conversionView.findViewById(R.id.textViewValue);
         TextView textChange = (TextView)conversionView.findViewById(R.id.textViewChange);
