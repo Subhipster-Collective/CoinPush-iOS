@@ -40,7 +40,14 @@ import java.util.HashMap;
 
 class Currency
 {
-    enum Code { ETH, BTC, LTC, DASH, XMR, NXT, ZEC, DGB, XRP, USD, EUR, GBP, JPY, CNY; }
+    enum Code
+    {
+        ETH("ETH"), BTC("BTC"), LTC("LTC"), DASH("DASH"), XMR("XMR"), NXT("NXT"), ZEC("ZEC"), DGB("DGB"), XRP("XRP"),
+        USD("USD"), EUR("EUR"), GBP("GBP"), JPY("JPY"), CNY("CNY");
+        private final String code;
+        private Code(String code) { this.code = code; }
+        public String getCode() { return code; }
+    }
     
     private final static String BASE_URL = "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=%s&tsyms=%s";
     
@@ -49,25 +56,26 @@ class Currency
     static
     {
         currencies = new HashMap<>();
-        currencies.put(Code.ETH, new Currency("ETH", "Etherium (ETH)", "Ξ", R.mipmap.ic_eth));
-        currencies.put(Code.BTC, new Currency("BTC", "Bitcoin (BTC)",
-                                                  android.os.Build.VERSION.SDK_INT < 26 ? "Ƀ" : "\u20BF",
-                                                  R.mipmap.ic_btc));
-        currencies.put(Code.LTC, new Currency("LTC", "Litecoin (LTC)", "Ł", R.mipmap.ic_ltc));
-        currencies.put(Code.DASH, new Currency("DASH", "DigitalCash (DASH)", "DASH", R.mipmap.ic_dash));
-        currencies.put(Code.XMR, new Currency("XMR", "Monero (XMR)", "ɱ", R.mipmap.ic_xmr));
-        currencies.put(Code.NXT, new Currency("NXT", "Nxt (NXT)", "NXT", R.mipmap.ic_nxt));
-        currencies.put(Code.ZEC, new Currency("ZEC", "ZCash (ZEC)", "ZEC", R.mipmap.ic_zec));
-        currencies.put(Code.DGB, new Currency("DGB", "DigiByte (DGB)", "", R.mipmap.ic_dgb));
-        currencies.put(Code.XRP, new Currency("XRP", "Ripple (XRP)", "", R.mipmap.ic_xrp));
+        currencies.put(Code.ETH, new Currency(Code.ETH, Code.ETH.getCode(), "Etherium", "Ξ", R.mipmap.ic_eth));
+        currencies.put(Code.BTC, new Currency(Code.BTC, Code.BTC.getCode(), "Bitcoin",
+                                              android.os.Build.VERSION.SDK_INT < 26 ? "Ƀ" : "\u20BF",
+                                              R.mipmap.ic_btc));
+        currencies.put(Code.LTC, new Currency(Code.LTC, Code.LTC.getCode(), "Litecoin", "Ł", R.mipmap.ic_ltc));
+        currencies.put(Code.DASH, new Currency(Code.DASH, Code.DASH.getCode(), "DigitalCash", "DASH", R.mipmap.ic_dash));
+        currencies.put(Code.XMR, new Currency(Code.XMR, Code.XMR.getCode(), "Monero", "ɱ", R.mipmap.ic_xmr));
+        currencies.put(Code.NXT, new Currency(Code.NXT, Code.NXT.getCode(), "Nxt", "NXT", R.mipmap.ic_nxt));
+        currencies.put(Code.ZEC, new Currency(Code.ZEC, Code.ZEC.getCode(), "ZCash", "ZEC", R.mipmap.ic_zec));
+        currencies.put(Code.DGB, new Currency(Code.DGB, Code.DGB.getCode(), "DigiByte", "", R.mipmap.ic_dgb));
+        currencies.put(Code.XRP, new Currency(Code.XRP, Code.XRP.getCode(), "Ripple", "", R.mipmap.ic_xrp));
         
-        currencies.put(Code.USD, new Currency("USD", "US Dollar (USC)", "$", "\uD83C\uDDFA\uD83C\uDDF8"));
-        currencies.put(Code.EUR, new Currency("EUR", "Euro (EUR)", "€", "\uD83C\uDDEA\uD83C\uDDFA"));
-        currencies.put(Code.GBP, new Currency("GBP", "British Pound (GBP)", "£", "\uD83C\uDDEC\uD83C\uDDE7"));
-        currencies.put(Code.JPY, new Currency("JPY", "Japanese Yen (JPY)", "¥", "\uD83C\uDDEF\uD83C\uDDF5"));
-        currencies.put(Code.CNY, new Currency("CNY", "Chinese Yuan (CNY)", "¥", "\uD83C\uDDE8\uD83C\uDDF3"));
+        currencies.put(Code.USD, new Currency(Code.USD, Code.USD.getCode(), "US Dollar", "$", "\uD83C\uDDFA\uD83C\uDDF8"));
+        currencies.put(Code.EUR, new Currency(Code.EUR, Code.EUR.getCode(), "Euro", "€", "\uD83C\uDDEA\uD83C\uDDFA"));
+        currencies.put(Code.GBP, new Currency(Code.GBP, Code.GBP.getCode(), "British Pound", "£", "\uD83C\uDDEC\uD83C\uDDE7"));
+        currencies.put(Code.JPY, new Currency(Code.JPY, Code.JPY.getCode(), "Japanese Yen", "¥", "\uD83C\uDDEF\uD83C\uDDF5"));
+        currencies.put(Code.CNY, new Currency(Code.CNY, Code.CNY.getCode(), "Chinese Yuan", "¥", "\uD83C\uDDE8\uD83C\uDDF3"));
     }
     
+    final Code key;
     final String code;
     final String name;
     final String symbol;
@@ -78,8 +86,9 @@ class Currency
     private String url = null;
     JSONObject json = null;
     
-    Currency(final String code, final String name, final String symbol, @DrawableRes final int icon)
+    Currency(final Code key, final String code, final String name, final String symbol, @DrawableRes final int icon)
     {
+        this.key = key;
         this.code = code;
         this.name = name;
         this.symbol = symbol;
@@ -87,8 +96,9 @@ class Currency
         emoji = "";
     }
     
-    Currency(final String code, final String name, final String symbol, final String emoji)
+    Currency(final Code key, final String code, final String name, final String symbol, final String emoji)
     {
+        this.key = key;
         this.code = code;
         this.name = name;
         this.symbol = symbol;
@@ -96,8 +106,9 @@ class Currency
         this.emoji = emoji;
     }
     
-    Currency(final String code, final String name, final String symbol)
+    Currency(final Code key, final String code, final String name, final String symbol)
     {
+        this.key = key;
         this.code = code;
         this.name = name;
         this.symbol = symbol;

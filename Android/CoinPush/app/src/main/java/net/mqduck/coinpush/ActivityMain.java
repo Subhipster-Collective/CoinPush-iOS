@@ -19,15 +19,19 @@
 
 package net.mqduck.coinpush;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 public class ActivityMain extends AppCompatActivity
 {
+    ConversionList conversions = new ConversionList();
     
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -37,12 +41,20 @@ public class ActivityMain extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     
-        ConversionList conversions = new ConversionList();
         conversions.add(new Conversion(Currency.Code.ETH, Currency.Code.USD));
         conversions.add(new Conversion(Currency.Code.BTC, Currency.Code.EUR));
         conversions.add(new Conversion(Currency.Code.LTC, Currency.Code.JPY));
         conversions.add(new Conversion(Currency.Code.NXT, Currency.Code.BTC));
         ListView list = (ListView)findViewById(R.id.list);
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+                Conversion conversion = conversions.get(position);
+                Intent intent = new Intent(parent.getContext(), ActivityConversionPreferences.class);
+                conversion.packIntent(intent);
+                startActivity(intent);
+            }
+        });
         ConversionAdapter adapter = new ConversionAdapter(this, conversions);
         list.setAdapter(adapter);
         

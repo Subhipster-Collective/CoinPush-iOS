@@ -19,6 +19,8 @@
 
 package net.mqduck.coinpush;
 
+import android.content.Intent;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -31,6 +33,11 @@ class Conversion
     private final static String DATUM_VALUE = "PRICE";
     private final static String DATUM_CHANGE = "CHANGEPCT24HOUR";
     
+    private final static String INTENT_KEY_FROM = "net.mqduck.coinpush.ActivityConversionPreferences.currencyFrom";
+    private final static String INTENT_KEY_TO = "net.mqduck.coinpush.ActivityConversionPreferences.currencyTo";
+    private final static String INTENT_KEY_VALUE = "net.mqduck.coinpush.ActivityConversionPreferences.value";
+    private final static String INTENT_KEY_CHANGE = "net.mqduck.coinpush.ActivityConversionPreferences.change";
+    
     final Currency currencyFrom, currencyTo;
     private Double value = 0.0, change = 0.0;
     
@@ -38,6 +45,24 @@ class Conversion
     {
         currencyFrom = Currency.currencies.get(codeFrom);
         currencyTo = Currency.currencies.get(codeTo);
+    }
+    
+    Conversion(final Intent intent)
+    {
+        Currency.Code codeFrom = Currency.Code.valueOf(intent.getStringExtra(INTENT_KEY_FROM));
+        Currency.Code codeTo = Currency.Code.valueOf(intent.getStringExtra(INTENT_KEY_TO));
+        currencyFrom = Currency.currencies.get(codeFrom);
+        currencyTo = Currency.currencies.get(codeTo);
+        value = intent.getDoubleExtra(INTENT_KEY_VALUE, 0);
+        change = intent.getDoubleExtra(INTENT_KEY_CHANGE, 0);
+    }
+    
+    void packIntent(Intent intent)
+    {
+        intent.putExtra(INTENT_KEY_FROM, currencyFrom.code);
+        intent.putExtra(INTENT_KEY_TO, currencyTo.code);
+        intent.putExtra(INTENT_KEY_VALUE, value);
+        intent.putExtra(INTENT_KEY_CHANGE, change);
     }
     
     void update()

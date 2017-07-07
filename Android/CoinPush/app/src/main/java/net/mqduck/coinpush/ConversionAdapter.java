@@ -13,9 +13,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.List;
-import java.util.Locale;
-
 /**
  * Created by mqduck on 7/4/17.
  */
@@ -23,7 +20,7 @@ import java.util.Locale;
 class ConversionAdapter extends ArrayAdapter<Conversion>
 {
     //private final Context context;
-    private final List<Conversion> conversions;
+    private final ConversionList conversions;
     private LayoutInflater inflater;
     private int updateDelay = 60000;
     private static float fontSize;
@@ -69,15 +66,19 @@ class ConversionAdapter extends ArrayAdapter<Conversion>
         TextView emojiFrom = (TextView)conversionView.findViewById(R.id.emoji_from);
         
         Conversion conversion = conversions.get(position);
-        textCurrencyFrom.setText(conversion.currencyFrom.name);
-        textValue.setText(String.format(Locale.getDefault(), "%s %.3f %s",
-                                        conversion.currencyTo.symbol, conversion.getValue(), conversion.currencyTo.code));
+        textCurrencyFrom.setText(String.format(textCurrencyFrom.getTag().toString(),
+                                               conversion.currencyFrom.name,
+                                               conversion.currencyFrom.code));
+        textValue.setText(String.format(textValue.getTag().toString(),
+                                        conversion.currencyTo.symbol,
+                                        conversion.getValue(),
+                                        conversion.currencyTo.code));
         iconFrom.setImageResource(conversion.currencyFrom.icon);
         emojiFrom.setTextSize(TypedValue.COMPLEX_UNIT_PX, fontSize);
         emojiFrom.setText(conversion.currencyFrom.emoji);
         
         double change = conversion.getChange();
-        textChange.setText(String.format(Locale.getDefault(), "%+.4f%%", change));
+        textChange.setText(String.format(textChange.getTag().toString(), change));
         if(change < 0)
             textChange.setTextColor(Color.rgb((int)Math.round(change * -30), 0, 0));
         else
@@ -85,4 +86,6 @@ class ConversionAdapter extends ArrayAdapter<Conversion>
         
         return conversionView;
     }
+    
+    ConversionList getConversions() { return conversions; }
 }
