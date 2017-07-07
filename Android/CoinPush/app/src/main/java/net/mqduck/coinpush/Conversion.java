@@ -69,9 +69,10 @@ class Conversion
     {
         try
         {
-            JSONObject mJson = currencyTo.json.getJSONObject(currencyFrom.code).getJSONObject(currencyTo.code);
-            value = mJson.getDouble(DATUM_VALUE);
-            change = mJson.getDouble(DATUM_CHANGE);
+            JSONObject json = currencyTo.json.getJSONObject(currencyFrom.code.toString())
+                                             .getJSONObject(currencyTo.code.toString());
+            value = json.getDouble(DATUM_VALUE);
+            change = json.getDouble(DATUM_CHANGE);
         }
         catch(JSONException e)
         {
