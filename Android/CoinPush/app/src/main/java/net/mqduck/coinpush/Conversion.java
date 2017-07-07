@@ -26,7 +26,7 @@ import org.json.JSONObject;
  * Created by mqduck on 7/4/17.
  */
 
-class ConversionData
+class Conversion
 {
     private final static String DATUM_VALUE = "PRICE";
     private final static String DATUM_CHANGE = "CHANGEPCT24HOUR";
@@ -34,15 +34,7 @@ class ConversionData
     final Currency currencyFrom, currencyTo;
     private Double value = 0.0, change = 0.0;
     
-    /*static
-    {
-        String codes = "";
-        for(String code : Currency.currencies.keySet())
-            codes += code + ",";
-        url = String.format(BASE_URL, codes, codes);
-    }*/
-    
-    ConversionData(final Currency.Code codeFrom, final Currency.Code codeTo)
+    Conversion(final Currency.Code codeFrom, final Currency.Code codeTo)
     {
         currencyFrom = Currency.currencies.get(codeFrom);
         currencyTo = Currency.currencies.get(codeTo);

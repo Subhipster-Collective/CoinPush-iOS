@@ -25,30 +25,30 @@ import java.util.ArrayList;
  * Created by mqduck on 7/6/17.
  */
 
-class ConversionDataList extends ArrayList<ConversionData>
+class ConversionList extends ArrayList<Conversion>
 {
-    public boolean add(ConversionData datum)
+    public boolean add(Conversion conversion)
     {
-        if(super.add(datum))
+        if(super.add(conversion))
         {
-            datum.currencyTo.addConversion(datum.currencyFrom);
+            conversion.currencyTo.addConversion(conversion.currencyFrom);
             return true;
         }
         return false;
     }
     
-    public ConversionData remove(int index)
+    public Conversion remove(int index)
     {
-        ConversionData datum = super.remove(index);
-        datum.currencyTo.removeConversion(datum.currencyFrom);
-        return datum;
+        Conversion conversion = super.remove(index);
+        conversion.currencyTo.removeConversion(conversion.currencyFrom);
+        return conversion;
     }
     
-    public boolean remove(Object datum)
+    public boolean remove(Object conversion)
     {
-        if(super.remove(datum))
+        if(super.remove(conversion))
         {
-            ((ConversionData)datum).currencyTo.removeConversion(((ConversionData)datum).currencyFrom);
+            ((Conversion)conversion).currencyTo.removeConversion(((Conversion)conversion).currencyFrom);
             return true;
         }
         return false;

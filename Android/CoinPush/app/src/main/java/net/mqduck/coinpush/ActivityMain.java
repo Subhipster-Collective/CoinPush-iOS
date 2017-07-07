@@ -26,8 +26,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
-import java.util.ArrayList;
-
 public class ActivityMain extends AppCompatActivity
 {
     
@@ -39,13 +37,13 @@ public class ActivityMain extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     
-        ConversionDataList data = new ConversionDataList();
-        data.add(new ConversionData(Currency.Code.ETH, Currency.Code.USD));
-        data.add(new ConversionData(Currency.Code.BTC, Currency.Code.EUR));
-        data.add(new ConversionData(Currency.Code.LTC, Currency.Code.JPY));
-        data.add(new ConversionData(Currency.Code.NXT, Currency.Code.BTC));
+        ConversionList conversions = new ConversionList();
+        conversions.add(new Conversion(Currency.Code.ETH, Currency.Code.USD));
+        conversions.add(new Conversion(Currency.Code.BTC, Currency.Code.EUR));
+        conversions.add(new Conversion(Currency.Code.LTC, Currency.Code.JPY));
+        conversions.add(new Conversion(Currency.Code.NXT, Currency.Code.BTC));
         ListView list = (ListView)findViewById(R.id.list);
-        ConversionAdapter adapter = new ConversionAdapter(this, data);
+        ConversionAdapter adapter = new ConversionAdapter(this, conversions);
         list.setAdapter(adapter);
         
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
