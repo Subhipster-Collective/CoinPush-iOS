@@ -32,13 +32,18 @@ import android.widget.ListView;
 public class ActivityMain extends AppCompatActivity
 {
     static ConversionList conversions = new ConversionList();
+    static float emojiSize;
     
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        
+        emojiSize = (float)0.7 * getResources().getDrawable(R.mipmap.ic_eth).getIntrinsicHeight();
+        
+        final Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        
         setSupportActionBar(toolbar);
     
         conversions.add(new Conversion(Currency.Code.ETH, Currency.Code.USD));
@@ -83,7 +88,7 @@ public class ActivityMain extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-        // Handle action bar item clicks here. The action bar will
+        /*// Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
@@ -94,6 +99,17 @@ public class ActivityMain extends AppCompatActivity
             return true;
         }
         
-        return super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected(item);*/
+        
+        switch(item.getItemId())
+        {
+        case R.id.action_settings:
+            return true;
+        case R.id.action_add_currency:
+            new FragmentAddConversion().show(getFragmentManager(), "FOO");
+            return true;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
     }
 }
