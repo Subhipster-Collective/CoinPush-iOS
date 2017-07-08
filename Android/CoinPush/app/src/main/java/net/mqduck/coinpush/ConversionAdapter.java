@@ -23,7 +23,7 @@ class ConversionAdapter extends ArrayAdapter<Conversion>
     private final ConversionList conversions;
     private LayoutInflater inflater;
     private int updateDelay = 60000;
-    private static float fontSize;
+    private static float emojiSize;
     
     ConversionAdapter(final Context context, final ConversionList conversions)
     {
@@ -31,7 +31,7 @@ class ConversionAdapter extends ArrayAdapter<Conversion>
         //this.context = context;
         inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.conversions = conversions;
-        fontSize = (float)0.7 * context.getResources().getDrawable(R.mipmap.ic_eth).getIntrinsicHeight();
+        emojiSize = (float)0.7 * context.getResources().getDrawable(R.mipmap.ic_eth).getIntrinsicHeight();
         
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -45,10 +45,7 @@ class ConversionAdapter extends ArrayAdapter<Conversion>
                             conversion.update();
                         return null;
                     }
-                    @Override protected void onPostExecute(Void result)
-                    {
-                        notifyDataSetChanged();
-                    }
+                    @Override protected void onPostExecute(Void result) { notifyDataSetChanged(); }
                 }.execute();
                 handler.postDelayed(this, updateDelay);
             }
@@ -74,7 +71,7 @@ class ConversionAdapter extends ArrayAdapter<Conversion>
                                         conversion.getValue(),
                                         conversion.currencyTo.code));
         iconFrom.setImageResource(conversion.currencyFrom.icon);
-        emojiFrom.setTextSize(TypedValue.COMPLEX_UNIT_PX, fontSize);
+        emojiFrom.setTextSize(TypedValue.COMPLEX_UNIT_PX, emojiSize);
         emojiFrom.setText(conversion.currencyFrom.emoji);
         
         double change = conversion.getChange();

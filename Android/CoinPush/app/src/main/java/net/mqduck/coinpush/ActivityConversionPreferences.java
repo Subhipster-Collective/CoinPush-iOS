@@ -19,6 +19,7 @@
 
 package net.mqduck.coinpush;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
@@ -36,7 +37,10 @@ public class ActivityConversionPreferences extends AppCompatActivity
         TextView textNotifyIncrease = (TextView)findViewById(R.id.text_notify_increase);
         TextView textNotifyDecrease = (TextView)findViewById(R.id.text_notify_decrease);
         
-        Conversion conversion = new Conversion(getIntent());
+        Intent intent = getIntent();
+        String codeStrFrom = intent.getStringExtra(getString(R.string.key_intent_currency_from));
+        String codeStrTo = intent.getStringExtra(getString(R.string.key_intent_currency_to));
+        Conversion conversion = ActivityMain.conversions.get(codeStrFrom, codeStrTo);
         
         textConversion.setText(String.format(textConversion.getTag().toString(),
                                              conversion.currencyFrom.code,

@@ -58,4 +58,26 @@ class ConversionList extends ArrayList<Conversion>
     {
         return false;
     }
+    
+    public Conversion get(final Currency currencyFrom, final Currency currencyTo) // Throw exception when not found?
+    {
+        Conversion result = null;
+        for(Conversion conversion : this)
+            if(conversion.currencyFrom == currencyFrom && conversion.currencyTo == currencyTo)
+            {
+                result = conversion;
+                break;
+            }
+        return result;
+    }
+    
+    public Conversion get(final Currency.Code codeFrom, final Currency.Code codeTo)
+    {
+        return get(Currency.currencies.get(codeFrom), Currency.currencies.get(codeTo));
+    }
+    
+    public Conversion get(final String codeStrFrom, final String codeStrTo)
+    {
+        return get(Currency.Code.valueOf(codeStrFrom), Currency.Code.valueOf(codeStrTo));
+    }
 }

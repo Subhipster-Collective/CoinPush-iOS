@@ -31,27 +31,29 @@ import android.widget.ListView;
 
 public class ActivityMain extends AppCompatActivity
 {
-    ConversionList conversions = new ConversionList();
+    static ConversionList conversions = new ConversionList();
     
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     
         conversions.add(new Conversion(Currency.Code.ETH, Currency.Code.USD));
         conversions.add(new Conversion(Currency.Code.BTC, Currency.Code.EUR));
         conversions.add(new Conversion(Currency.Code.LTC, Currency.Code.JPY));
         conversions.add(new Conversion(Currency.Code.NXT, Currency.Code.BTC));
+        conversions.add(new Conversion(Currency.Code.XMR, Currency.Code.CNY));
         ListView list = (ListView)findViewById(R.id.list);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
                 Conversion conversion = conversions.get(position);
                 Intent intent = new Intent(parent.getContext(), ActivityConversionPreferences.class);
-                conversion.packIntent(intent);
+                intent.putExtra(getString(R.string.key_intent_currency_from), conversion.currencyFrom.code.toString());
+                intent.putExtra(getString(R.string.key_intent_currency_to), conversion.currencyTo.code.toString());
                 startActivity(intent);
             }
         });
