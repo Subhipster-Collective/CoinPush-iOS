@@ -66,10 +66,7 @@ class ConversionAdapter extends ArrayAdapter<Conversion>
         textCurrencyFrom.setText(String.format(textCurrencyFrom.getTag().toString(),
                                                conversion.currencyFrom.name,
                                                conversion.currencyFrom.code));
-        textValue.setText(String.format(textValue.getTag().toString(),
-                                        conversion.currencyTo.symbol,
-                                        conversion.getValue(),
-                                        conversion.currencyTo.code));
+        textValue.setText(conversion.currencyTo.getValueStr(conversion.getValue(), true));
         iconFrom.setImageResource(conversion.currencyFrom.icon);
         emojiFrom.setTextSize(TypedValue.COMPLEX_UNIT_PX, emojiSize);
         emojiFrom.setText(conversion.currencyFrom.emoji);

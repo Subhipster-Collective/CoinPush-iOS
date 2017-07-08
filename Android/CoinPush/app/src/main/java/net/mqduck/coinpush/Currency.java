@@ -30,6 +30,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.nio.charset.Charset;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -49,6 +50,8 @@ class Currency
     }
     
     private final static String BASE_URL = "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=%s&tsyms=%s";
+    private final static NumberFormat format;
+    private final static String formatSymbol;
     
     final static HashMap<Code, Currency> currencies;
     
@@ -72,6 +75,11 @@ class Currency
         currencies.put(Code.GBP, new Currency(Code.GBP, "British Pound", "£", "\uD83C\uDDEC\uD83C\uDDE7"));
         currencies.put(Code.JPY, new Currency(Code.JPY, "Japanese Yen", "¥", "\uD83C\uDDEF\uD83C\uDDF5"));
         currencies.put(Code.CNY, new Currency(Code.CNY, "Chinese Yuan", "¥", "\uD83C\uDDE8\uD83C\uDDF3"));
+        
+        format = NumberFormat.getCurrencyInstance();
+        format.setCurrency(java.util.Currency.getInstance("EUR"));
+        format.setMaximumFractionDigits(4);
+        formatSymbol = format.getCurrency().getSymbol();
     }
     
     final Code code;
@@ -174,5 +182,25 @@ class Currency
             return true;
         }
         return false;
+    }
+    
+    String getValueStr(final double value, final boolean includeCode)
+    {
+        String valueStr = format.format(value);
+        
+        if(code == Code.USD)
+            valueStr = valueStr.replaceFirst(formatSymbol, "\\$");
+        else
+            valueStr = valueStr.replaceFirst(formatSymbol, symbol);
+        
+        if(includeCode)
+            valueStr += " " + code;
+        
+        return valueStr;
+    }
+    
+    String getValueStr(final double value)
+    {
+        return getValueStr(value, false);
     }
 }
