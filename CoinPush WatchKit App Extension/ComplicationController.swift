@@ -1,8 +1,8 @@
 //
 //  ComplicationController.swift
-//  CoinPush WatchKit Extension
+//  CoinPush WatchKit App Extension
 //
-//  Created by Austin Conlon on 6/27/17.
+//  Created by Austin Conlon on 7/8/17.
 //  Copyright © 2017 Goods and Services. All rights reserved.
 //
 

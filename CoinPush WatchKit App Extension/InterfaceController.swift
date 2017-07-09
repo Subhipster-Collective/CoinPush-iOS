@@ -1,8 +1,8 @@
 //
 //  InterfaceController.swift
-//  CoinPush Watch app Extension
+//  CoinPush WatchKit App Extension
 //
-//  Created by Bijan Massoumi on 7/4/17.
+//  Created by Austin Conlon on 7/8/17.
 //  Copyright © 2017 Goods and Services. All rights reserved.
 //
 

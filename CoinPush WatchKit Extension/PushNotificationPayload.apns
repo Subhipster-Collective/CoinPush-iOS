@@ -4,8 +4,7 @@
             "body": "Test message",
             "title": "Optional title"
         },
-        "category": "myCategory",
-        "thread-id":"5280"
+        "category": "myCategory"
     },
     
     "WatchKit Simulator Actions": [

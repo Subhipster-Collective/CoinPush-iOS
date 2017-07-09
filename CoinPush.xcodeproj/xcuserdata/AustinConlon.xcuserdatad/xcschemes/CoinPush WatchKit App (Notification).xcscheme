@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FB4966731F0304A5008CD42B"
+               BlueprintIdentifier = "FBB6FD711F1207D200670A98"
                BuildableName = "CoinPush WatchKit App.app"
                BlueprintName = "CoinPush WatchKit App"
                ReferencedContainer = "container:CoinPush.xcodeproj">
@@ -46,7 +46,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FB4966731F0304A5008CD42B"
+            BlueprintIdentifier = "FBB6FD711F1207D200670A98"
             BuildableName = "CoinPush WatchKit App.app"
             BlueprintName = "CoinPush WatchKit App"
             ReferencedContainer = "container:CoinPush.xcodeproj">
@@ -66,14 +66,14 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "8"
-      notificationPayloadFile = "CoinPush WatchKit Extension/PushNotificationPayload.apns">
+      notificationPayloadFile = "CoinPush WatchKit App Extension/PushNotificationPayload.apns">
       <RemoteRunnable
          runnableDebuggingMode = "2"
          BundleIdentifier = "com.apple.Carousel"
-         RemotePath = "/CoinPush WatchKit App">
+         RemotePath = "/CoinPush">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FB4966731F0304A5008CD42B"
+            BlueprintIdentifier = "FBB6FD711F1207D200670A98"
             BuildableName = "CoinPush WatchKit App.app"
             BlueprintName = "CoinPush WatchKit App"
             ReferencedContainer = "container:CoinPush.xcodeproj">
@@ -82,7 +82,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FB4966731F0304A5008CD42B"
+            BlueprintIdentifier = "FBB6FD711F1207D200670A98"
             BuildableName = "CoinPush WatchKit App.app"
             BlueprintName = "CoinPush WatchKit App"
             ReferencedContainer = "container:CoinPush.xcodeproj">
@@ -98,14 +98,14 @@
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES"
       launchAutomaticallySubstyle = "8"
-      notificationPayloadFile = "CoinPush WatchKit Extension/PushNotificationPayload.apns">
+      notificationPayloadFile = "CoinPush WatchKit App Extension/PushNotificationPayload.apns">
       <RemoteRunnable
          runnableDebuggingMode = "2"
          BundleIdentifier = "com.apple.Carousel"
-         RemotePath = "/CoinPush WatchKit App">
+         RemotePath = "/CoinPush">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FB4966731F0304A5008CD42B"
+            BlueprintIdentifier = "FBB6FD711F1207D200670A98"
             BuildableName = "CoinPush WatchKit App.app"
             BlueprintName = "CoinPush WatchKit App"
             ReferencedContainer = "container:CoinPush.xcodeproj">
@@ -114,7 +114,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FB4966731F0304A5008CD42B"
+            BlueprintIdentifier = "FBB6FD711F1207D200670A98"
             BuildableName = "CoinPush WatchKit App.app"
             BlueprintName = "CoinPush WatchKit App"
             ReferencedContainer = "container:CoinPush.xcodeproj">
