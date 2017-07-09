@@ -29,6 +29,8 @@ class ConversionList extends ArrayList<Conversion>
 {
     public boolean add(Conversion conversion)
     {
+        if(contains(conversion))
+            return false;
         if(super.add(conversion))
         {
             conversion.currencyTo.addConversion(conversion.currencyFrom);
@@ -52,6 +54,21 @@ class ConversionList extends ArrayList<Conversion>
             return true;
         }
         return false;
+    }
+    
+    public boolean remove(final Currency currencyFrom, final Currency currencyTo)
+    {
+        return remove(get(currencyFrom, currencyTo));
+    }
+    
+    public boolean remove(final Currency.Code codeFrom, final Currency.Code codeTo)
+    {
+        return remove(get(codeFrom, codeTo));
+    }
+    
+    public boolean remove(final String codeStrFrom, final String codeStrTo)
+    {
+        return remove(get(codeStrFrom, codeStrTo));
     }
     
     public boolean removeAll() // For now, don't call this
@@ -79,5 +96,28 @@ class ConversionList extends ArrayList<Conversion>
     public Conversion get(final String codeStrFrom, final String codeStrTo)
     {
         return get(Currency.Code.valueOf(codeStrFrom), Currency.Code.valueOf(codeStrTo));
+    }
+    
+    public boolean contains(final Currency currencyFrom, final Currency currencyTo)
+    {
+        for(Conversion conversion : this)
+            if(conversion.currencyFrom == currencyFrom && conversion.currencyTo == currencyTo)
+                return true;
+        return false;
+    }
+    
+    public boolean contains(final Conversion conversion)
+    {
+        return contains(conversion.currencyFrom, conversion.currencyTo);
+    }
+    
+    public boolean contains(final Currency.Code codeFrom, Currency.Code codeTo)
+    {
+        return contains(Currency.currencies.get(codeFrom), Currency.currencies.get(codeTo));
+    }
+    
+    public boolean contains(final String codeStrFrom, final String codeStrTo)
+    {
+        return contains(Currency.Code.valueOf(codeStrFrom), Currency.Code.valueOf(codeStrTo));
     }
 }

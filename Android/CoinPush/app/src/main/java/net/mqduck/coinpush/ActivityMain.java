@@ -32,6 +32,7 @@ import android.widget.ListView;
 public class ActivityMain extends AppCompatActivity
 {
     static ConversionList conversions = new ConversionList();
+    static ConversionAdapter conversionAdapter;
     static float emojiSize;
     
     @Override
@@ -62,8 +63,8 @@ public class ActivityMain extends AppCompatActivity
                 startActivity(intent);
             }
         });
-        ConversionAdapter adapter = new ConversionAdapter(this, conversions);
-        list.setAdapter(adapter);
+        conversionAdapter = new ConversionAdapter(this, conversions);
+        list.setAdapter(conversionAdapter);
         
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener()

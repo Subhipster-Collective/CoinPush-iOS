@@ -42,28 +42,24 @@ public class FragmentAddConversion extends DialogFragment
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.dialog_add_conversion, null);
-    
-        /*ArrayList<String> foo = new ArrayList<>();
-        foo.add("BAR");
-        foo.add("baz");
-    
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, foo);*/
-    
-        ArrayList<Currency> currencies = new ArrayList<>();
-        currencies.add(Currency.currencies.get(Currency.Code.BTC));
-        currencies.add(Currency.currencies.get(Currency.Code.ETH));
-        currencies.add(Currency.currencies.get(Currency.Code.USD));
         
-        CurrencyAdapter adapter = new CurrencyAdapter(getActivity(), currencies);
+        final CurrencyAdapter adapter = new CurrencyAdapter(getActivity(), new ArrayList<>(Currency.currencies.values()));
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Spinner spinner = (Spinner)view.findViewById(R.id.spinner_currency_from);
-        spinner.setAdapter(adapter);
+        final Spinner spinnerFrom = (Spinner)view.findViewById(R.id.spinner_currency_from);
+        final Spinner spinnerTo = (Spinner)view.findViewById(R.id.spinner_currency_to);
+        spinnerFrom.setAdapter(adapter);
+        spinnerTo.setAdapter(adapter);
         
         builder.setView(view)
                 .setPositiveButton("Add", new DialogInterface.OnClickListener() {
                     @Override public void onClick(DialogInterface dialog, int which)
                     {
-                        
+                        Currency currencyFrom = (Currency)spinnerFrom.getSelectedItem();
+                        Currency currencyTo = (Currency)spinnerFrom.getSelectedItem();
+                        ActivityMain.conversions.add(new Conversion((Currency)spinnerFrom.getSelectedItem(),
+                                                                    (Currency)spinnerTo.getSelectedItem()));
+                        //ActivityMain.conversionAdapter.notifyDataSetChanged();
+                        ActivityMain.conversionAdapter.updateData();
                     }
                 })
                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

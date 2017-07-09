@@ -41,7 +41,9 @@ class ConversionAdapter extends ArrayAdapter<Conversion>
     //private final Context context;
     private final ConversionList conversions;
     private LayoutInflater inflater;
-    private int updateDelay = 60000;
+    private int updateDelay = 10000;
+    private final Runnable updateRunnable;
+    private final Handler updateHandler;
     
     ConversionAdapter(final Context context, final ConversionList conversions)
     {
@@ -50,23 +52,29 @@ class ConversionAdapter extends ArrayAdapter<Conversion>
         inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.conversions = conversions;
         
-        final Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
+        updateRunnable = new Runnable() {
             @Override public void run()
             {
-                new AsyncTask<Void, Void, Void>() {
-                    @Override protected Void doInBackground(Void... voids)
-                    {
-                        Currency.updateJsons();
-                        for(Conversion conversion : conversions)
-                            conversion.update();
-                        return null;
-                    }
-                    @Override protected void onPostExecute(Void result) { notifyDataSetChanged(); }
-                }.execute();
-                handler.postDelayed(this, updateDelay);
+                updateData();
+                updateHandler.postDelayed(this, updateDelay);
             }
-        }, 0);
+        };
+        updateHandler = new Handler();
+        updateHandler.postDelayed(updateRunnable, 0);
+    }
+    
+    void updateData()
+    {
+        new AsyncTask<Void, Void, Void>() {
+            @Override protected Void doInBackground(Void... params)
+            {
+                Currency.updateJsons();
+                for(Conversion conversion : conversions)
+                    conversion.update();
+                return null;
+            }
+            @Override protected void onPostExecute(Void result) { notifyDataSetChanged(); }
+        }.execute();
     }
     
     @NonNull
@@ -80,9 +88,7 @@ class ConversionAdapter extends ArrayAdapter<Conversion>
         TextView emojiFrom = (TextView)conversionView.findViewById(R.id.emoji_from);
         
         Conversion conversion = conversions.get(position);
-        textCurrencyFrom.setText(String.format(textCurrencyFrom.getTag().toString(),
-                                               conversion.currencyFrom.name,
-                                               conversion.currencyFrom.code));
+        textCurrencyFrom.setText(conversion.currencyFrom.toString(true));
         textValue.setText(conversion.currencyTo.getValueStr(conversion.getValue(), true));
         iconFrom.setImageResource(conversion.currencyFrom.icon);
         emojiFrom.setTextSize(TypedValue.COMPLEX_UNIT_PX, ActivityMain.emojiSize);

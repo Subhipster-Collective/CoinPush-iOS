@@ -78,7 +78,7 @@ class Currency
         
         format = NumberFormat.getCurrencyInstance();
         format.setCurrency(java.util.Currency.getInstance("EUR"));
-        format.setMaximumFractionDigits(4);
+        format.setMaximumFractionDigits(16);
         formatSymbol = format.getCurrency().getSymbol();
     }
     
@@ -182,6 +182,19 @@ class Currency
             return true;
         }
         return false;
+    }
+    
+    public String toString(final boolean includeCode)
+    {
+        if(includeCode)
+            return name + " (" + code.toString() + ")";
+        else
+            return name;
+    }
+    
+    public String toString()
+    {
+        return toString(false);
     }
     
     String getValueStr(final double value, final boolean includeCode)

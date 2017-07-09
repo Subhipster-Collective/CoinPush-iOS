@@ -58,9 +58,7 @@ public class CurrencyAdapter extends ArrayAdapter<Currency>
         icon.setImageResource(currency.icon);
         emoji.setTextSize(TypedValue.COMPLEX_UNIT_PX, ActivityMain.emojiSize);
         emoji.setText(currency.emoji);
-        textCurrency.setText(String.format(textCurrency.getTag().toString(),
-                                           currency.name,
-                                           currency.code.toString()));
+        textCurrency.setText(currency.toString(true));
         
         return currencyView;
     }

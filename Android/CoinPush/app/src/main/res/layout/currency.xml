@@ -55,7 +55,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:tag="%s (%s)"
             android:textAlignment="center"
             tools:text="Etherium (ETH)"/>
     </LinearLayout>

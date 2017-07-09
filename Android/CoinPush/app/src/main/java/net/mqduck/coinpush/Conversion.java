@@ -34,6 +34,12 @@ class Conversion
     final Currency currencyFrom, currencyTo;
     private Double value = 0.0, change = 0.0;
     
+    Conversion(final Currency currencyFrom, final Currency currencyTo)
+    {
+        this.currencyFrom = currencyFrom;
+        this.currencyTo = currencyTo;
+    }
+    
     Conversion(final Currency.Code codeFrom, final Currency.Code codeTo)
     {
         currencyFrom = Currency.currencies.get(codeFrom);

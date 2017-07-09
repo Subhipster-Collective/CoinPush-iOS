@@ -23,14 +23,13 @@
               android:layout_height="wrap_content"
               android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hello, World"/>
-
     <Spinner
         android:id="@+id/spinner_currency_from"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Spinner
+        android:id="@+id/spinner_currency_to"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 </LinearLayout>
