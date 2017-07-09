@@ -1,1 +1,0 @@
-curl -X POST -d "{\"Type\": \"send_price\",\"Coin\":\"ETH\",\"ID\":\"123\",\"Pref\":[3.0],\"Push\":true}" "localhost/handle_request"

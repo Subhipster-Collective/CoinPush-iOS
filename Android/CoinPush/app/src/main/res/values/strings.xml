@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">CoinPush</string>
-    <string name="action_settings">Settings</string>
-    <string name="key_intent_currency_from">net.mqduck.coinpush.ConversionList.currencyFrom</string>
-    <string name="key_intent_currency_to">net.mqduck.coinpush.ConversionList.currencyTo</string>
-</resources>
