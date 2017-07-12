@@ -44,6 +44,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         fromPickerView.delegate = self
         toPickerView.delegate = self
+        increaseValue.delegate = self
+        decreaseValue.delegate = self
         
         fromTextField.inputView = fromPickerView
         toTextField.inputView = toPickerView
@@ -107,15 +109,18 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     //MARK: UITextField Delegate
     
     
-    /*func textFieldDidEndEditing(_ textField: UITextField) {
-        textField += "%"
-        
-    }*/
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.text? += "%"
         
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if let data = textField.text{
+            var value = data.components(separatedBy: "%")
+            textField.text? = value[0]
+        }
+    }
+    
     
     //MARK: UIPickerView Delegate
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
