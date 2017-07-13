@@ -1,6 +1,0 @@
-framework module Pods_CoinPush {
-  umbrella header "Pods-CoinPush-umbrella.h"
-
-  export *
-  module * { export * }
-}
