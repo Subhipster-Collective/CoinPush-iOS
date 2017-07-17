@@ -1,7 +1,0 @@
-version: "Apple Swift version 3.1 (swiftlang-802.0.53 clang-802.0.42)"
-options: "c69adf6c7971b1822c760873f317cf63"
-build_time: [552630659, 700920000]
-inputs:
-  "/Users/Bijibaba/Documents/Programs/CoinPush/CoinPush/CryptoApi.swift": [9223372036854775807, 0]
-  "/Users/Bijibaba/Documents/Programs/CoinPush/CoinPush/ViewController.swift": [552558302, 0]
-  "/Users/Bijibaba/Documents/Programs/CoinPush/CoinPush/AppDelegate.swift": [552630658, 0]
