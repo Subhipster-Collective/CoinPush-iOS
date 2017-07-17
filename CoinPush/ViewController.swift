@@ -83,8 +83,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             return
         }
         
-        let fromCurrency = fromTextField.text ?? ""
-        let toCurrency = toTextField.text ?? ""
+        let fromCurrency = helper.getCurrencyIdentifier(rawText: fromTextField!.text!)
+        let toCurrency = helper.getCurrencyIdentifier(rawText: toTextField!.text!)
+        
         let pushEnabled1 = pushSwitch.isOn
         var increase : Float32?
         var decrease : Float32?
@@ -140,9 +141,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         if enableBool {
             pushSwitch.isEnabled = enableBool
             pushLabel.isEnabled = enableBool
-            var currency = fromTextField.text?.components(separatedBy: " ")
-            increaseLabel.text? = "When \(currency![1]) increases by "
-            decreaseLabel.text? = "When \(currency![1]) decreases by "
+            var currency = helper.getCurrencyIdentifier(rawText: fromTextField!.text!)
+            increaseLabel.text? = "When \(currency) increases by "
+            decreaseLabel.text? = "When \(currency) decreases by "
         }
         
     }
