@@ -9,8 +9,10 @@
 import UIKit
 import FirebaseDatabase
 import GoogleMobileAds
+import os.log
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UITextFieldDelegate {
+    
     
     @IBOutlet weak var fromTextField: UITextField!
     @IBOutlet weak var toTextField: UITextField!
@@ -23,6 +25,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBOutlet weak var increaseValue: UITextField!
     @IBOutlet weak var decreaseValue: UITextField!
+    
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    
+    var conversion: CurrencyConversion?
     
     let fromOptions = ["Ethereum (ETH)","Bitcoin (BTC)"]
     
@@ -64,6 +71,40 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         updatePushStates()
         
     }
+    
+    //MARK: Navigation
+    // This method lets you configure a view controller before it's presented.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        // Configure the destination view controller only when the save button is pressed.
+        guard let button = sender as? UIBarButtonItem, button === saveButton else {
+            print("The save button was not pressed, cancelling")
+            return
+        }
+        
+        let fromCurrency = fromTextField.text ?? ""
+        let toCurrency = toTextField.text ?? ""
+        let pushEnabled1 = pushSwitch.isOn
+        var increase : Float32?
+        var decrease : Float32?
+        
+        if let val = increaseValue?.text {
+            increase = Float(val)
+        }
+        if let val = decreaseLabel?.text {
+            decrease = Float(val)
+        }
+        
+        // Set the meal to be passed to MealTableViewController after the unwind segue.
+        conversion = CurrencyConversion(fromCurrency: fromCurrency, toCurrency: toCurrency, pushEnabled: pushEnabled1, increaseValue: increase, decreaseValue: decrease)
+    }
+    
+    
+    
+    
+    
+    
     //MARK: Action methods
     
 

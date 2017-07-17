@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QDe-Bb-U35">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,6 +9,74 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--CoinPush-->
+        <scene sceneID="IgD-dJ-q81">
+            <objects>
+                <tableViewController id="cP6-sl-ZKK" customClass="CurrencyTableViewController" customModule="CoinPush" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="WGr-Ao-XiP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrencyTableViewCell" rowHeight="90" id="78h-fm-Lu8" customClass="CurrencyTableViewCell" customModule="CoinPush" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="78h-fm-Lu8" id="Sgf-h7-ThL">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BTC" translatesAutoresizingMaskIntoConstraints="NO" id="4Bt-iB-EYZ">
+                                            <rect key="frame" x="8" y="8" width="81" height="74"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNB-q4-C7W">
+                                            <rect key="frame" x="97" y="34" width="149" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tb0-D2-GyP">
+                                            <rect key="frame" x="254" y="8" width="100" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Isn-Qw-9TL">
+                                            <rect key="frame" x="254" y="60" width="100" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="coinIcon" destination="4Bt-iB-EYZ" id="FEr-VM-0BA"/>
+                                    <outlet property="deltaLabel" destination="Isn-Qw-9TL" id="Ugc-3y-Llg"/>
+                                    <outlet property="priceLabel" destination="tb0-D2-GyP" id="AFf-wU-9nX"/>
+                                    <outlet property="titleLabel" destination="WNB-q4-C7W" id="Gjh-rO-yYg"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cP6-sl-ZKK" id="8GO-w2-6OY"/>
+                            <outlet property="delegate" destination="cP6-sl-ZKK" id="QGx-df-ycH"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="CoinPush" id="mqe-xy-bjZ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fhG-Xi-yIy">
+                            <connections>
+                                <segue destination="FhI-8M-52f" kind="modal" id="RCq-FS-402"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oI2-Uj-b75" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1159.2" y="697.60119940029995"/>
+        </scene>
         <!--Ethereum Push Notifications-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -87,6 +155,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="New Conversion" id="6V2-2p-p8U">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="xRV-bV-bu8"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="BOD-jM-e2S"/>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="decreaseLabel" destination="Og8-XJ-V6g" id="sAb-LN-RvP"/>
@@ -96,36 +168,52 @@
                         <outlet property="increaseValue" destination="usr-f4-EI3" id="owx-mB-HVz"/>
                         <outlet property="pushLabel" destination="JAY-fO-i5M" id="uZ7-AL-NvY"/>
                         <outlet property="pushSwitch" destination="GHO-D8-Zmd" id="68X-sm-XA0"/>
+                        <outlet property="saveButton" destination="BOD-jM-e2S" id="bcs-s1-X7H"/>
                         <outlet property="toTextField" destination="qEL-zg-F2U" id="uf0-Zy-7Ku"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1133.5999999999999" y="697.60119940029995"/>
+            <point key="canvasLocation" x="3111.1999999999998" y="697.60119940029995"/>
         </scene>
-        <!--CoinPush-->
-        <scene sceneID="vad-ub-ifs">
+        <!--Navigation Controller-->
+        <scene sceneID="j4H-B5-1is">
             <objects>
-                <tableViewController id="IAk-OY-1jS" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" id="yhG-k3-p33">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <sections>
-                            <tableViewSection id="a6v-oT-0Nu">
-                                <cells/>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="IAk-OY-1jS" id="hxf-7q-Yw6"/>
-                            <outlet property="delegate" destination="IAk-OY-1jS" id="Idz-lq-W87"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="CoinPush" id="PM1-Gv-hVn"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QlD-RK-qEN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QDe-Bb-U35" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8fd-OU-ykd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cP6-sl-ZKK" kind="relationship" relationship="rootViewController" id="iO4-tp-TpT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Np-p6-9PB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="127" y="698"/>
+            <point key="canvasLocation" x="220" y="697.60119940029995"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Nrt-oI-0eg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FhI-8M-52f" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vcE-jl-y2m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="z4j-Ye-xWX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5v-dY-8UD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2172" y="697.60119940029995"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BTC" width="128" height="128"/>
+    </resources>
 </document>
