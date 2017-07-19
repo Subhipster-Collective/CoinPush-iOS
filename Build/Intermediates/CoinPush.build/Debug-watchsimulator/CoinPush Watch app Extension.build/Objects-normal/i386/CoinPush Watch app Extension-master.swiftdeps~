@@ -1,7 +1,0 @@
-version: "Apple Swift version 3.1 (swiftlang-802.0.53 clang-802.0.42)"
-options: "600ea0a2bfc36058862a35bf6438a03f"
-build_time: [552557128, 601847000]
-inputs:
-  "/Users/Bijibaba/Documents/Programs/CoinPush/CoinPush Watch app Extension/NotificationController.swift": [552479634, 0]
-  "/Users/Bijibaba/Documents/Programs/CoinPush/CoinPush Watch app Extension/ExtensionDelegate.swift": [552479634, 0]
-  "/Users/Bijibaba/Documents/Programs/CoinPush/CoinPush Watch app Extension/InterfaceController.swift": [552479634, 0]
