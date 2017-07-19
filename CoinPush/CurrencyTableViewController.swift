@@ -11,7 +11,11 @@ import Alamofire
 
 class CurrencyTableViewController: UITableViewController {
 
-    var currencyPairs = [CurrencyConversion]()
+    var currencyPairs = [CurrencyConversion]() {
+        didSet {
+            
+        }
+    }
     
     
     override func viewDidLoad() {
@@ -41,12 +45,7 @@ class CurrencyTableViewController: UITableViewController {
             tableView.insertRows(at: [newIndexPath], with: .automatic)
 
         }
-        
     }
-    
-    
-
-    
     
     // MARK: - Table view data source
 
@@ -59,8 +58,6 @@ class CurrencyTableViewController: UITableViewController {
         return currencyPairs.count
     }
     
-    
-
     
    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier = "CurrencyTableViewCell"
@@ -84,7 +81,7 @@ class CurrencyTableViewController: UITableViewController {
                 //to get status code
                 if let status = response.response?.statusCode {
                     switch(status){
-                    case 201:
+                    case 200:
                         print("example success")
                     default:
                         print("error with response status: \(status)")
@@ -97,6 +94,22 @@ class CurrencyTableViewController: UITableViewController {
                 }
         }
     
+    }
+    private func structureRequest() -> String {
+        var fromString = ""
+        var toString = ""
+        
+        for (i, pair) in currencyPairs.enumerated() {
+            if (i < currencyPairs.count - 1 ) {
+                fromString += pair.fromTag + ","
+                toString += pair.toTag + ","
+            } else {
+                fromString += pair.fromTag
+                toString += pair.toTag
+            }
+        }
+        let requestUrl = "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=\(fromString)&tsyms=\(toString)"
+        return requestUrl
     }
     
     
