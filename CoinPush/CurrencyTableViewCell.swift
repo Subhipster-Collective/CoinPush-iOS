@@ -11,7 +11,7 @@ import UIKit
 class CurrencyTableViewCell: UITableViewCell {
     
     //MARK: Properties
-    @IBOutlet weak var coinIcon: UIImage!
+    @IBOutlet weak var coinIcon: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var priceLabel: UILabel!

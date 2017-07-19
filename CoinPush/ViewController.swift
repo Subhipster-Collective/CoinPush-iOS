@@ -83,8 +83,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             return
         }
         
-        let fromCurrency = helper.getCurrencyIdentifier(rawText: fromTextField!.text!)
-        let toCurrency = helper.getCurrencyIdentifier(rawText: toTextField!.text!)
+        
+        
+        let fromTag = helper.getCurrencyIdentifier(rawText: fromTextField!.text!)
+        let toTag = helper.getCurrencyIdentifier(rawText: toTextField!.text!)
         
         let pushEnabled1 = pushSwitch.isOn
         var increase : Float32?
@@ -98,7 +100,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         
         // Set the meal to be passed to MealTableViewController after the unwind segue.
-        conversion = CurrencyConversion(fromCurrency: fromCurrency, toCurrency: toCurrency, pushEnabled: pushEnabled1, increaseValue: increase, decreaseValue: decrease)
+        conversion = CurrencyConversion(fromTag: fromTag, toTag: toTag, pushEnabled: pushEnabled1, increaseValue: increase, decreaseValue: decrease)
     }
     
     
@@ -141,7 +143,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         if enableBool {
             pushSwitch.isEnabled = enableBool
             pushLabel.isEnabled = enableBool
-            var currency = helper.getCurrencyIdentifier(rawText: fromTextField!.text!)
+            let currency = helper.getCurrencyIdentifier(rawText: fromTextField!.text!)
             increaseLabel.text? = "When \(currency) increases by "
             decreaseLabel.text? = "When \(currency) decreases by "
         }

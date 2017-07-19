@@ -9,8 +9,9 @@
 import UIKit
 
 class CurrencyConversion {
-    var fromCurrency: String
-    var toCurrency: String
+    var fromTag: String
+    var toTag: String
+    
     var pushEnabled: Bool
     
     var increaseValue: Float32?
@@ -19,10 +20,10 @@ class CurrencyConversion {
     
     //MARK: Initialization
     
-    init?(fromCurrency: String, toCurrency: String, pushEnabled: Bool, increaseValue: Float32?, decreaseValue: Float32?) {
+    init?(fromTag: String, toTag: String, pushEnabled: Bool, increaseValue: Float32?, decreaseValue: Float32?) {
 
-        self.fromCurrency = fromCurrency
-        self.toCurrency = toCurrency
+        self.fromTag = fromTag
+        self.toTag = toTag
         self.pushEnabled = pushEnabled
         self.increaseValue = increaseValue
         self.decreaseValue = decreaseValue

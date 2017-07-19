@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import Alamofire
 
 class CurrencyTableViewController: UITableViewController {
 
-    var currencies = [CurrencyConversion]()
+    var currencyPairs = [CurrencyConversion]()
     
     
     override func viewDidLoad() {
@@ -23,16 +24,30 @@ class CurrencyTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    
-    //MARK: Actions
-    
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    
+    //MARK: Actions
+    @IBAction func unwindToCurrencyList(sender: UIStoryboardSegue) {
+        if let source = sender.source as?
+            ViewController, let conversionData = source.conversion {
+            
+            //add a new conversion to list
+            let newIndexPath = IndexPath(row: currencyPairs.count, section: 0)
+            currencyPairs.append(conversionData)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+
+        }
+        
+    }
+    
+    
+
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -41,7 +56,7 @@ class CurrencyTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return currencies.count
+        return currencyPairs.count
     }
     
     
@@ -52,17 +67,39 @@ class CurrencyTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? CurrencyTableViewCell else {
             fatalError("The dequeued cell is not an instance of CurrencyTableViewCell.")
         }
-        let currencyData = currencies[indexPath.row]
-    
-        cell.coinIcon =  UIImage(named: currencyData.fromCurrency)
-    
-        
-    
+        let conversionData = currencyPairs[indexPath.row]
 
+        cell.coinIcon.image =  UIImage(named: conversionData.fromTag)
+        cell.titleLabel.text = helper.labelDict[conversionData.fromTag]
+        cell.priceLabel.text = helper.symbolDict[conversionData.toTag]! + "0.00"
+        cell.deltaLabel.text = "0.00" + "%"
+    
         return cell
     }
- 
-
+    //MARK: private methods
+    private func getPriceLabels(request: String){
+        Alamofire.request(request, method: .post, parameters: nil, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                print(response)
+                //to get status code
+                if let status = response.response?.statusCode {
+                    switch(status){
+                    case 201:
+                        print("example success")
+                    default:
+                        print("error with response status: \(status)")
+                    }
+                }
+                //to get JSON return value
+                if let result = response.result.value {
+                    let JSON = result as! NSDictionary
+                    print(JSON)
+                }
+        }
+    
+    }
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

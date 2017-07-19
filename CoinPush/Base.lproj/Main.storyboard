@@ -25,7 +25,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BTC" translatesAutoresizingMaskIntoConstraints="NO" id="4Bt-iB-EYZ">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Bt-iB-EYZ">
                                             <rect key="frame" x="8" y="8" width="81" height="74"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -157,7 +157,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="New Conversion" id="6V2-2p-p8U">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="xRV-bV-bu8"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="BOD-jM-e2S"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="BOD-jM-e2S">
+                            <connections>
+                                <segue destination="U3b-L4-RpU" kind="unwind" unwindAction="unwindToCurrencyListWithSender:" id="HQr-Sd-DVh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
@@ -173,6 +177,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="U3b-L4-RpU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3111.1999999999998" y="697.60119940029995"/>
         </scene>
@@ -213,7 +218,4 @@
             <point key="canvasLocation" x="2172" y="697.60119940029995"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="BTC" width="128" height="128"/>
-    </resources>
 </document>
