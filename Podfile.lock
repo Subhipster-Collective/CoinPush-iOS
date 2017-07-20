@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.5.0)
   - Firebase/AdMob (4.0.3):
     - Firebase/Core
     - Google-Mobile-Ads-SDK (= 7.21.0)
@@ -36,11 +37,13 @@ PODS:
   - Protobuf (3.3.0)
 
 DEPENDENCIES:
+  - Alamofire
   - Firebase/AdMob
   - Firebase/Database
   - Firebase/Messaging
 
 SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   Firebase: 9e33fdfbca37cab635c693883caa90a4475b842b
   FirebaseAnalytics: ad41720e3e67fc63fbe3d2948d3e26932a8de311
   FirebaseCore: c709067051de07bdaffdc4e735cd7299a23c463a
@@ -51,6 +54,6 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
 
-PODFILE CHECKSUM: 9f85858a4ead2d7cd3a2cef664b163704692a6ac
+PODFILE CHECKSUM: 7373909b2e360e170ed2048a747592e010f7c120
 
 COCOAPODS: 1.2.1

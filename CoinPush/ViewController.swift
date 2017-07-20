@@ -38,17 +38,28 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //setup initial visibility
         pushLabel.isEnabled = false
         pushSwitch.isEnabled = false
+        saveButton.isEnabled = false
+        increaseLabel.isEnabled = false
+        decreaseLabel.isEnabled = false
         
         hideAdvancedPush()
         
+        //tag fields for distinguishing later
         let fromPickerView = UIPickerView()
         fromPickerView.tag = 1
         
         let toPickerView = UIPickerView()
         toPickerView.tag = 2
         
+        increaseLabel.tag = 1
+        increaseValue.tag = 1
+        decreaseLabel.tag = 2
+        decreaseValue.tag = 2
+        
+        //assign delegate
         fromPickerView.delegate = self
         toPickerView.delegate = self
         increaseValue.delegate = self
@@ -57,10 +68,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         fromTextField.inputView = fromPickerView
         toTextField.inputView = toPickerView
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> b38c3d4630da25dbc73e9476a069ff0c72d7b26b
 
 
     override func didReceiveMemoryWarning() {
@@ -77,6 +84,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     //MARK: Navigation
+    
+    
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
+    
     // This method lets you configure a view controller before it's presented.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -87,15 +102,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             return
         }
         
-<<<<<<< HEAD
-        let fromCurrency = helper.getCurrencyIdentifier(rawText: fromTextField!.text!)
-        let toCurrency = helper.getCurrencyIdentifier(rawText: toTextField!.text!)
-=======
+    
+        
         
         
         let fromTag = helper.getCurrencyIdentifier(rawText: fromTextField!.text!)
         let toTag = helper.getCurrencyIdentifier(rawText: toTextField!.text!)
->>>>>>> b38c3d4630da25dbc73e9476a069ff0c72d7b26b
         
         let pushEnabled1 = pushSwitch.isOn
         var increase : Float32?
@@ -109,16 +121,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         
         // Set the meal to be passed to MealTableViewController after the unwind segue.
-<<<<<<< HEAD
-        conversion = CurrencyConversion(fromCurrency: fromCurrency, toCurrency: toCurrency, pushEnabled: pushEnabled1, increaseValue: increase, decreaseValue: decrease)
-=======
         conversion = CurrencyConversion(fromTag: fromTag, toTag: toTag, pushEnabled: pushEnabled1, increaseValue: increase, decreaseValue: decrease)
->>>>>>> b38c3d4630da25dbc73e9476a069ff0c72d7b26b
     }
-    
-    
-    
-    
     
     
     //MARK: Action methods
@@ -131,7 +135,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             hideAdvancedPush()
         }
     }
-    
     
     
     //MARK: Private Functions
@@ -156,11 +159,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         if enableBool {
             pushSwitch.isEnabled = enableBool
             pushLabel.isEnabled = enableBool
-<<<<<<< HEAD
-            var currency = helper.getCurrencyIdentifier(rawText: fromTextField!.text!)
-=======
+            saveButton.isEnabled = enableBool
             let currency = helper.getCurrencyIdentifier(rawText: fromTextField!.text!)
->>>>>>> b38c3d4630da25dbc73e9476a069ff0c72d7b26b
             increaseLabel.text? = "When \(currency) increases by "
             decreaseLabel.text? = "When \(currency) decreases by "
         }
@@ -171,8 +171,25 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.text? += "%"
+        let value = textField.text!.components(separatedBy: "%")
+        let numVal =  Float(value[0])
         
+        if (numVal == 0 || numVal == nil) {
+            if (textField.tag == 1) {
+                increaseLabel.isEnabled = false
+            } else {
+                decreaseLabel.isEnabled = false
+            }
+            textField.placeholder? = "0.00%"
+            
+        } else {
+            if (textField.tag == 1) {
+                increaseLabel.isEnabled = true
+            } else {
+                decreaseLabel.isEnabled = true
+            }
+            textField.text? += "%"
+        }
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

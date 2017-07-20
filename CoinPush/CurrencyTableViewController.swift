@@ -10,40 +10,47 @@ import UIKit
 import Alamofire
 
 class CurrencyTableViewController: UITableViewController {
-
+    
     var currencyPairs = [CurrencyConversion]() {
         didSet {
-            
+            let request = structureRequest()
+            updatePriceLabels(request: request)
         }
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     
     //MARK: Actions
     @IBAction func unwindToCurrencyList(sender: UIStoryboardSegue) {
         if let source = sender.source as?
             ViewController, let conversionData = source.conversion {
             
+            for pair in currencyPairs {
+                if (conversionData.fromTag == pair.fromTag && conversionData.toTag == pair.toTag){
+                    return
+                }
+            }
+            
             //add a new conversion to list
             let newIndexPath = IndexPath(row: currencyPairs.count, section: 0)
             currencyPairs.append(conversionData)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
-
+            
         }
     }
     
@@ -52,7 +59,7 @@ class CurrencyTableViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return currencyPairs.count
@@ -64,17 +71,19 @@ class CurrencyTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? CurrencyTableViewCell else {
             fatalError("The dequeued cell is not an instance of CurrencyTableViewCell.")
         }
+    
+    
         let conversionData = currencyPairs[indexPath.row]
-
+        
         cell.coinIcon.image =  UIImage(named: conversionData.fromTag)
         cell.titleLabel.text = helper.labelDict[conversionData.fromTag]
         cell.priceLabel.text = helper.symbolDict[conversionData.toTag]! + "0.00"
         cell.deltaLabel.text = "0.00" + "%"
-    
+        
         return cell
     }
     //MARK: private methods
-    private func getPriceLabels(request: String){
+    private func updatePriceLabels(request: String){
         Alamofire.request(request, method: .post, parameters: nil, encoding: JSONEncoding.default)
             .responseJSON { response in
                 print(response)
@@ -82,7 +91,7 @@ class CurrencyTableViewController: UITableViewController {
                 if let status = response.response?.statusCode {
                     switch(status){
                     case 200:
-                        print("example success")
+                        print("success")
                     default:
                         print("error with response status: \(status)")
                     }
@@ -90,10 +99,31 @@ class CurrencyTableViewController: UITableViewController {
                 //to get JSON return value
                 if let result = response.result.value {
                     let JSON = result as! NSDictionary
-                    print(JSON)
+                    let dataTree = JSON["RAW"] as! NSDictionary
+                    
+                    for (i, pair) in self.currencyPairs.enumerated(){
+                        let cell = self.tableView.cellForRow(at: IndexPath(row: i, section: 0)) as? CurrencyTableViewCell
+                        let toValues = (dataTree[pair.fromTag] as? NSDictionary)?[pair.toTag] as? NSDictionary!
+                        
+                         //update the labels
+                        cell?.priceLabel.text = helper.symbolDict[pair.toTag]! + "\(toValues!["PRICE"]!)"
+                        
+                        let pct = "\(toValues!["CHANGEPCT24HOUR"]!)"
+                        var index = pct.index(pct.startIndex, offsetBy: 5)
+                        cell?.deltaLabel.text =  pct.substring(to: index) + "%"
+                        
+                        index = pct.index(pct.startIndex, offsetBy: 1)
+                        if (pct.substring(to: index) == "-"){
+                            cell?.deltaLabel.textColor = UIColor.red
+                        } else {
+                            cell?.deltaLabel.textColor = UIColor.green
+                        }
+                        
+                    }
+                
                 }
         }
-    
+        
     }
     private func structureRequest() -> String {
         var fromString = ""

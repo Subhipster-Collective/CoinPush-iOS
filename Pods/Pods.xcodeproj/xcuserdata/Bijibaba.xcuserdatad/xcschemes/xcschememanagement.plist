@@ -4,17 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-CoinPush Watch app Extension.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-CoinPush Watch app.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -42,12 +37,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>6068E219F47B66797B501861C64532DF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>757F0C763118100175F5701A70560A8B</key>
+		<key>70E4FC028CEC3131C505F86CFFABD394</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +47,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>90D939372D87B3EED365D38AAD8EC743</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A2EB31A0A6D93D766770A936B9B8C0C1</key>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -73,6 +58,11 @@
 			<true/>
 		</dict>
 		<key>E6E6C15299ACFD0803139B625F4B3956</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EB3B0C4B0646B7B4D5C895186CF4F2C4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

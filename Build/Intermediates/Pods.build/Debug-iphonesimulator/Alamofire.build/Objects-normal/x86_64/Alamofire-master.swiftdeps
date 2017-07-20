@@ -1,0 +1,21 @@
+version: "Apple Swift version 3.1 (swiftlang-802.0.53 clang-802.0.42)"
+options: "561a48391b085120f4c9dd33bf979443"
+build_time: [553852141, 550173000]
+inputs:
+  "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Alamofire/Source/AFError.swift": [553771044, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Alamofire/Source/Alamofire.swift": [553771044, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Alamofire/Source/DispatchQueue+Alamofire.swift": [553771044, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Alamofire/Source/MultipartFormData.swift": [553771044, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Alamofire/Source/NetworkReachabilityManager.swift": [553771044, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Alamofire/Source/Notifications.swift": [553771044, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Alamofire/Source/ParameterEncoding.swift": [553771044, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Alamofire/Source/Request.swift": [553771044, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Alamofire/Source/Response.swift": [553771044, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Alamofire/Source/ResponseSerialization.swift": [553771044, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Alamofire/Source/Result.swift": [553771044, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Alamofire/Source/ServerTrustPolicy.swift": [553771044, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Alamofire/Source/SessionDelegate.swift": [553771044, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Alamofire/Source/SessionManager.swift": [553771044, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Alamofire/Source/TaskDelegate.swift": [553771044, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Alamofire/Source/Timeline.swift": [553771044, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Alamofire/Source/Validation.swift": [553771044, 0]

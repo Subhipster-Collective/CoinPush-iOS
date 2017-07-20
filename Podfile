@@ -9,6 +9,7 @@ target 'CoinPush' do
 pod “Firebase/Messaging"
 pod "Firebase/Database"
 pod 'Firebase/AdMob'
+pod “Alamofire”
   target 'CoinPushTests' do
     inherit! :search_paths
     # Pods for testing
@@ -21,18 +22,4 @@ pod 'Firebase/AdMob'
 
 end
 
-target 'CoinPush Watch app' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
 
-  # Pods for CoinPush Watch app
-
-end
-
-target 'CoinPush Watch app Extension' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
-
-  # Pods for CoinPush Watch app Extension
-
-end

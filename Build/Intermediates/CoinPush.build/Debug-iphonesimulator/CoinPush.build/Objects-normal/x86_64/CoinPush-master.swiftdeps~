@@ -1,0 +1,10 @@
+version: "Apple Swift version 3.1 (swiftlang-802.0.53 clang-802.0.42)"
+options: "081865e1c4cc27d292d8ab52d4488338"
+build_time: [553851774, 158041000]
+inputs:
+  "/Users/Bijibaba/Documents/backup/CoinPush/CoinPush/ViewController.swift": [553851142, 0]
+  "/Users/Bijibaba/Documents/backup/CoinPush/CoinPush/CurrencyTableViewController.swift": [553851672, 0]
+  "/Users/Bijibaba/Documents/backup/CoinPush/CoinPush/CurrencyConversion.swift": [553770810, 0]
+  "/Users/Bijibaba/Documents/backup/CoinPush/CoinPush/helper.swift": [553825095, 0]
+  "/Users/Bijibaba/Documents/backup/CoinPush/CoinPush/CurrencyTableViewCell.swift": [553770810, 0]
+  "/Users/Bijibaba/Documents/backup/CoinPush/CoinPush/AppDelegate.swift": [553150188, 0]

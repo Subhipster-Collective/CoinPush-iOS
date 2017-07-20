@@ -1,0 +1,21 @@
+version: "Apple Swift version 3.1 (swiftlang-802.0.53 clang-802.0.42)"
+options: "7a57660eeff642425c439b1278c46b41"
+build_time: [552636311, 791344000]
+inputs:
+  "/Users/Bijibaba/Documents/Programs/CoinPush/Pods/Alamofire/Source/AFError.swift": [552633047, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush/Pods/Alamofire/Source/Alamofire.swift": [552633047, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush/Pods/Alamofire/Source/DispatchQueue+Alamofire.swift": [552633047, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush/Pods/Alamofire/Source/MultipartFormData.swift": [552633047, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush/Pods/Alamofire/Source/NetworkReachabilityManager.swift": [552633047, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush/Pods/Alamofire/Source/Notifications.swift": [552633047, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush/Pods/Alamofire/Source/ParameterEncoding.swift": [552633047, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush/Pods/Alamofire/Source/Request.swift": [552633047, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush/Pods/Alamofire/Source/Response.swift": [552633047, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush/Pods/Alamofire/Source/ResponseSerialization.swift": [552633047, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush/Pods/Alamofire/Source/Result.swift": [552633047, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush/Pods/Alamofire/Source/ServerTrustPolicy.swift": [552633047, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush/Pods/Alamofire/Source/SessionDelegate.swift": [552633047, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush/Pods/Alamofire/Source/SessionManager.swift": [552633047, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush/Pods/Alamofire/Source/TaskDelegate.swift": [552633047, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush/Pods/Alamofire/Source/Timeline.swift": [552633047, 0]
+  "/Users/Bijibaba/Documents/Programs/CoinPush/Pods/Alamofire/Source/Validation.swift": [552633047, 0]

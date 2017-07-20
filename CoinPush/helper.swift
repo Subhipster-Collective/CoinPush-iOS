@@ -9,15 +9,12 @@
 import Foundation
 
 class helper {
-<<<<<<< HEAD
-=======
     
     static var labelDict: [String:String] = ["ETH": "Ethereum","BTC": "Bitcoin", "USD": "U.S Dollars", "EUR": "Euros"]
     
-    static var symbolDict: [String: String] = ["USD" : "$",  "EUR": "€"]
+    static var symbolDict: [String: String] = ["USD" : "$",  "EUR" : "€", "BTC" :"Ƀ", "ETH" : "Ξ"]
     
     
->>>>>>> b38c3d4630da25dbc73e9476a069ff0c72d7b26b
     static func getCurrencyIdentifier(rawText: String) -> String{
         var returnExpression : String
         switch rawText {
@@ -36,8 +33,5 @@ class helper {
             }
         return returnExpression
     }
-<<<<<<< HEAD
-=======
     
->>>>>>> b38c3d4630da25dbc73e9476a069ff0c72d7b26b
 }
