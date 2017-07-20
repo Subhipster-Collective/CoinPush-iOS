@@ -7,18 +7,15 @@
 //
 
 import UIKit
-<<<<<<< HEAD
-
-class CurrencyTableViewController: UITableViewController {
-
-    var currencies = [CurrencyConversion]()
-=======
 import Alamofire
 
 class CurrencyTableViewController: UITableViewController {
 
-    var currencyPairs = [CurrencyConversion]()
->>>>>>> b38c3d4630da25dbc73e9476a069ff0c72d7b26b
+    var currencyPairs = [CurrencyConversion]() {
+        didSet {
+            
+        }
+    }
     
     
     override func viewDidLoad() {
@@ -31,21 +28,11 @@ class CurrencyTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-<<<<<<< HEAD
-    
-    //MARK: Actions
-    
-    
-    
-=======
->>>>>>> b38c3d4630da25dbc73e9476a069ff0c72d7b26b
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-<<<<<<< HEAD
-=======
     
     //MARK: Actions
     @IBAction func unwindToCurrencyList(sender: UIStoryboardSegue) {
@@ -58,14 +45,8 @@ class CurrencyTableViewController: UITableViewController {
             tableView.insertRows(at: [newIndexPath], with: .automatic)
 
         }
-        
     }
     
-    
-
-    
-    
->>>>>>> b38c3d4630da25dbc73e9476a069ff0c72d7b26b
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -74,34 +55,15 @@ class CurrencyTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-<<<<<<< HEAD
-        return currencies.count
-=======
         return currencyPairs.count
->>>>>>> b38c3d4630da25dbc73e9476a069ff0c72d7b26b
     }
     
-    
-
     
    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier = "CurrencyTableViewCell"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? CurrencyTableViewCell else {
             fatalError("The dequeued cell is not an instance of CurrencyTableViewCell.")
         }
-<<<<<<< HEAD
-        let currencyData = currencies[indexPath.row]
-    
-        cell.coinIcon =  UIImage(named: currencyData.fromCurrency)
-    
-        
-    
-
-        return cell
-    }
- 
-
-=======
         let conversionData = currencyPairs[indexPath.row]
 
         cell.coinIcon.image =  UIImage(named: conversionData.fromTag)
@@ -119,7 +81,7 @@ class CurrencyTableViewController: UITableViewController {
                 //to get status code
                 if let status = response.response?.statusCode {
                     switch(status){
-                    case 201:
+                    case 200:
                         print("example success")
                     default:
                         print("error with response status: \(status)")
@@ -133,9 +95,24 @@ class CurrencyTableViewController: UITableViewController {
         }
     
     }
+    private func structureRequest() -> String {
+        var fromString = ""
+        var toString = ""
+        
+        for (i, pair) in currencyPairs.enumerated() {
+            if (i < currencyPairs.count - 1 ) {
+                fromString += pair.fromTag + ","
+                toString += pair.toTag + ","
+            } else {
+                fromString += pair.fromTag
+                toString += pair.toTag
+            }
+        }
+        let requestUrl = "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=\(fromString)&tsyms=\(toString)"
+        return requestUrl
+    }
     
     
->>>>>>> b38c3d4630da25dbc73e9476a069ff0c72d7b26b
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
