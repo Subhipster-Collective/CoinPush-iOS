@@ -28,12 +28,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
-    
     var conversion: CurrencyConversion?
     
-    let fromOptions = ["Ethereum (ETH)","Bitcoin (BTC)","Digital Dash (DGB)","Ethereum Classic (ETC)", "Litecoin (LTC)"]
+    let fromOptions = ["Bitcoin (BTC)","Ethereum (ETH)","Dash (DGB)","Ethereum Classic (ETC)", "Litecoin (LTC)"]
     
-    let toOptions = ["🇺🇸 U.S Dollar (USD)", "🇪🇺 Euro (EUR)","🇨🇳 Chinese Yuan (CNY)","🇬🇧 British Pound (GBP), "]
+    let toOptions = ["🇺🇸 U.S Dollar (USD)", "🇪🇺 Euro (EUR)","🇨🇳 Chinese Yuan (CNY)","🇬🇧 British Pound (GBP)"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

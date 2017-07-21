@@ -22,7 +22,7 @@ class helper {
                 returnExpression = "ETH"
             case "Bitcoin (BTC)":
                 returnExpression = "BTC"
-            case "Digital Dash (DGB)":
+            case "Dash (DGB)":
                 returnExpression = "DGB"
             case "Ethereum Classic (ETC)":
                 returnExpression = "ETC"
