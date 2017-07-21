@@ -8,6 +8,8 @@ provides-member:
 provides-dynamic-lookup:
 - "didReceiveMemoryWarning"
 - "numberOfSections"
+- "prepare"
+- "refreshPrices"
 - "tableView"
 - "unwindToCurrencyList"
 - "viewDidLoad"
@@ -18,6 +20,8 @@ depends-top-level:
 - !private "-"
 - !private "<"
 - !private "=="
+- !private ">"
+- !private "??"
 - !private "Alamofire"
 - !private "Array"
 - "AssignmentPrecedence"
@@ -25,12 +29,15 @@ depends-top-level:
 - "CurrencyConversion"
 - !private "CurrencyTableViewCell"
 - "CurrencyTableViewController"
+- !private "EditCurrencyViewController"
+- !private "EditInfo"
 - "IndexPath"
 - "Int"
 - !private "JSONEncoding"
 - !private "NSDictionary"
 - !private "String"
 - !private "StringLiteralType"
+- "UIBarButtonItem"
 - !private "UIColor"
 - !private "UIImage"
 - "UIStoryboardSegue"
@@ -46,6 +53,7 @@ depends-top-level:
 depends-member:
 - !private ["Ps9AnyObject", "Alamofire"]
 - ["Ps9AnyObject", "CurrencyConversion"]
+- !private ["Ps9AnyObject", "EditInfo"]
 - !private ["Ps9AnyObject", "IndexPath"]
 - !private ["Ps9AnyObject", "JSONEncoding"]
 - !private ["Ps9AnyObject", "UIColor"]
@@ -56,16 +64,21 @@ depends-member:
 - !private ["Ps9AnyObject", "currencyPairs"]
 - !private ["Ps9AnyObject", "deltaLabel"]
 - !private ["Ps9AnyObject", "dequeueReusableCell"]
+- !private ["Ps9AnyObject", "destination"]
 - !private ["Ps9AnyObject", "didReceiveMemoryWarning"]
 - !private ["Ps9AnyObject", "fatalError"]
 - !private ["Ps9AnyObject", "fromTag"]
 - !private ["Ps9AnyObject", "green"]
 - !private ["Ps9AnyObject", "helper"]
+- !private ["Ps9AnyObject", "identifier"]
 - !private ["Ps9AnyObject", "image"]
 - !private ["Ps9AnyObject", "index"]
+- !private ["Ps9AnyObject", "indexPath"]
 - !private ["Ps9AnyObject", "init"]
 - !private ["Ps9AnyObject", "insertRows"]
 - !private ["Ps9AnyObject", "labelDict"]
+- !private ["Ps9AnyObject", "pair"]
+- !private ["Ps9AnyObject", "prepare"]
 - !private ["Ps9AnyObject", "priceLabel"]
 - !private ["Ps9AnyObject", "print"]
 - !private ["Ps9AnyObject", "red"]
@@ -102,6 +115,7 @@ depends-member:
 - !private ["PSo15CALayerDelegate", "deltaLabel"]
 - !private ["PSo15CALayerDelegate", "dequeueReusableCell"]
 - !private ["PSo15CALayerDelegate", "image"]
+- !private ["PSo15CALayerDelegate", "indexPath"]
 - !private ["PSo15CALayerDelegate", "insertRows"]
 - !private ["PSo15CALayerDelegate", "priceLabel"]
 - !private ["PSo15CALayerDelegate", "text"]
@@ -109,6 +123,7 @@ depends-member:
 - !private ["PSo15CALayerDelegate", "titleLabel"]
 - !private ["Ps7CVarArg", "Alamofire"]
 - ["Ps7CVarArg", "CurrencyConversion"]
+- !private ["Ps7CVarArg", "EditInfo"]
 - !private ["Ps7CVarArg", "IndexPath"]
 - !private ["Ps7CVarArg", "JSONEncoding"]
 - !private ["Ps7CVarArg", "UIColor"]
@@ -121,15 +136,20 @@ depends-member:
 - !private ["Ps7CVarArg", "currencyPairs"]
 - !private ["Ps7CVarArg", "deltaLabel"]
 - !private ["Ps7CVarArg", "dequeueReusableCell"]
+- !private ["Ps7CVarArg", "destination"]
 - !private ["Ps7CVarArg", "didReceiveMemoryWarning"]
 - !private ["Ps7CVarArg", "enumerated"]
 - !private ["Ps7CVarArg", "fatalError"]
 - !private ["Ps7CVarArg", "green"]
 - !private ["Ps7CVarArg", "helper"]
+- !private ["Ps7CVarArg", "identifier"]
 - !private ["Ps7CVarArg", "image"]
 - !private ["Ps7CVarArg", "index"]
+- !private ["Ps7CVarArg", "indexPath"]
 - ["Ps7CVarArg", "init"]
 - !private ["Ps7CVarArg", "insertRows"]
+- !private ["Ps7CVarArg", "pair"]
+- !private ["Ps7CVarArg", "prepare"]
 - !private ["Ps7CVarArg", "priceLabel"]
 - !private ["Ps7CVarArg", "print"]
 - !private ["Ps7CVarArg", "red"]
@@ -166,11 +186,14 @@ depends-member:
 - !private ["C8CoinPush27CurrencyTableViewController", "Alamofire"]
 - ["C8CoinPush27CurrencyTableViewController", "CurrencyConversion"]
 - !private ["C8CoinPush27CurrencyTableViewController", "CurrencyTableViewCell"]
+- !private ["C8CoinPush27CurrencyTableViewController", "EditCurrencyViewController"]
+- !private ["C8CoinPush27CurrencyTableViewController", "EditInfo"]
 - ["C8CoinPush27CurrencyTableViewController", "IndexPath"]
 - ["C8CoinPush27CurrencyTableViewController", "Int"]
 - !private ["C8CoinPush27CurrencyTableViewController", "JSONEncoding"]
 - !private ["C8CoinPush27CurrencyTableViewController", "NSDictionary"]
 - !private ["C8CoinPush27CurrencyTableViewController", "String"]
+- ["C8CoinPush27CurrencyTableViewController", "UIBarButtonItem"]
 - !private ["C8CoinPush27CurrencyTableViewController", "UIColor"]
 - !private ["C8CoinPush27CurrencyTableViewController", "UIImage"]
 - ["C8CoinPush27CurrencyTableViewController", "UIStoryboardSegue"]
@@ -184,7 +207,9 @@ depends-member:
 - !private ["C8CoinPush27CurrencyTableViewController", "helper"]
 - ["C8CoinPush27CurrencyTableViewController", "init"]
 - ["C8CoinPush27CurrencyTableViewController", "numberOfSections"]
+- ["C8CoinPush27CurrencyTableViewController", "prepare"]
 - !private ["C8CoinPush27CurrencyTableViewController", "print"]
+- ["C8CoinPush27CurrencyTableViewController", "refreshPrices"]
 - !private ["C8CoinPush27CurrencyTableViewController", "structureRequest"]
 - ["C8CoinPush27CurrencyTableViewController", "tableView"]
 - ["C8CoinPush27CurrencyTableViewController", "unwindToCurrencyList"]
@@ -192,6 +217,7 @@ depends-member:
 - ["C8CoinPush27CurrencyTableViewController", "viewDidLoad"]
 - !private ["Ps28CustomDebugStringConvertible", "Alamofire"]
 - ["Ps28CustomDebugStringConvertible", "CurrencyConversion"]
+- !private ["Ps28CustomDebugStringConvertible", "EditInfo"]
 - !private ["Ps28CustomDebugStringConvertible", "IndexPath"]
 - !private ["Ps28CustomDebugStringConvertible", "JSONEncoding"]
 - !private ["Ps28CustomDebugStringConvertible", "UIColor"]
@@ -204,15 +230,20 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "currencyPairs"]
 - !private ["Ps28CustomDebugStringConvertible", "deltaLabel"]
 - !private ["Ps28CustomDebugStringConvertible", "dequeueReusableCell"]
+- !private ["Ps28CustomDebugStringConvertible", "destination"]
 - !private ["Ps28CustomDebugStringConvertible", "didReceiveMemoryWarning"]
 - !private ["Ps28CustomDebugStringConvertible", "enumerated"]
 - !private ["Ps28CustomDebugStringConvertible", "fatalError"]
 - !private ["Ps28CustomDebugStringConvertible", "green"]
 - !private ["Ps28CustomDebugStringConvertible", "helper"]
+- !private ["Ps28CustomDebugStringConvertible", "identifier"]
 - !private ["Ps28CustomDebugStringConvertible", "image"]
 - !private ["Ps28CustomDebugStringConvertible", "index"]
+- !private ["Ps28CustomDebugStringConvertible", "indexPath"]
 - ["Ps28CustomDebugStringConvertible", "init"]
 - !private ["Ps28CustomDebugStringConvertible", "insertRows"]
+- !private ["Ps28CustomDebugStringConvertible", "pair"]
+- !private ["Ps28CustomDebugStringConvertible", "prepare"]
 - !private ["Ps28CustomDebugStringConvertible", "priceLabel"]
 - !private ["Ps28CustomDebugStringConvertible", "print"]
 - !private ["Ps28CustomDebugStringConvertible", "red"]
@@ -251,6 +282,7 @@ depends-member:
 - !private ["Ps17CustomReflectable", "substring"]
 - !private ["Ps23CustomStringConvertible", "Alamofire"]
 - ["Ps23CustomStringConvertible", "CurrencyConversion"]
+- !private ["Ps23CustomStringConvertible", "EditInfo"]
 - !private ["Ps23CustomStringConvertible", "IndexPath"]
 - !private ["Ps23CustomStringConvertible", "JSONEncoding"]
 - !private ["Ps23CustomStringConvertible", "UIColor"]
@@ -264,15 +296,20 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "currencyPairs"]
 - !private ["Ps23CustomStringConvertible", "deltaLabel"]
 - !private ["Ps23CustomStringConvertible", "dequeueReusableCell"]
+- !private ["Ps23CustomStringConvertible", "destination"]
 - !private ["Ps23CustomStringConvertible", "didReceiveMemoryWarning"]
 - !private ["Ps23CustomStringConvertible", "enumerated"]
 - !private ["Ps23CustomStringConvertible", "fatalError"]
 - !private ["Ps23CustomStringConvertible", "green"]
 - !private ["Ps23CustomStringConvertible", "helper"]
+- !private ["Ps23CustomStringConvertible", "identifier"]
 - !private ["Ps23CustomStringConvertible", "image"]
 - !private ["Ps23CustomStringConvertible", "index"]
+- !private ["Ps23CustomStringConvertible", "indexPath"]
 - ["Ps23CustomStringConvertible", "init"]
 - !private ["Ps23CustomStringConvertible", "insertRows"]
+- !private ["Ps23CustomStringConvertible", "pair"]
+- !private ["Ps23CustomStringConvertible", "prepare"]
 - !private ["Ps23CustomStringConvertible", "priceLabel"]
 - !private ["Ps23CustomStringConvertible", "print"]
 - !private ["Ps23CustomStringConvertible", "red"]
@@ -298,8 +335,11 @@ depends-member:
 - !private ["V9Alamofire12DataResponse", "response"]
 - !private ["V9Alamofire12DataResponse", "result"]
 - !private ["Vs10Dictionary", "subscript"]
+- !private ["C8CoinPush26EditCurrencyViewController", "pair"]
+- !private ["V8CoinPush8EditInfo", "init"]
 - !private ["Ps9Equatable", "Alamofire"]
 - ["Ps9Equatable", "CurrencyConversion"]
+- !private ["Ps9Equatable", "EditInfo"]
 - !private ["Ps9Equatable", "IndexPath"]
 - !private ["Ps9Equatable", "JSONEncoding"]
 - !private ["Ps9Equatable", "UIColor"]
@@ -312,15 +352,20 @@ depends-member:
 - !private ["Ps9Equatable", "currencyPairs"]
 - !private ["Ps9Equatable", "deltaLabel"]
 - !private ["Ps9Equatable", "dequeueReusableCell"]
+- !private ["Ps9Equatable", "destination"]
 - !private ["Ps9Equatable", "didReceiveMemoryWarning"]
 - !private ["Ps9Equatable", "fatalError"]
 - !private ["Ps9Equatable", "green"]
 - !private ["Ps9Equatable", "helper"]
+- !private ["Ps9Equatable", "identifier"]
 - !private ["Ps9Equatable", "image"]
 - !private ["Ps9Equatable", "index"]
+- !private ["Ps9Equatable", "indexPath"]
 - !private ["Ps9Equatable", "init"]
 - !private ["Ps9Equatable", "insertRows"]
+- !private ["Ps9Equatable", "pair"]
 - !private ["Ps9Equatable", "post"]
+- !private ["Ps9Equatable", "prepare"]
 - !private ["Ps9Equatable", "priceLabel"]
 - !private ["Ps9Equatable", "print"]
 - !private ["Ps9Equatable", "red"]
@@ -362,6 +407,7 @@ depends-member:
 - !private ["CSo15HTTPURLResponse", "statusCode"]
 - !private ["Ps8Hashable", "Alamofire"]
 - ["Ps8Hashable", "CurrencyConversion"]
+- !private ["Ps8Hashable", "EditInfo"]
 - !private ["Ps8Hashable", "IndexPath"]
 - !private ["Ps8Hashable", "JSONEncoding"]
 - !private ["Ps8Hashable", "UIColor"]
@@ -374,15 +420,20 @@ depends-member:
 - !private ["Ps8Hashable", "currencyPairs"]
 - !private ["Ps8Hashable", "deltaLabel"]
 - !private ["Ps8Hashable", "dequeueReusableCell"]
+- !private ["Ps8Hashable", "destination"]
 - !private ["Ps8Hashable", "didReceiveMemoryWarning"]
 - !private ["Ps8Hashable", "fatalError"]
 - !private ["Ps8Hashable", "green"]
 - !private ["Ps8Hashable", "helper"]
+- !private ["Ps8Hashable", "identifier"]
 - !private ["Ps8Hashable", "image"]
 - !private ["Ps8Hashable", "index"]
+- !private ["Ps8Hashable", "indexPath"]
 - !private ["Ps8Hashable", "init"]
 - !private ["Ps8Hashable", "insertRows"]
+- !private ["Ps8Hashable", "pair"]
 - !private ["Ps8Hashable", "post"]
+- !private ["Ps8Hashable", "prepare"]
 - !private ["Ps8Hashable", "priceLabel"]
 - !private ["Ps8Hashable", "print"]
 - !private ["Ps8Hashable", "red"]
@@ -420,6 +471,7 @@ depends-member:
 - !private ["Ps17MutableCollection", "subscript"]
 - !private ["PSo8NSCoding", "Alamofire"]
 - ["PSo8NSCoding", "CurrencyConversion"]
+- !private ["PSo8NSCoding", "EditInfo"]
 - !private ["PSo8NSCoding", "IndexPath"]
 - !private ["PSo8NSCoding", "JSONEncoding"]
 - !private ["PSo8NSCoding", "UIColor"]
@@ -436,8 +488,11 @@ depends-member:
 - !private ["PSo8NSCoding", "helper"]
 - !private ["PSo8NSCoding", "image"]
 - !private ["PSo8NSCoding", "index"]
+- !private ["PSo8NSCoding", "indexPath"]
 - !private ["PSo8NSCoding", "init"]
 - !private ["PSo8NSCoding", "insertRows"]
+- !private ["PSo8NSCoding", "pair"]
+- !private ["PSo8NSCoding", "prepare"]
 - !private ["PSo8NSCoding", "priceLabel"]
 - !private ["PSo8NSCoding", "print"]
 - !private ["PSo8NSCoding", "red"]
@@ -464,6 +519,7 @@ depends-member:
 - !private ["CSo12NSDictionary", "subscript"]
 - !private ["PSo26NSExtensionRequestHandling", "Alamofire"]
 - ["PSo26NSExtensionRequestHandling", "CurrencyConversion"]
+- !private ["PSo26NSExtensionRequestHandling", "EditInfo"]
 - !private ["PSo26NSExtensionRequestHandling", "IndexPath"]
 - !private ["PSo26NSExtensionRequestHandling", "JSONEncoding"]
 - !private ["PSo26NSExtensionRequestHandling", "UIColor"]
@@ -474,6 +530,8 @@ depends-member:
 - !private ["PSo26NSExtensionRequestHandling", "fatalError"]
 - !private ["PSo26NSExtensionRequestHandling", "helper"]
 - !private ["PSo26NSExtensionRequestHandling", "init"]
+- !private ["PSo26NSExtensionRequestHandling", "pair"]
+- !private ["PSo26NSExtensionRequestHandling", "prepare"]
 - !private ["PSo26NSExtensionRequestHandling", "print"]
 - !private ["PSo26NSExtensionRequestHandling", "structureRequest"]
 - !private ["PSo26NSExtensionRequestHandling", "tableView"]
@@ -489,11 +547,14 @@ depends-member:
 - !private ["CSo8NSObject", "Alamofire"]
 - ["CSo8NSObject", "CurrencyConversion"]
 - !private ["CSo8NSObject", "CurrencyTableViewCell"]
+- !private ["CSo8NSObject", "EditCurrencyViewController"]
+- !private ["CSo8NSObject", "EditInfo"]
 - ["CSo8NSObject", "IndexPath"]
 - ["CSo8NSObject", "Int"]
 - !private ["CSo8NSObject", "JSONEncoding"]
 - !private ["CSo8NSObject", "NSDictionary"]
 - !private ["CSo8NSObject", "String"]
+- ["CSo8NSObject", "UIBarButtonItem"]
 - !private ["CSo8NSObject", "UIColor"]
 - !private ["CSo8NSObject", "UIImage"]
 - ["CSo8NSObject", "UIStoryboardSegue"]
@@ -506,18 +567,24 @@ depends-member:
 - ["CSo8NSObject", "currencyPairs"]
 - !private ["CSo8NSObject", "deltaLabel"]
 - !private ["CSo8NSObject", "dequeueReusableCell"]
+- !private ["CSo8NSObject", "destination"]
 - ["CSo8NSObject", "didReceiveMemoryWarning"]
 - !private ["CSo8NSObject", "fatalError"]
 - !private ["CSo8NSObject", "green"]
 - !private ["CSo8NSObject", "helper"]
+- !private ["CSo8NSObject", "identifier"]
 - !private ["CSo8NSObject", "image"]
 - !private ["CSo8NSObject", "index"]
+- !private ["CSo8NSObject", "indexPath"]
 - ["CSo8NSObject", "init"]
 - !private ["CSo8NSObject", "insertRows"]
 - ["CSo8NSObject", "numberOfSections"]
+- !private ["CSo8NSObject", "pair"]
+- ["CSo8NSObject", "prepare"]
 - !private ["CSo8NSObject", "priceLabel"]
 - !private ["CSo8NSObject", "print"]
 - !private ["CSo8NSObject", "red"]
+- ["CSo8NSObject", "refreshPrices"]
 - !private ["CSo8NSObject", "source"]
 - !private ["CSo8NSObject", "startIndex"]
 - !private ["CSo8NSObject", "statusCode"]
@@ -533,6 +600,7 @@ depends-member:
 - ["CSo8NSObject", "viewDidLoad"]
 - !private ["PSo16NSObjectProtocol", "Alamofire"]
 - ["PSo16NSObjectProtocol", "CurrencyConversion"]
+- !private ["PSo16NSObjectProtocol", "EditInfo"]
 - !private ["PSo16NSObjectProtocol", "IndexPath"]
 - !private ["PSo16NSObjectProtocol", "JSONEncoding"]
 - !private ["PSo16NSObjectProtocol", "UIColor"]
@@ -543,14 +611,19 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "currencyPairs"]
 - !private ["PSo16NSObjectProtocol", "deltaLabel"]
 - !private ["PSo16NSObjectProtocol", "dequeueReusableCell"]
+- !private ["PSo16NSObjectProtocol", "destination"]
 - !private ["PSo16NSObjectProtocol", "didReceiveMemoryWarning"]
 - !private ["PSo16NSObjectProtocol", "fatalError"]
 - !private ["PSo16NSObjectProtocol", "green"]
 - !private ["PSo16NSObjectProtocol", "helper"]
+- !private ["PSo16NSObjectProtocol", "identifier"]
 - !private ["PSo16NSObjectProtocol", "image"]
 - !private ["PSo16NSObjectProtocol", "index"]
+- !private ["PSo16NSObjectProtocol", "indexPath"]
 - !private ["PSo16NSObjectProtocol", "init"]
 - !private ["PSo16NSObjectProtocol", "insertRows"]
+- !private ["PSo16NSObjectProtocol", "pair"]
+- !private ["PSo16NSObjectProtocol", "prepare"]
 - !private ["PSo16NSObjectProtocol", "priceLabel"]
 - !private ["PSo16NSObjectProtocol", "print"]
 - !private ["PSo16NSObjectProtocol", "red"]
@@ -623,6 +696,7 @@ depends-member:
 - !private ["PSo29UIAccessibilityIdentification", "deltaLabel"]
 - !private ["PSo29UIAccessibilityIdentification", "dequeueReusableCell"]
 - !private ["PSo29UIAccessibilityIdentification", "image"]
+- !private ["PSo29UIAccessibilityIdentification", "indexPath"]
 - !private ["PSo29UIAccessibilityIdentification", "init"]
 - !private ["PSo29UIAccessibilityIdentification", "insertRows"]
 - !private ["PSo29UIAccessibilityIdentification", "priceLabel"]
@@ -634,6 +708,7 @@ depends-member:
 - !private ["PSo12UIAppearance", "deltaLabel"]
 - !private ["PSo12UIAppearance", "dequeueReusableCell"]
 - !private ["PSo12UIAppearance", "image"]
+- !private ["PSo12UIAppearance", "indexPath"]
 - !private ["PSo12UIAppearance", "insertRows"]
 - !private ["PSo12UIAppearance", "priceLabel"]
 - !private ["PSo12UIAppearance", "text"]
@@ -641,6 +716,7 @@ depends-member:
 - !private ["PSo12UIAppearance", "titleLabel"]
 - !private ["PSo21UIAppearanceContainer", "Alamofire"]
 - ["PSo21UIAppearanceContainer", "CurrencyConversion"]
+- !private ["PSo21UIAppearanceContainer", "EditInfo"]
 - !private ["PSo21UIAppearanceContainer", "IndexPath"]
 - !private ["PSo21UIAppearanceContainer", "JSONEncoding"]
 - !private ["PSo21UIAppearanceContainer", "UIColor"]
@@ -655,8 +731,11 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "fatalError"]
 - !private ["PSo21UIAppearanceContainer", "helper"]
 - !private ["PSo21UIAppearanceContainer", "image"]
+- !private ["PSo21UIAppearanceContainer", "indexPath"]
 - !private ["PSo21UIAppearanceContainer", "init"]
 - !private ["PSo21UIAppearanceContainer", "insertRows"]
+- !private ["PSo21UIAppearanceContainer", "pair"]
+- !private ["PSo21UIAppearanceContainer", "prepare"]
 - !private ["PSo21UIAppearanceContainer", "priceLabel"]
 - !private ["PSo21UIAppearanceContainer", "print"]
 - !private ["PSo21UIAppearanceContainer", "structureRequest"]
@@ -671,6 +750,7 @@ depends-member:
 - !private ["CSo7UIColor", "red"]
 - !private ["PSo18UIContentContainer", "Alamofire"]
 - ["PSo18UIContentContainer", "CurrencyConversion"]
+- !private ["PSo18UIContentContainer", "EditInfo"]
 - !private ["PSo18UIContentContainer", "IndexPath"]
 - !private ["PSo18UIContentContainer", "JSONEncoding"]
 - !private ["PSo18UIContentContainer", "UIColor"]
@@ -681,6 +761,8 @@ depends-member:
 - !private ["PSo18UIContentContainer", "fatalError"]
 - !private ["PSo18UIContentContainer", "helper"]
 - !private ["PSo18UIContentContainer", "init"]
+- !private ["PSo18UIContentContainer", "pair"]
+- !private ["PSo18UIContentContainer", "prepare"]
 - !private ["PSo18UIContentContainer", "print"]
 - !private ["PSo18UIContentContainer", "structureRequest"]
 - !private ["PSo18UIContentContainer", "tableView"]
@@ -694,6 +776,7 @@ depends-member:
 - !private ["PSo17UICoordinateSpace", "deltaLabel"]
 - !private ["PSo17UICoordinateSpace", "dequeueReusableCell"]
 - !private ["PSo17UICoordinateSpace", "image"]
+- !private ["PSo17UICoordinateSpace", "indexPath"]
 - !private ["PSo17UICoordinateSpace", "insertRows"]
 - !private ["PSo17UICoordinateSpace", "priceLabel"]
 - !private ["PSo17UICoordinateSpace", "text"]
@@ -704,6 +787,7 @@ depends-member:
 - !private ["PSo13UIDynamicItem", "deltaLabel"]
 - !private ["PSo13UIDynamicItem", "dequeueReusableCell"]
 - !private ["PSo13UIDynamicItem", "image"]
+- !private ["PSo13UIDynamicItem", "indexPath"]
 - !private ["PSo13UIDynamicItem", "insertRows"]
 - !private ["PSo13UIDynamicItem", "priceLabel"]
 - !private ["PSo13UIDynamicItem", "text"]
@@ -711,6 +795,7 @@ depends-member:
 - !private ["PSo13UIDynamicItem", "titleLabel"]
 - !private ["PSo18UIFocusEnvironment", "Alamofire"]
 - ["PSo18UIFocusEnvironment", "CurrencyConversion"]
+- !private ["PSo18UIFocusEnvironment", "EditInfo"]
 - !private ["PSo18UIFocusEnvironment", "IndexPath"]
 - !private ["PSo18UIFocusEnvironment", "JSONEncoding"]
 - !private ["PSo18UIFocusEnvironment", "UIColor"]
@@ -725,8 +810,11 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "fatalError"]
 - !private ["PSo18UIFocusEnvironment", "helper"]
 - !private ["PSo18UIFocusEnvironment", "image"]
+- !private ["PSo18UIFocusEnvironment", "indexPath"]
 - !private ["PSo18UIFocusEnvironment", "init"]
 - !private ["PSo18UIFocusEnvironment", "insertRows"]
+- !private ["PSo18UIFocusEnvironment", "pair"]
+- !private ["PSo18UIFocusEnvironment", "prepare"]
 - !private ["PSo18UIFocusEnvironment", "priceLabel"]
 - !private ["PSo18UIFocusEnvironment", "print"]
 - !private ["PSo18UIFocusEnvironment", "structureRequest"]
@@ -742,6 +830,7 @@ depends-member:
 - !private ["PSo11UIFocusItem", "deltaLabel"]
 - !private ["PSo11UIFocusItem", "dequeueReusableCell"]
 - !private ["PSo11UIFocusItem", "image"]
+- !private ["PSo11UIFocusItem", "indexPath"]
 - !private ["PSo11UIFocusItem", "insertRows"]
 - !private ["PSo11UIFocusItem", "priceLabel"]
 - !private ["PSo11UIFocusItem", "text"]
@@ -760,11 +849,14 @@ depends-member:
 - !private ["CSo11UIResponder", "Alamofire"]
 - ["CSo11UIResponder", "CurrencyConversion"]
 - !private ["CSo11UIResponder", "CurrencyTableViewCell"]
+- !private ["CSo11UIResponder", "EditCurrencyViewController"]
+- !private ["CSo11UIResponder", "EditInfo"]
 - ["CSo11UIResponder", "IndexPath"]
 - ["CSo11UIResponder", "Int"]
 - !private ["CSo11UIResponder", "JSONEncoding"]
 - !private ["CSo11UIResponder", "NSDictionary"]
 - !private ["CSo11UIResponder", "String"]
+- ["CSo11UIResponder", "UIBarButtonItem"]
 - !private ["CSo11UIResponder", "UIColor"]
 - !private ["CSo11UIResponder", "UIImage"]
 - ["CSo11UIResponder", "UIStoryboardSegue"]
@@ -781,11 +873,15 @@ depends-member:
 - !private ["CSo11UIResponder", "fatalError"]
 - !private ["CSo11UIResponder", "helper"]
 - !private ["CSo11UIResponder", "image"]
+- !private ["CSo11UIResponder", "indexPath"]
 - ["CSo11UIResponder", "init"]
 - !private ["CSo11UIResponder", "insertRows"]
 - ["CSo11UIResponder", "numberOfSections"]
+- !private ["CSo11UIResponder", "pair"]
+- ["CSo11UIResponder", "prepare"]
 - !private ["CSo11UIResponder", "priceLabel"]
 - !private ["CSo11UIResponder", "print"]
+- ["CSo11UIResponder", "refreshPrices"]
 - ["CSo11UIResponder", "structureRequest"]
 - ["CSo11UIResponder", "tableView"]
 - !private ["CSo11UIResponder", "text"]
@@ -796,6 +892,7 @@ depends-member:
 - ["CSo11UIResponder", "viewDidLoad"]
 - !private ["PSo30UIResponderStandardEditActions", "Alamofire"]
 - ["PSo30UIResponderStandardEditActions", "CurrencyConversion"]
+- !private ["PSo30UIResponderStandardEditActions", "EditInfo"]
 - !private ["PSo30UIResponderStandardEditActions", "IndexPath"]
 - !private ["PSo30UIResponderStandardEditActions", "JSONEncoding"]
 - !private ["PSo30UIResponderStandardEditActions", "UIColor"]
@@ -810,8 +907,11 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "fatalError"]
 - !private ["PSo30UIResponderStandardEditActions", "helper"]
 - !private ["PSo30UIResponderStandardEditActions", "image"]
+- !private ["PSo30UIResponderStandardEditActions", "indexPath"]
 - !private ["PSo30UIResponderStandardEditActions", "init"]
 - !private ["PSo30UIResponderStandardEditActions", "insertRows"]
+- !private ["PSo30UIResponderStandardEditActions", "pair"]
+- !private ["PSo30UIResponderStandardEditActions", "prepare"]
 - !private ["PSo30UIResponderStandardEditActions", "priceLabel"]
 - !private ["PSo30UIResponderStandardEditActions", "print"]
 - !private ["PSo30UIResponderStandardEditActions", "structureRequest"]
@@ -824,9 +924,11 @@ depends-member:
 - ["PSo30UIResponderStandardEditActions", ""]
 - !private ["CSo12UIScrollView", "cellForRow"]
 - !private ["CSo12UIScrollView", "dequeueReusableCell"]
+- !private ["CSo12UIScrollView", "indexPath"]
 - !private ["CSo12UIScrollView", "insertRows"]
 - !private ["PSo20UIScrollViewDelegate", "Alamofire"]
 - ["PSo20UIScrollViewDelegate", "CurrencyConversion"]
+- !private ["PSo20UIScrollViewDelegate", "EditInfo"]
 - !private ["PSo20UIScrollViewDelegate", "IndexPath"]
 - !private ["PSo20UIScrollViewDelegate", "JSONEncoding"]
 - !private ["PSo20UIScrollViewDelegate", "UIColor"]
@@ -836,6 +938,7 @@ depends-member:
 - !private ["PSo20UIScrollViewDelegate", "fatalError"]
 - !private ["PSo20UIScrollViewDelegate", "helper"]
 - !private ["PSo20UIScrollViewDelegate", "init"]
+- !private ["PSo20UIScrollViewDelegate", "prepare"]
 - !private ["PSo20UIScrollViewDelegate", "print"]
 - !private ["PSo20UIScrollViewDelegate", "structureRequest"]
 - !private ["PSo20UIScrollViewDelegate", "tableView"]
@@ -844,6 +947,7 @@ depends-member:
 - ["PSo20UIScrollViewDelegate", ""]
 - !private ["PSo16UIStateRestoring", "Alamofire"]
 - ["PSo16UIStateRestoring", "CurrencyConversion"]
+- !private ["PSo16UIStateRestoring", "EditInfo"]
 - !private ["PSo16UIStateRestoring", "IndexPath"]
 - !private ["PSo16UIStateRestoring", "JSONEncoding"]
 - !private ["PSo16UIStateRestoring", "UIColor"]
@@ -854,15 +958,20 @@ depends-member:
 - !private ["PSo16UIStateRestoring", "fatalError"]
 - !private ["PSo16UIStateRestoring", "helper"]
 - !private ["PSo16UIStateRestoring", "init"]
+- !private ["PSo16UIStateRestoring", "pair"]
+- !private ["PSo16UIStateRestoring", "prepare"]
 - !private ["PSo16UIStateRestoring", "print"]
 - !private ["PSo16UIStateRestoring", "structureRequest"]
 - !private ["PSo16UIStateRestoring", "tableView"]
 - !private ["PSo16UIStateRestoring", "updatePriceLabels"]
 - !private ["PSo16UIStateRestoring", "viewDidLoad"]
 - ["PSo16UIStateRestoring", ""]
+- !private ["CSo17UIStoryboardSegue", "destination"]
+- !private ["CSo17UIStoryboardSegue", "identifier"]
 - !private ["CSo17UIStoryboardSegue", "source"]
 - !private ["CSo11UITableView", "cellForRow"]
 - !private ["CSo11UITableView", "dequeueReusableCell"]
+- !private ["CSo11UITableView", "indexPath"]
 - !private ["CSo11UITableView", "insertRows"]
 - !private ["CSo15UITableViewCell", "coinIcon"]
 - !private ["CSo15UITableViewCell", "deltaLabel"]
@@ -871,11 +980,14 @@ depends-member:
 - !private ["CSo21UITableViewController", "Alamofire"]
 - ["CSo21UITableViewController", "CurrencyConversion"]
 - !private ["CSo21UITableViewController", "CurrencyTableViewCell"]
+- !private ["CSo21UITableViewController", "EditCurrencyViewController"]
+- !private ["CSo21UITableViewController", "EditInfo"]
 - ["CSo21UITableViewController", "IndexPath"]
 - ["CSo21UITableViewController", "Int"]
 - !private ["CSo21UITableViewController", "JSONEncoding"]
 - !private ["CSo21UITableViewController", "NSDictionary"]
 - !private ["CSo21UITableViewController", "String"]
+- ["CSo21UITableViewController", "UIBarButtonItem"]
 - !private ["CSo21UITableViewController", "UIColor"]
 - !private ["CSo21UITableViewController", "UIImage"]
 - ["CSo21UITableViewController", "UIStoryboardSegue"]
@@ -888,7 +1000,9 @@ depends-member:
 - !private ["CSo21UITableViewController", "helper"]
 - ["CSo21UITableViewController", "init"]
 - ["CSo21UITableViewController", "numberOfSections"]
+- ["CSo21UITableViewController", "prepare"]
 - !private ["CSo21UITableViewController", "print"]
+- ["CSo21UITableViewController", "refreshPrices"]
 - ["CSo21UITableViewController", "structureRequest"]
 - ["CSo21UITableViewController", "tableView"]
 - ["CSo21UITableViewController", "unwindToCurrencyList"]
@@ -897,6 +1011,7 @@ depends-member:
 - ["CSo21UITableViewController", ""]
 - !private ["PSo21UITableViewDataSource", "Alamofire"]
 - ["PSo21UITableViewDataSource", "CurrencyConversion"]
+- !private ["PSo21UITableViewDataSource", "EditInfo"]
 - !private ["PSo21UITableViewDataSource", "IndexPath"]
 - !private ["PSo21UITableViewDataSource", "JSONEncoding"]
 - !private ["PSo21UITableViewDataSource", "UIColor"]
@@ -906,6 +1021,7 @@ depends-member:
 - !private ["PSo21UITableViewDataSource", "fatalError"]
 - !private ["PSo21UITableViewDataSource", "helper"]
 - !private ["PSo21UITableViewDataSource", "init"]
+- !private ["PSo21UITableViewDataSource", "prepare"]
 - !private ["PSo21UITableViewDataSource", "print"]
 - !private ["PSo21UITableViewDataSource", "structureRequest"]
 - !private ["PSo21UITableViewDataSource", "tableView"]
@@ -914,6 +1030,7 @@ depends-member:
 - ["PSo21UITableViewDataSource", ""]
 - !private ["PSo19UITableViewDelegate", "Alamofire"]
 - ["PSo19UITableViewDelegate", "CurrencyConversion"]
+- !private ["PSo19UITableViewDelegate", "EditInfo"]
 - !private ["PSo19UITableViewDelegate", "IndexPath"]
 - !private ["PSo19UITableViewDelegate", "JSONEncoding"]
 - !private ["PSo19UITableViewDelegate", "UIColor"]
@@ -923,6 +1040,7 @@ depends-member:
 - !private ["PSo19UITableViewDelegate", "fatalError"]
 - !private ["PSo19UITableViewDelegate", "helper"]
 - !private ["PSo19UITableViewDelegate", "init"]
+- !private ["PSo19UITableViewDelegate", "prepare"]
 - !private ["PSo19UITableViewDelegate", "print"]
 - !private ["PSo19UITableViewDelegate", "structureRequest"]
 - !private ["PSo19UITableViewDelegate", "tableView"]
@@ -931,8 +1049,10 @@ depends-member:
 - ["PSo19UITableViewDelegate", ""]
 - !private ["OSC23UITableViewRowAnimation", "automatic"]
 - !private ["PSo19UITextFieldDelegate", "conversion"]
+- !private ["PSo19UITextFieldDelegate", "pair"]
 - !private ["PSo18UITraitEnvironment", "Alamofire"]
 - ["PSo18UITraitEnvironment", "CurrencyConversion"]
+- !private ["PSo18UITraitEnvironment", "EditInfo"]
 - !private ["PSo18UITraitEnvironment", "IndexPath"]
 - !private ["PSo18UITraitEnvironment", "JSONEncoding"]
 - !private ["PSo18UITraitEnvironment", "UIColor"]
@@ -947,8 +1067,11 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "fatalError"]
 - !private ["PSo18UITraitEnvironment", "helper"]
 - !private ["PSo18UITraitEnvironment", "image"]
+- !private ["PSo18UITraitEnvironment", "indexPath"]
 - !private ["PSo18UITraitEnvironment", "init"]
 - !private ["PSo18UITraitEnvironment", "insertRows"]
+- !private ["PSo18UITraitEnvironment", "pair"]
+- !private ["PSo18UITraitEnvironment", "prepare"]
 - !private ["PSo18UITraitEnvironment", "priceLabel"]
 - !private ["PSo18UITraitEnvironment", "print"]
 - !private ["PSo18UITraitEnvironment", "structureRequest"]
@@ -964,6 +1087,7 @@ depends-member:
 - !private ["CSo6UIView", "deltaLabel"]
 - !private ["CSo6UIView", "dequeueReusableCell"]
 - !private ["CSo6UIView", "image"]
+- !private ["CSo6UIView", "indexPath"]
 - !private ["CSo6UIView", "insertRows"]
 - !private ["CSo6UIView", "priceLabel"]
 - !private ["CSo6UIView", "text"]
@@ -972,11 +1096,14 @@ depends-member:
 - !private ["CSo16UIViewController", "Alamofire"]
 - ["CSo16UIViewController", "CurrencyConversion"]
 - !private ["CSo16UIViewController", "CurrencyTableViewCell"]
+- !private ["CSo16UIViewController", "EditCurrencyViewController"]
+- !private ["CSo16UIViewController", "EditInfo"]
 - ["CSo16UIViewController", "IndexPath"]
 - ["CSo16UIViewController", "Int"]
 - !private ["CSo16UIViewController", "JSONEncoding"]
 - !private ["CSo16UIViewController", "NSDictionary"]
 - !private ["CSo16UIViewController", "String"]
+- ["CSo16UIViewController", "UIBarButtonItem"]
 - !private ["CSo16UIViewController", "UIColor"]
 - !private ["CSo16UIViewController", "UIImage"]
 - ["CSo16UIViewController", "UIStoryboardSegue"]
@@ -990,7 +1117,10 @@ depends-member:
 - !private ["CSo16UIViewController", "helper"]
 - ["CSo16UIViewController", "init"]
 - ["CSo16UIViewController", "numberOfSections"]
+- !private ["CSo16UIViewController", "pair"]
+- ["CSo16UIViewController", "prepare"]
 - !private ["CSo16UIViewController", "print"]
+- ["CSo16UIViewController", "refreshPrices"]
 - ["CSo16UIViewController", "structureRequest"]
 - ["CSo16UIViewController", "tableView"]
 - ["CSo16UIViewController", "unwindToCurrencyList"]
@@ -1018,6 +1148,7 @@ depends-member:
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "deltaLabel"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "dequeueReusableCell"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "image"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "indexPath"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "insertRows"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "priceLabel"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "text"]
@@ -1058,6 +1189,7 @@ depends-member:
 - !private ["Ps35_HasCustomAnyHashableRepresentation", "substring"]
 - !private ["Ps9_Hashable", "Alamofire"]
 - ["Ps9_Hashable", "CurrencyConversion"]
+- !private ["Ps9_Hashable", "EditInfo"]
 - !private ["Ps9_Hashable", "IndexPath"]
 - !private ["Ps9_Hashable", "JSONEncoding"]
 - !private ["Ps9_Hashable", "UIColor"]
@@ -1070,15 +1202,20 @@ depends-member:
 - !private ["Ps9_Hashable", "currencyPairs"]
 - !private ["Ps9_Hashable", "deltaLabel"]
 - !private ["Ps9_Hashable", "dequeueReusableCell"]
+- !private ["Ps9_Hashable", "destination"]
 - !private ["Ps9_Hashable", "didReceiveMemoryWarning"]
 - !private ["Ps9_Hashable", "fatalError"]
 - !private ["Ps9_Hashable", "green"]
 - !private ["Ps9_Hashable", "helper"]
+- !private ["Ps9_Hashable", "identifier"]
 - !private ["Ps9_Hashable", "image"]
 - !private ["Ps9_Hashable", "index"]
+- !private ["Ps9_Hashable", "indexPath"]
 - !private ["Ps9_Hashable", "init"]
 - !private ["Ps9_Hashable", "insertRows"]
+- !private ["Ps9_Hashable", "pair"]
 - !private ["Ps9_Hashable", "post"]
+- !private ["Ps9_Hashable", "prepare"]
 - !private ["Ps9_Hashable", "priceLabel"]
 - !private ["Ps9_Hashable", "print"]
 - !private ["Ps9_Hashable", "red"]
@@ -1156,6 +1293,8 @@ depends-nominal:
 - !private "C9Alamofire11DataRequest"
 - !private "V9Alamofire12DataResponse"
 - !private "Vs10Dictionary"
+- !private "C8CoinPush26EditCurrencyViewController"
+- !private "V8CoinPush8EditInfo"
 - "Ps9Equatable"
 - "Ps25ExpressibleByArrayLiteral"
 - !private "Ps27ExpressibleByBooleanLiteral"
@@ -1260,7 +1399,7 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.apinotesc"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/StoreKit.apinotesc"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreText.apinotesc"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules/Alamofire.swiftmodule/x86_64.swiftmodule"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules/Alamofire.swiftmodule/x86_64.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
@@ -1272,124 +1411,123 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FIRInstanceID.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FirebaseInstanceID.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-umbrella.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRMutableData.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/DFPCustomRenderedAd.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADNativeCustomTemplateAd.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADNativeAd.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADMediatedNativeAd.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADCustomEventNativeAd.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADNativeAppInstallAd.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADMediatedNativeAppInstallAd.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADRewardBasedVideoAd.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADNativeContentAd.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADMediatedNativeContentAd.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADAdReward.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseReference.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADMediatedNativeAdNotificationSource.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADNativeAdImage.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataEventType.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FirebaseCore.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabase.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FirebaseDatabase.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Firebase/Core/Sources/Firebase.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADInAppPurchase.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADAdDelegate.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADNativeAdDelegate.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADMediatedNativeAdDelegate.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADCustomEventNativeAdDelegate.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADRewardBasedVideoAdDelegate.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADInAppPurchaseDelegate.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADAdSizeDelegate.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADInterstitialDelegate.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/DFPCustomRenderedInterstitialDelegate.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADCustomEventInterstitialDelegate.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADAdLoaderDelegate.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADAudioVideoManagerDelegate.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADVideoControllerDelegate.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADCustomEventBannerDelegate.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADAppEventDelegate.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADNativeExpressAdViewDelegate.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADBannerViewDelegate.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/DFPCustomRenderedBannerViewDelegate.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRServerValue.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADAdSize.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseMessaging/Frameworks/FirebaseMessaging.framework/Headers/FIRMessaging.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseMessaging/Frameworks/FirebaseMessaging.framework/Headers/FirebaseMessaging.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADInterstitial.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/DFPInterstitial.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADCustomEventInterstitial.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRLoggerLevel.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/Mediation/GADMAdNetworkAdapterProtocol.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/Mediation/GADMRewardBasedVideoAdNetworkAdapterProtocol.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/Mediation/GADMAdNetworkConnectorProtocol.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/Mediation/GADMRewardBasedVideoAdNetworkConnectorProtocol.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADNativeAdImage+Mediation.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRConfiguration.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRConfiguration.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRAnalyticsConfiguration.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsConfiguration.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRApp.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRApp.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADAdLoader.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADAudioVideoManager.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADVideoController.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADDebugOptionsViewController.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADCustomEventBanner.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADRequestError.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADCorrelator.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADNativeAppInstallAdAssetIDs.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADNativeContentAdAssetIDs.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADExtras.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADAdNetworkExtras.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADCustomEventExtras.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADMobileAds.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GoogleMobileAds.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRParameterNames.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIREventNames.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRUserPropertyNames.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GoogleMobileAdsDefines.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADAdLoaderAdTypes.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/Mediation/GADMEnums.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIROptions.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIROptions.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADNativeAdViewAdOptions.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADVideoOptions.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADNativeAdImageAdLoaderOptions.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADCorrelatorAdLoaderOptions.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/DFPBannerViewOptions.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADCustomEventParameters.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-Swift.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRTransactionResult.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataSnapshot.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRCoreSwiftNameSupport.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseSwiftNameSupport.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsSwiftNameSupport.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADRequest.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/DFPRequest.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/Mediation/GADMediationAdRequest.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADSearchRequest.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADDynamicHeightSearchRequest.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADCustomEventRequest.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADMediaView.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADNativeExpressAdView.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADBannerView.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/DFPBannerView.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADSearchBannerView.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADAdChoicesView.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseQuery.h"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Firebase/Core/Sources/module.modulemap"
-- "/Users/Bijibaba/Documents/Programs/CoinPush/Pods/Firebase/Core/Sources/module.modulemap"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules/module.modulemap"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Modules/module.modulemap"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Modules/module.modulemap"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseMessaging/Frameworks/FirebaseMessaging.framework/Modules/module.modulemap"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Modules/module.modulemap"
-- "/Users/Bijibaba/Documents/backup/CoinPush/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Modules/module.modulemap"
-interface-hash: "0ad466d50d60bfa920e84cefb1b31356"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FIRInstanceID.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FirebaseInstanceID.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-umbrella.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRMutableData.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/DFPCustomRenderedAd.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADNativeCustomTemplateAd.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADNativeAd.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADMediatedNativeAd.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADCustomEventNativeAd.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADNativeAppInstallAd.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADMediatedNativeAppInstallAd.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADRewardBasedVideoAd.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADNativeContentAd.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADMediatedNativeContentAd.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADAdReward.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseReference.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADMediatedNativeAdNotificationSource.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADNativeAdImage.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataEventType.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FirebaseCore.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabase.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FirebaseDatabase.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Firebase/Core/Sources/Firebase.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADInAppPurchase.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADAdDelegate.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADNativeAdDelegate.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADMediatedNativeAdDelegate.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADCustomEventNativeAdDelegate.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADRewardBasedVideoAdDelegate.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADInAppPurchaseDelegate.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADAdSizeDelegate.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADInterstitialDelegate.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/DFPCustomRenderedInterstitialDelegate.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADCustomEventInterstitialDelegate.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADAdLoaderDelegate.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADAudioVideoManagerDelegate.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADVideoControllerDelegate.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADCustomEventBannerDelegate.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADAppEventDelegate.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADNativeExpressAdViewDelegate.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADBannerViewDelegate.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/DFPCustomRenderedBannerViewDelegate.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRServerValue.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADAdSize.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseMessaging/Frameworks/FirebaseMessaging.framework/Headers/FIRMessaging.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseMessaging/Frameworks/FirebaseMessaging.framework/Headers/FirebaseMessaging.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADInterstitial.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/DFPInterstitial.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADCustomEventInterstitial.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRLoggerLevel.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/Mediation/GADMAdNetworkAdapterProtocol.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/Mediation/GADMRewardBasedVideoAdNetworkAdapterProtocol.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/Mediation/GADMAdNetworkConnectorProtocol.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/Mediation/GADMRewardBasedVideoAdNetworkConnectorProtocol.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADNativeAdImage+Mediation.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRConfiguration.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRConfiguration.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRAnalyticsConfiguration.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsConfiguration.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRApp.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRApp.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADAdLoader.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADAudioVideoManager.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADVideoController.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADDebugOptionsViewController.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADCustomEventBanner.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADRequestError.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADCorrelator.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADNativeAppInstallAdAssetIDs.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADNativeContentAdAssetIDs.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADExtras.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADAdNetworkExtras.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADCustomEventExtras.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADMobileAds.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GoogleMobileAds.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRParameterNames.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIREventNames.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRUserPropertyNames.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GoogleMobileAdsDefines.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADAdLoaderAdTypes.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/Mediation/GADMEnums.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIROptions.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIROptions.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADNativeAdViewAdOptions.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADVideoOptions.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADNativeAdImageAdLoaderOptions.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADCorrelatorAdLoaderOptions.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/DFPBannerViewOptions.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADCustomEventParameters.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-Swift.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRTransactionResult.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataSnapshot.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRCoreSwiftNameSupport.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseSwiftNameSupport.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsSwiftNameSupport.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADRequest.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/DFPRequest.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/Mediation/GADMediationAdRequest.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADSearchRequest.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADDynamicHeightSearchRequest.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADCustomEventRequest.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADMediaView.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADNativeExpressAdView.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADBannerView.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/DFPBannerView.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADSearchBannerView.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Headers/GADAdChoicesView.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseQuery.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Firebase/Core/Sources/module.modulemap"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules/module.modulemap"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Modules/module.modulemap"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Modules/module.modulemap"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseMessaging/Frameworks/FirebaseMessaging.framework/Modules/module.modulemap"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Modules/module.modulemap"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Google-Mobile-Ads-SDK/Frameworks/frameworks/GoogleMobileAds.framework/Modules/module.modulemap"
+interface-hash: "f220230f6751fa7ad8a3aee23361b1f0"

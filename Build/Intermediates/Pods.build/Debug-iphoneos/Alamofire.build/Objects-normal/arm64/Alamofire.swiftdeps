@@ -324,6 +324,6 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SwiftOnoneSupport.swiftmodule"
-- "/Users/Bijibaba/Documents/Programs/CoinPush/Pods/Target Support Files/Alamofire/Alamofire-umbrella.h"
-- "/Users/Bijibaba/Documents/Programs/CoinPush/Build/Intermediates/Pods.build/Debug-iphoneos/Alamofire.build/unextended-module.modulemap"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Pods/Target Support Files/Alamofire/Alamofire-umbrella.h"
+- "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Intermediates/Pods.build/Debug-iphoneos/Alamofire.build/unextended-module.modulemap"
 interface-hash: "04a31c0609168df2c34b1db6a32322d9"

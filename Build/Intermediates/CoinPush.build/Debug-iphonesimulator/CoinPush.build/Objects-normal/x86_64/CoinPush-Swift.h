@@ -169,6 +169,7 @@ SWIFT_CLASS("_TtC8CoinPush21CurrencyTableViewCell")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIBarButtonItem;
 @class UIStoryboardSegue;
 @class UITableView;
 @class NSBundle;
@@ -177,20 +178,42 @@ SWIFT_CLASS("_TtC8CoinPush27CurrencyTableViewController")
 @interface CurrencyTableViewController : UITableViewController
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
+- (IBAction)refreshPrices:(UIBarButtonItem * _Nonnull)sender;
 - (IBAction)unwindToCurrencyListWithSender:(UIStoryboardSegue * _Nonnull)sender;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
 - (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UITextField;
 @class UISwitch;
-@class UIBarButtonItem;
+@class UITextField;
 @class UITouch;
 @class UIEvent;
+
+SWIFT_CLASS("_TtC8CoinPush26EditCurrencyViewController")
+@interface EditCurrencyViewController : UIViewController <UITextFieldDelegate>
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified identiferLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified conversionLabel;
+@property (nonatomic, weak) IBOutlet UISwitch * _Null_unspecified pushSwitch;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified increaseLabel;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified increaseValue;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified decreaseLabel;
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified decreaseValue;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (IBAction)isSwitched:(UISwitch * _Nonnull)sender;
+- (void)textFieldDidEndEditing:(UITextField * _Nonnull)textField;
+- (void)textFieldDidBeginEditing:(UITextField * _Nonnull)textField;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class UIPickerView;
 
 SWIFT_CLASS("_TtC8CoinPush14ViewController")

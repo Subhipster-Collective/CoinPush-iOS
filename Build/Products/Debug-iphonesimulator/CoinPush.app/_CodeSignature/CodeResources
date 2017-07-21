@@ -22,23 +22,31 @@
 		</data>
 		<key>Base.lproj/Main.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib</key>
 		<data>
-		eJYg9Vsp8Y2U7WMXAtRKY8NsWGo=
+		99mMXNN8jS14EF5uJSJz8ojeZe0=
+		</data>
+		<key>Base.lproj/Main.storyboardc/FWJ-54-iHb-view-5M1-eZ-pzn.nib</key>
+		<data>
+		rSwewP3BNoocgKZxUFf/fyZB/B4=
 		</data>
 		<key>Base.lproj/Main.storyboardc/Info.plist</key>
 		<data>
-		W9U3uKS+b3lBOHq+2FLgkhYtXlw=
+		8OmTV8uwj/Kaw8TUIRhjW8xnhw8=
 		</data>
 		<key>Base.lproj/Main.storyboardc/UINavigationController-FhI-8M-52f.nib</key>
 		<data>
-		tFT/4ln6R9sig3tYI6ll0I0dmdA=
+		GOPY4lX1c6etL0C5+yZAJ1ZQgK0=
 		</data>
 		<key>Base.lproj/Main.storyboardc/UINavigationController-QDe-Bb-U35.nib</key>
 		<data>
-		qeoTmhnhn1IkhsQ1K8BGK+rtv2I=
+		yJyDQArzuXRBuLw6GgVlTT7ww0E=
+		</data>
+		<key>Base.lproj/Main.storyboardc/UIViewController-FWJ-54-iHb.nib</key>
+		<data>
+		EP7mf0QUOySSa+JnK/91JyokVAs=
 		</data>
 		<key>Base.lproj/Main.storyboardc/cP6-sl-ZKK-view-WGr-Ao-XiP.nib</key>
 		<data>
-		ppHv9QrumOnXAYJDtrQhbRK7Mt4=
+		AHsK3DH/LqUrmNyYjz9gT3d4ckM=
 		</data>
 		<key>Frameworks/Alamofire.framework/Alamofire</key>
 		<data>
@@ -187,55 +195,77 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			eJYg9Vsp8Y2U7WMXAtRKY8NsWGo=
+			99mMXNN8jS14EF5uJSJz8ojeZe0=
 			</data>
 			<key>hash2</key>
 			<data>
-			o+xwuqV72tkCRY690a3XpBVXrQLRiey4YKG0fycaJrw=
+			VZf9a0gFg8jhDYby4oMXf48dZ8KeqBUAoCRqqeapwOQ=
+			</data>
+		</dict>
+		<key>Base.lproj/Main.storyboardc/FWJ-54-iHb-view-5M1-eZ-pzn.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			rSwewP3BNoocgKZxUFf/fyZB/B4=
+			</data>
+			<key>hash2</key>
+			<data>
+			xDdL+odOjwTHlkPqVqo4o+V1s6igNyyHJdcf2NdSOWk=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			W9U3uKS+b3lBOHq+2FLgkhYtXlw=
+			8OmTV8uwj/Kaw8TUIRhjW8xnhw8=
 			</data>
 			<key>hash2</key>
 			<data>
-			7z/oFmvt9dFTLIe/U8FsjgKuurS4rjCgcHQxQkQwZFE=
+			zq3ACFiQtFJ5gunLMKiIzn6I5a2VmaDK0oRH1IyABsg=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/UINavigationController-FhI-8M-52f.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			tFT/4ln6R9sig3tYI6ll0I0dmdA=
+			GOPY4lX1c6etL0C5+yZAJ1ZQgK0=
 			</data>
 			<key>hash2</key>
 			<data>
-			5XcZ8BjyqoKCm0f7t7InnaorMtbhpZ4e+z7UqaVm0Tw=
+			tEndafoYom5Ba55/M4ISDqxyTtxKfdB4uHJE1UXNNQ4=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/UINavigationController-QDe-Bb-U35.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			qeoTmhnhn1IkhsQ1K8BGK+rtv2I=
+			yJyDQArzuXRBuLw6GgVlTT7ww0E=
 			</data>
 			<key>hash2</key>
 			<data>
-			jQgeMAEHM1ns5N/CSsCEa48uglNd1ehIkIQ1cziqf+8=
+			1BL9aXz0jH1IdaKv+hPFu3C3s8IkX54KWaBotTfhd8k=
+			</data>
+		</dict>
+		<key>Base.lproj/Main.storyboardc/UIViewController-FWJ-54-iHb.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			EP7mf0QUOySSa+JnK/91JyokVAs=
+			</data>
+			<key>hash2</key>
+			<data>
+			hrKyUmdJ45K2dvt3cprFyaKGsaW0CAUBX1pY2HVhsK0=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/cP6-sl-ZKK-view-WGr-Ao-XiP.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ppHv9QrumOnXAYJDtrQhbRK7Mt4=
+			AHsK3DH/LqUrmNyYjz9gT3d4ckM=
 			</data>
 			<key>hash2</key>
 			<data>
-			8HFQylkb0utHLrSaMBALCyqdadjSq4T4kvmo2rUVYbk=
+			wexuZp0GDGWEtOVclsFyiPgPkCr0Gk6lDbcA+1FK5Q8=
 			</data>
 		</dict>
 		<key>Frameworks/Alamofire.framework/Alamofire</key>

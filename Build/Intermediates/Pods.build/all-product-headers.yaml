@@ -4,12 +4,12 @@
   'roots': [
     {
       'type': 'directory',
-      'name': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers",
+      'name': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphoneos/Alamofire/Alamofire.framework/Headers",
       'contents': [
         {
           'type': 'file',
           'name': "Alamofire-Swift.h",
-          'external-contents': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-Swift.h"
+          'external-contents': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphoneos/Alamofire/Alamofire.framework/Headers/Alamofire-Swift.h"
         },
         {
           'type': 'file',
@@ -20,18 +20,18 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Modules",
+      'name': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphoneos/Alamofire/Alamofire.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Intermediates/Pods.build/Debug-iphonesimulator/Alamofire.build/module.modulemap"
+          'external-contents': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Intermediates/Pods.build/Debug-iphoneos/Alamofire.build/module.modulemap"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphonesimulator/GoogleToolboxForMac/GoogleToolboxForMac.framework/Headers",
+      'name': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphoneos/GoogleToolboxForMac/GoogleToolboxForMac.framework/Headers",
       'contents': [
         {
           'type': 'file',
@@ -51,7 +51,7 @@
         {
           'type': 'file',
           'name': "GoogleToolboxForMac-Swift.h",
-          'external-contents': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphonesimulator/GoogleToolboxForMac/GoogleToolboxForMac.framework/Headers/GoogleToolboxForMac-Swift.h"
+          'external-contents': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphoneos/GoogleToolboxForMac/GoogleToolboxForMac.framework/Headers/GoogleToolboxForMac-Swift.h"
         },
         {
           'type': 'file',
@@ -62,18 +62,18 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphonesimulator/GoogleToolboxForMac/GoogleToolboxForMac.framework/Modules",
+      'name': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphoneos/GoogleToolboxForMac/GoogleToolboxForMac.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Intermediates/Pods.build/Debug-iphonesimulator/GoogleToolboxForMac.build/module.modulemap"
+          'external-contents': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Intermediates/Pods.build/Debug-iphoneos/GoogleToolboxForMac.build/module.modulemap"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphonesimulator/Pods_CoinPush.framework/Headers",
+      'name': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphoneos/Pods_CoinPush.framework/Headers",
       'contents': [
         {
           'type': 'file',
@@ -83,24 +83,24 @@
         {
           'type': 'file',
           'name': "Pods_CoinPush-Swift.h",
-          'external-contents': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphonesimulator/Pods_CoinPush.framework/Headers/Pods_CoinPush-Swift.h"
+          'external-contents': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphoneos/Pods_CoinPush.framework/Headers/Pods_CoinPush-Swift.h"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphonesimulator/Pods_CoinPush.framework/Modules",
+      'name': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphoneos/Pods_CoinPush.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods-CoinPush.build/module.modulemap"
+          'external-contents': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Intermediates/Pods.build/Debug-iphoneos/Pods-CoinPush.build/module.modulemap"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphonesimulator/Protobuf/Protobuf.framework/Headers",
+      'name': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphoneos/Protobuf/Protobuf.framework/Headers",
       'contents': [
         {
           'type': 'file',
@@ -270,7 +270,7 @@
         {
           'type': 'file',
           'name': "Protobuf-Swift.h",
-          'external-contents': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphonesimulator/Protobuf/Protobuf.framework/Headers/Protobuf-Swift.h"
+          'external-contents': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphoneos/Protobuf/Protobuf.framework/Headers/Protobuf-Swift.h"
         },
         {
           'type': 'file',
@@ -306,12 +306,12 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphonesimulator/Protobuf/Protobuf.framework/Modules",
+      'name': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Products/Debug-iphoneos/Protobuf/Protobuf.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Intermediates/Pods.build/Debug-iphonesimulator/Protobuf.build/module.modulemap"
+          'external-contents': "/Users/Bijibaba/Documents/Programs/CoinPush-iOS/Build/Intermediates/Pods.build/Debug-iphoneos/Protobuf.build/module.modulemap"
         }
       ]
     }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		700082721F20A46C0027BE98 /* EditCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700082711F20A46C0027BE98 /* EditCurrencyViewController.swift */; };
+		700082741F21573E0027BE98 /* EditInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700082731F21573E0027BE98 /* EditInfo.swift */; };
 		709C32911F1F5A7C004BD25A /* CurrencyConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709C32901F1F5A7C004BD25A /* CurrencyConversion.swift */; };
 		709C32931F1F5A83004BD25A /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709C32921F1F5A83004BD25A /* CurrencyTableViewCell.swift */; };
 		709C32951F1F5A8F004BD25A /* CurrencyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709C32941F1F5A8F004BD25A /* CurrencyTableViewController.swift */; };
@@ -60,6 +62,8 @@
 		190A758CFCD9D2B81B3E3D3B /* Pods-CoinPush.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinPush.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoinPush/Pods-CoinPush.release.xcconfig"; sourceTree = "<group>"; };
 		28F59654104B51CF7D10C146 /* Pods-CoinPush Watch app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinPush Watch app.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoinPush Watch app/Pods-CoinPush Watch app.release.xcconfig"; sourceTree = "<group>"; };
 		3A7668084F953BFBC9BA1B86 /* Pods-CoinPush.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinPush.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoinPush/Pods-CoinPush.debug.xcconfig"; sourceTree = "<group>"; };
+		700082711F20A46C0027BE98 /* EditCurrencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditCurrencyViewController.swift; path = ../EditCurrencyViewController.swift; sourceTree = "<group>"; };
+		700082731F21573E0027BE98 /* EditInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInfo.swift; sourceTree = "<group>"; };
 		700299981F0B8D23006DD656 /* CoinPush.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoinPush.entitlements; sourceTree = "<group>"; };
 		709C32901F1F5A7C004BD25A /* CurrencyConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyConversion.swift; sourceTree = "<group>"; };
 		709C32921F1F5A83004BD25A /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
@@ -88,16 +92,6 @@
 		FB49666B1F0304A5008CD42B /* CoinPushUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinPushUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB49666F1F0304A5008CD42B /* CoinPushUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinPushUITests.swift; sourceTree = "<group>"; };
 		FB4966711F0304A5008CD42B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBB6FD751F1207D200670A98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		FBB6FD771F1207D200670A98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FBB6FD791F1207D200670A98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBB6FD841F1207D200670A98 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		FBB6FD851F1207D200670A98 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		FBB6FD871F1207D200670A98 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		FBB6FD891F1207D200670A98 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		FBB6FD8B1F1207D200670A98 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
-		FBB6FD8D1F1207D200670A98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FBB6FD8F1F1207D200670A98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDE1D0FD07DC3F6D6998266B /* Pods-CoinPush Watch app Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinPush Watch app Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoinPush Watch app Extension/Pods-CoinPush Watch app Extension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,8 +158,6 @@
 				FB49664E1F0304A5008CD42B /* CoinPush */,
 				FB4966631F0304A5008CD42B /* CoinPushTests */,
 				FB49666E1F0304A5008CD42B /* CoinPushUITests */,
-				FBB6FD731F1207D200670A98 /* CoinPush WatchKit App */,
-				FBB6FD821F1207D200670A98 /* CoinPush WatchKit App Extension */,
 				FB49664D1F0304A5008CD42B /* Products */,
 				A6473414BED92188CB7F55AF /* Pods */,
 				EE51DAC5F27AB6E1B2E23E54 /* Frameworks */,
@@ -192,11 +184,13 @@
 				709C32941F1F5A8F004BD25A /* CurrencyTableViewController.swift */,
 				709C32921F1F5A83004BD25A /* CurrencyTableViewCell.swift */,
 				70E3C4BD1F20083900110E62 /* ViewController.swift */,
+				700082711F20A46C0027BE98 /* EditCurrencyViewController.swift */,
 				709C32961F1F5AB2004BD25A /* helper.swift */,
 				FB4966561F0304A5008CD42B /* Assets.xcassets */,
 				FB4966581F0304A5008CD42B /* LaunchScreen.storyboard */,
 				FB49665B1F0304A5008CD42B /* Info.plist */,
 				FB0F30CB1F0E252D0047396B /* GoogleService-Info.plist */,
+				700082731F21573E0027BE98 /* EditInfo.swift */,
 			);
 			path = CoinPush;
 			sourceTree = "<group>";
@@ -217,38 +211,6 @@
 				FB4966711F0304A5008CD42B /* Info.plist */,
 			);
 			path = CoinPushUITests;
-			sourceTree = "<group>";
-		};
-		FBB6FD731F1207D200670A98 /* CoinPush WatchKit App */ = {
-			isa = PBXGroup;
-			children = (
-				FBB6FD741F1207D200670A98 /* Interface.storyboard */,
-				FBB6FD771F1207D200670A98 /* Assets.xcassets */,
-				FBB6FD791F1207D200670A98 /* Info.plist */,
-			);
-			path = "CoinPush WatchKit App";
-			sourceTree = "<group>";
-		};
-		FBB6FD821F1207D200670A98 /* CoinPush WatchKit App Extension */ = {
-			isa = PBXGroup;
-			children = (
-				FBB6FD851F1207D200670A98 /* InterfaceController.swift */,
-				FBB6FD871F1207D200670A98 /* ExtensionDelegate.swift */,
-				FBB6FD891F1207D200670A98 /* NotificationController.swift */,
-				FBB6FD8B1F1207D200670A98 /* ComplicationController.swift */,
-				FBB6FD8D1F1207D200670A98 /* Assets.xcassets */,
-				FBB6FD8F1F1207D200670A98 /* Info.plist */,
-				FBB6FD831F1207D200670A98 /* Supporting Files */,
-			);
-			path = "CoinPush WatchKit App Extension";
-			sourceTree = "<group>";
-		};
-		FBB6FD831F1207D200670A98 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				FBB6FD841F1207D200670A98 /* PushNotificationPayload.apns */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -539,8 +501,10 @@
 				70E3C4BE1F20083900110E62 /* ViewController.swift in Sources */,
 				709C32951F1F5A8F004BD25A /* CurrencyTableViewController.swift in Sources */,
 				709C32911F1F5A7C004BD25A /* CurrencyConversion.swift in Sources */,
+				700082741F21573E0027BE98 /* EditInfo.swift in Sources */,
 				709C32971F1F5AB2004BD25A /* helper.swift in Sources */,
 				709C32931F1F5A83004BD25A /* CurrencyTableViewCell.swift in Sources */,
+				700082721F20A46C0027BE98 /* EditCurrencyViewController.swift in Sources */,
 				FB4966501F0304A5008CD42B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -591,14 +555,6 @@
 				FB4966591F0304A5008CD42B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		FBB6FD741F1207D200670A98 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FBB6FD751F1207D200670A98 /* Base */,
-			);
-			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
