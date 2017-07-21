@@ -31,17 +31,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     var conversion: CurrencyConversion?
     
-    let fromOptions = ["Ethereum (ETH)","Bitcoin (BTC)"]
+    let fromOptions = ["Ethereum (ETH)","Bitcoin (BTC)","Digital Dash (DGB)","Ethereum Classic (ETC)", "Litecoin (LTC)"]
     
-    let toOptions = ["🇺🇸 U.S Dollar (USD)", "🇪🇺 Euro (EUR)"]
+    let toOptions = ["🇺🇸 U.S Dollar (USD)", "🇪🇺 Euro (EUR)","🇨🇳 Chinese Yuan (CNY)","🇬🇧 British Pound (GBP), "]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //setup initial visibility
         pushLabel.isEnabled = false
-        pushSwitch.isEnabled = false
-        saveButton.isEnabled = false
         increaseLabel.isEnabled = false
         decreaseLabel.isEnabled = false
         

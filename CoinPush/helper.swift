@@ -10,9 +10,9 @@ import Foundation
 
 class helper {
     
-    static var labelDict: [String:String] = ["ETH": "Ethereum","BTC": "Bitcoin", "USD": "U.S Dollars", "EUR": "Euros"]
+    static var labelDict: [String:String] = ["ETH": "Ethereum","BTC": "Bitcoin", "ETC" :"Ethereum Classic", "DGB": "Digital Dash" ,"LTC": "Litecoin","USD": "U.S Dollars", "EUR": "Euros", "CNY" : "Chinese Yuan", "GBP" : "Pounds"]
     
-    static var symbolDict: [String: String] = ["USD" : "$",  "EUR" : "€", "BTC" :"Ƀ", "ETH" : "Ξ"]
+    static var symbolDict: [String: String] = ["USD" : "$",  "EUR" : "€", "BTC" :"Ƀ", "ETH" : "Ξ","LTC" : "Ł","ETC" : "⟠", "CNY" : "¥", "GBP" : "£"]
     
     
     static func getCurrencyIdentifier(rawText: String) -> String{
@@ -22,11 +22,20 @@ class helper {
                 returnExpression = "ETH"
             case "Bitcoin (BTC)":
                 returnExpression = "BTC"
+            case "Digital Dash (DGB)":
+                returnExpression = "DGB"
+            case "Ethereum Classic (ETC)":
+                returnExpression = "ETC"
+            case "Litecoin (LTC)":
+                returnExpression = "LTC"
             case "🇺🇸 U.S Dollar (USD)":
                 returnExpression = "USD"
             case "🇪🇺 Euro (EUR)":
                 returnExpression = "EUR"
-            
+            case "🇨🇳 Chinese Yuan (CNY)":
+                returnExpression = "CNY"
+            case "🇬🇧 British Pound (GBP)":
+                returnExpression = "GBP"
             default:
                 fatalError("passed string had no match")
             
