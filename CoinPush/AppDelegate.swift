@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  CoinPush
 //
-//  Created by Austin Conlon on 6/27/17.
+//  Created by Bijan Massoumi on 6/27/17.
 //  Copyright © 2017 Goods and Services. All rights reserved.
 //
 

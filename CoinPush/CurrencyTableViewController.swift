@@ -36,6 +36,14 @@ class CurrencyTableViewController: UITableViewController {
     
     
     //MARK: Actions
+    
+    @IBAction func refreshPrices(_ sender: UIBarButtonItem) {
+        if (currencyPairs.count > 0){
+            let request = structureRequest()
+            updatePriceLabels(request: request)
+        }
+    }
+    
     @IBAction func unwindToCurrencyList(sender: UIStoryboardSegue) {
         if let source = sender.source as?
             ViewController, let conversionData = source.conversion {
@@ -178,14 +186,38 @@ class CurrencyTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        switch(segue.identifier ?? "") {
+            case "AddCurrency":
+                print("adding new item")
+            case "ShowDetail":
+                guard let editCurrencyView = segue.destination as? EditCurrencyViewController else {
+                    fatalError("Unexpected destination: \(segue.destination)")
+                }
+                guard let selectedCell = sender as? CurrencyTableViewCell else {
+                    fatalError("Unexpected sender: \(sender)")
+                }
+                guard let index = tableView.indexPath(for: selectedCell) else {
+                    fatalError("The Selected cell ain't in the table m8")
+                }
+                
+                let conversion  = currencyPairs[index.row]
+                let price = selectedCell.priceLabel.text!
+                let delta = selectedCell.deltaLabel.text!
+                
+                let passingPair = EditInfo(pair: conversion, currentPrice: price, currentDelta: delta)
+                editCurrencyView.pair = passingPair
+            
+        default:
+            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+        
+        }
     }
-    */
+ 
 
 }

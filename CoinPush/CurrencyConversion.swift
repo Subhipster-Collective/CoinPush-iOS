@@ -21,7 +21,7 @@ class CurrencyConversion {
     //MARK: Initialization
     
     init?(fromTag: String, toTag: String, pushEnabled: Bool, increaseValue: Float32?, decreaseValue: Float32?) {
-
+        
         self.fromTag = fromTag
         self.toTag = toTag
         self.pushEnabled = pushEnabled

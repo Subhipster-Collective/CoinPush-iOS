@@ -110,18 +110,19 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let toTag = helper.getCurrencyIdentifier(rawText: toTextField!.text!)
         
         let pushEnabled1 = pushSwitch.isOn
-        var increase : Float32?
-        var decrease : Float32?
+        var increase : Float32!
+        var decrease : Float32!
         
-        if let val = increaseValue?.text {
-            increase = Float(val)
+        if let val = Float((increaseValue?.text?.components(separatedBy: "%")[0])!) {
+            increase = val
         }
-        if let val = decreaseLabel?.text {
-            decrease = Float(val)
+        if let val = Float((decreaseValue?.text?.components(separatedBy: "%")[0])!) {
+            decrease = val
         }
         
         // Set the meal to be passed to MealTableViewController after the unwind segue.
         conversion = CurrencyConversion(fromTag: fromTag, toTag: toTag, pushEnabled: pushEnabled1, increaseValue: increase, decreaseValue: decrease)
+
     }
     
     
@@ -166,6 +167,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         
     }
+    
     
     //MARK: UITextField Delegate
     
