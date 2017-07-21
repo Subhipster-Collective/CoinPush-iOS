@@ -45,6 +45,7 @@ class CurrencyTableViewController: UITableViewController {
     }
     
     @IBAction func unwindToCurrencyList(sender: UIStoryboardSegue) {
+        
         if let source = sender.source as?
             ViewController, let conversionData = source.conversion {
             
@@ -53,11 +54,16 @@ class CurrencyTableViewController: UITableViewController {
                     return
                 }
             }
-            
             //add a new conversion to list
             let newIndexPath = IndexPath(row: currencyPairs.count, section: 0)
             currencyPairs.append(conversionData)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
+            
+        } else if let source = sender.source as? EditCurrencyViewController, let conversionData = source.pair {
+            let selectedIndexPath = tableView.indexPathForSelectedRow
+            // Update an existing meal.
+            currencyPairs[(selectedIndexPath?.row)!] = conversionData.Pair
+            //tableView.reloadRows(at: [selectedIndexPath!], with: .none)
             
         }
     }

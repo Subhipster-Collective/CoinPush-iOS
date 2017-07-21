@@ -102,10 +102,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             return
         }
         
-    
-        
-        
-        
         let fromTag = helper.getCurrencyIdentifier(rawText: fromTextField!.text!)
         let toTag = helper.getCurrencyIdentifier(rawText: toTextField!.text!)
         

@@ -165,7 +165,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Edit" id="SRi-eb-r0a"/>
+                    <navigationItem key="navigationItem" title="Edit" id="SRi-eb-r0a">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8Vh-XE-jYk">
+                            <connections>
+                                <segue destination="Set-Y8-DL9" kind="unwind" unwindAction="unwindToCurrencyListWithSender:" id="YYh-1F-ZpP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="conversionLabel" destination="75X-md-MWd" id="kOf-ak-6Oi"/>
                         <outlet property="decreaseLabel" destination="Xg2-ge-TpY" id="wbX-Bf-xxH"/>
@@ -177,6 +183,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="82K-eY-W59" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Set-Y8-DL9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1157.5999999999999" y="1462.2188905547227"/>
         </scene>
