@@ -13,7 +13,6 @@ import os.log
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UITextFieldDelegate {
     
-    
     @IBOutlet weak var fromTextField: UITextField!
     @IBOutlet weak var toTextField: UITextField!
     
@@ -27,7 +26,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var decreaseValue: UITextField!
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    
+        
     var conversion: CurrencyConversion?
     
     let fromOptions = ["Bitcoin (BTC)","Ethereum (ETH)","Dash (DGB)","Ethereum Classic (ETC)", "Litecoin (LTC)"]
@@ -43,6 +42,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         decreaseLabel.isEnabled = false
         
         hideAdvancedPush()
+        updatePushStates()
         
         //tag fields for distinguishing later
         let fromPickerView = UIPickerView()
@@ -175,7 +175,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             } else {
                 decreaseLabel.isEnabled = false
             }
-            textField.placeholder? = "0.00%"
+            textField.text? = "0.00%"
             
         } else {
             if (textField.tag == 1) {

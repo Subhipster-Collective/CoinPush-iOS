@@ -8,8 +8,13 @@
 
 import UIKit
 import Alamofire
+import GoogleMobileAds
 
-class CurrencyTableViewController: UITableViewController {
+
+class CurrencyTableViewController: UITableViewController,  GADBannerViewDelegate {
+    
+    var bannerView: GADBannerView!
+    var screenOffset: CGFloat!
     
     var currencyPairs = [CurrencyConversion]() {
         didSet {
@@ -23,6 +28,25 @@ class CurrencyTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Ad display
+
+        bannerView = GADBannerView(adSize: kGADAdSizeFullBanner)
+         screenOffset  = UIApplication.shared.statusBarFrame.height + (self.navigationController?.navigationBar.bounds.height)! + bannerView.frame.height
+        print(UIScreen.main.bounds.height)
+        bannerView.frame = CGRect(x: 0.0,
+                                  y: UIScreen.main.bounds.height - screenOffset ,
+                                  width: bannerView.frame.width,
+                                  height: bannerView.frame.height)
+        bannerView.delegate = self
+        self.view.addSubview(bannerView)
+        bannerView.adUnitID = Passwords.adMobAdID
+        bannerView.rootViewController = self
+        /*let request = GADRequest()
+        request.testDevices = [ kGADSimulatorID]                    // All simulators
+        bannerView.load(request)*/
+        
+        
         navigationItem.leftBarButtonItem = editButtonItem
 
         
@@ -70,6 +94,11 @@ class CurrencyTableViewController: UITableViewController {
             //tableView.reloadRows(at: [selectedIndexPath!], with: .none)
             
         }
+        let JSON = generateInputJson()
+        print(JSON)
+        
+        helper.writeUserData(Data: JSON)
+        
     }
     
     // MARK: - Table view data source and delegate
@@ -100,20 +129,37 @@ class CurrencyTableViewController: UITableViewController {
         
         return cell
     }
+
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    
+    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            let pair = currencyPairs[indexPath.row]
+            let removalString = pair.fromTag + ":" + pair.toTag
             currencyPairs.remove(at: indexPath.row)
+            helper.deletePair(pairString: removalString)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
     
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+   /* override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return bannerView
     }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        return bannerView.frame.height
+    }*/
+    
     
     //MARK: private methods
     private func updatePriceLabels(request: String){
@@ -175,22 +221,46 @@ class CurrencyTableViewController: UITableViewController {
         return requestUrl
     }
     
+    private func generateInputJson() -> [String: [String:String] ] {
+        var returnDict = [String: [String:String] ]()
+        for convsersion in currencyPairs {
+            let conversionKey = convsersion.fromTag + ":" + convsersion.toTag
+            returnDict[conversionKey] = [String:String]()
+            
+            if (convsersion.decreaseValue != 0 && convsersion.pushEnabled) {
+                returnDict[conversionKey]!["pushDecreased"] = "\(convsersion.decreaseValue!)"
+                returnDict[conversionKey]!["thresholdDecreased"]  = "true"
+            } else {
+                returnDict[conversionKey]!["pushDecreased"] = "\(convsersion.decreaseValue!)"
+                returnDict[conversionKey]!["thresholdDecreased"] = "false"
+            }
+            
+            if (convsersion.increaseValue != 0 && convsersion.pushEnabled) {
+                returnDict[conversionKey]!["pushIncreased"] = "\(convsersion.increaseValue!)"
+                returnDict[conversionKey]!["thresholdIncreased"] = "true"
+            } else {
+                returnDict[conversionKey]!["pushIncreased"] = "\(convsersion.increaseValue!)"
+                returnDict[conversionKey]!["thresholdIncreased"] = "false"
+            }
+        }
+        
+        return returnDict
+    }
+    
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+    //MARK: adDelegate
+    /// Tells the delegate an ad request loaded an ad.
+    
+    func adViewDidReceiveAd(_ bannerView: GADBannerView!) {
+        print("Banner loaded successfully")
 
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    /// Tells the delegate an ad request failed.
+    func adView(_ bannerView: GADBannerView,
+                didFailToReceiveAdWithError error: GADRequestError) {
+        print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
     }
-    */
-
     
     // MARK: - Navigation
 
