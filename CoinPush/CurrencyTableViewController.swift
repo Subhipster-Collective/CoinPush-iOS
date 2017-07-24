@@ -49,6 +49,10 @@ class CurrencyTableViewController: UITableViewController,  GADBannerViewDelegate
         
         navigationItem.leftBarButtonItem = editButtonItem
 
+        // Load any saved meals, otherwise load sample data.
+        if let savedPairs = loadMeals() {
+            currencyPairs += savedPairs
+        }
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -94,9 +98,11 @@ class CurrencyTableViewController: UITableViewController,  GADBannerViewDelegate
             //tableView.reloadRows(at: [selectedIndexPath!], with: .none)
             
         }
-        let JSON = generateInputJson()
-        print(JSON)
+        // Save the meals.
+        saveMeals()
         
+        //send data to Firebase
+        let JSON = generateInputJson()
         helper.writeUserData(Data: JSON)
         
     }
@@ -143,6 +149,9 @@ class CurrencyTableViewController: UITableViewController,  GADBannerViewDelegate
             let pair = currencyPairs[indexPath.row]
             let removalString = pair.fromTag + ":" + pair.toTag
             currencyPairs.remove(at: indexPath.row)
+            // Save the meals.
+            saveMeals()
+            //delete form firebase
             helper.deletePair(pairString: removalString)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
@@ -245,6 +254,18 @@ class CurrencyTableViewController: UITableViewController,  GADBannerViewDelegate
         }
         
         return returnDict
+    }
+    
+    private func saveMeals() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(currencyPairs, toFile: CurrencyConversion.ArchiveURL.path)
+        if isSuccessfulSave {
+            print("Meals successfully saved.")
+        } else {
+            print("Failed to save meals...")
+        }
+    }
+    private func loadMeals() -> [CurrencyConversion]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: CurrencyConversion.ArchiveURL.path) as? [CurrencyConversion]
     }
     
 
