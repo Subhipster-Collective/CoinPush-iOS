@@ -62,10 +62,10 @@ class helper {
     static func writeUserData(Data: [String:[String:String]]){
         let ref = Database.database().reference()
         for conversion in Data.keys {
-            let pushDecreased = ["pushDecreased" : Data[conversion]!["thresholdDecreased"]!.toBool()!]
-            let pushIncreased = ["pushIncreased" : Data[conversion]!["thresholdIncreased"]!.toBool()!]
-            let thresholdIncreased = ["thresholdIncreased" : Float(Data[conversion]!["pushIncreased"]!)!]
-            let thresholdDecreased = ["thresholdDecreased" : Float(Data[conversion]!["pushDecreased"]!)!]
+            let pushDecreased = Data[conversion]!["thresholdDecreased"]!.toBool()!
+            let pushIncreased = Data[conversion]!["thresholdIncreased"]!.toBool()!
+            let thresholdIncreased = Float(Data[conversion]!["pushIncreased"]!)!
+            let thresholdDecreased = Float(Data[conversion]!["pushDecreased"]!)!
             
             let input = ["pushDecreased": pushDecreased, "pushIncreased": pushIncreased, "thresholdIncreased": thresholdIncreased, "thresholdDecreased": thresholdDecreased] as [String : Any]
             
