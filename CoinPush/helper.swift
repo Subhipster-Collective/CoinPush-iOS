@@ -10,6 +10,20 @@ import FirebaseDatabase
 import Firebase
 import UIKit
 
+
+extension String {
+    func toBool() -> Bool? {
+        switch self {
+        case "True", "true", "yes", "1":
+            return true
+        case "False", "false", "no", "0":
+            return false
+        default:
+            return nil
+        }
+    }
+}
+
 class helper {
     
 
@@ -46,14 +60,21 @@ class helper {
         return returnExpression
     }
     static func writeUserData(Data: [String:[String:String]]){
-        var ref = Database.database().reference()
+        let ref = Database.database().reference()
         for conversion in Data.keys {
-            ref.child("users").child(Passwords.userID).child("conversions").child(conversion).setValue(Data[conversion]!)
+            let pushDecreased = ["pushDecreased" : Data[conversion]!["thresholdDecreased"]!.toBool()!]
+            let pushIncreased = ["pushIncreased" : Data[conversion]!["thresholdIncreased"]!.toBool()!]
+            let thresholdIncreased = ["thresholdIncreased" : Float(Data[conversion]!["pushIncreased"]!)!]
+            let thresholdDecreased = ["thresholdDecreased" : Float(Data[conversion]!["pushDecreased"]!)!]
+            
+            let input = ["pushDecreased": pushDecreased, "pushIncreased": pushIncreased, "thresholdIncreased": thresholdIncreased, "thresholdDecreased": thresholdDecreased] as [String : Any]
+            
+            ref.child("users").child(Passwords.userID).child("conversions").child(conversion).setValue(input)
         }
         
     }
     static func deletePair(pairString: String) {
-        var ref = Database.database().reference()
+        let ref = Database.database().reference()
         ref.child("users").child(Passwords.userID).child("conversions").child(pairString).removeValue()
   }
     
