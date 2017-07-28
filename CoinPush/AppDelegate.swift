@@ -54,7 +54,7 @@ UNUserNotificationCenterDelegate, MessagingDelegate {
         Auth.auth().signInAnonymously() { (user, error) in
             Passwords.userID = user!.uid
         }
-
+        Passwords.userRegistration = Messaging.messaging().fcmToken
         
         return true
     }

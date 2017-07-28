@@ -50,7 +50,7 @@ class CurrencyTableViewController: UITableViewController,  GADBannerViewDelegate
         navigationItem.leftBarButtonItem = editButtonItem
 
         // Load any saved meals, otherwise load sample data.
-        if let savedPairs = loadMeals() {
+        if let savedPairs = loadPairs() {
             currencyPairs += savedPairs
         }
         
@@ -99,7 +99,7 @@ class CurrencyTableViewController: UITableViewController,  GADBannerViewDelegate
             
         }
         // Save the meals.
-        saveMeals()
+        savePairs()
         
         //send data to Firebase
         let JSON = generateInputJson()
@@ -150,7 +150,7 @@ class CurrencyTableViewController: UITableViewController,  GADBannerViewDelegate
             let removalString = pair.fromTag + ":" + pair.toTag
             currencyPairs.remove(at: indexPath.row)
             // Save the meals.
-            saveMeals()
+            savePairs()
             //delete form firebase
             helper.deletePair(pairString: removalString)
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -256,15 +256,15 @@ class CurrencyTableViewController: UITableViewController,  GADBannerViewDelegate
         return returnDict
     }
     
-    private func saveMeals() {
+    private func savePairs() {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(currencyPairs, toFile: CurrencyConversion.ArchiveURL.path)
         if isSuccessfulSave {
-            print("Meals successfully saved.")
+            print("pairs successfully saved.")
         } else {
-            print("Failed to save meals...")
+            print("Failed to save pairs...")
         }
     }
-    private func loadMeals() -> [CurrencyConversion]? {
+    private func loadPairs() -> [CurrencyConversion]? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: CurrencyConversion.ArchiveURL.path) as? [CurrencyConversion]
     }
     

@@ -70,6 +70,7 @@ class helper {
             let input = ["pushDecreased": pushDecreased, "pushIncreased": pushIncreased, "thresholdIncreased": thresholdIncreased, "thresholdDecreased": thresholdDecreased] as [String : Any]
             
             ref.child("users").child(Passwords.userID).child("conversions").child(conversion).setValue(input)
+            ref.child("users").child(Passwords.userID).updateChildValues(["token" : Passwords.userRegistration])
         }
         
     }
