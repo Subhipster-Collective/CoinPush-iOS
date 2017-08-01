@@ -25,14 +25,13 @@ extension String {
 }
 
 class helper {
-    
 
     static var labelDict: [String:String] = ["ETH": "Ethereum","BTC": "Bitcoin", "ETC" :"Ethereum Classic", "DGB": "Digital Dash" ,"LTC": "Litecoin","USD": "U.S Dollars", "EUR": "Euros", "CNY" : "Chinese Yuan", "GBP" : "Pounds"]
     
     static var symbolDict: [String: String] = ["USD" : "$",  "EUR" : "€", "BTC" :"Ƀ", "ETH" : "Ξ","LTC" : "Ł","ETC" : "⟠", "CNY" : "¥", "GBP" : "£"]
     
     
-    static func getCurrencyIdentifier(rawText: String) -> String{
+    static func getCurrencyIdentifier(rawText: String) -> String!{
         var returnExpression : String
         switch rawText {
             case "Ethereum (ETH)":
@@ -54,7 +53,7 @@ class helper {
             case "🇬🇧 British Pound (GBP)":
                 returnExpression = "GBP"
             default:
-                fatalError("passed string had no match")
+                return nil
             
             }
         return returnExpression
@@ -69,14 +68,16 @@ class helper {
             
             let input = ["pushDecreased": pushDecreased, "pushIncreased": pushIncreased, "thresholdIncreased": thresholdIncreased, "thresholdDecreased": thresholdDecreased] as [String : Any]
             
-            ref.child("users").child(Passwords.userID).child("conversions").child(conversion).setValue(input)
+            ref.child("users").child(Passwords.userID).child("conversionPrefs").child(conversion).setValue(input)
             ref.child("users").child(Passwords.userID).updateChildValues(["token" : Passwords.userRegistration])
+            ref.child("users").child(Passwords.userID).child("timeLastPushed").updateChildValues([conversion : 0])
         }
         
     }
     static func deletePair(pairString: String) {
         let ref = Database.database().reference()
-        ref.child("users").child(Passwords.userID).child("conversions").child(pairString).removeValue()
+        ref.child("users").child(Passwords.userID).child("conversionPrefs").child(pairString).removeValue()
+        ref.child("users").child(Passwords.userID).child("timeLastPushed").child(pairString).removeValue()
   }
     
     

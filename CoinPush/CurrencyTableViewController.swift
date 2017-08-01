@@ -9,6 +9,8 @@
 import UIKit
 import Alamofire
 import GoogleMobileAds
+import FirebaseDatabase
+
 
 
 class CurrencyTableViewController: UITableViewController,  GADBannerViewDelegate {
@@ -49,10 +51,19 @@ class CurrencyTableViewController: UITableViewController,  GADBannerViewDelegate
         
         navigationItem.leftBarButtonItem = editButtonItem
 
-        // Load any saved meals, otherwise load sample data.
+        // Load any saved pairs, otherwise load sample data.
         if let savedPairs = loadPairs() {
             currencyPairs += savedPairs
         }
+        
+        let ref = Database.database().reference()
+        ref.child("conversionData").observe(.childChanged, with: { (snapShot) in
+            if (self.currencyPairs.count > 0){
+                let request = self.structureRequest()
+                self.updatePriceLabels(request: request)
+            }
+            
+        })
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -69,12 +80,6 @@ class CurrencyTableViewController: UITableViewController,  GADBannerViewDelegate
     
     //MARK: Actions
     
-    @IBAction func refreshPrices(_ sender: UIBarButtonItem) {
-        if (currencyPairs.count > 0){
-            let request = structureRequest()
-            updatePriceLabels(request: request)
-        }
-    }
     
     @IBAction func unwindToCurrencyList(sender: UIStoryboardSegue) {
         
@@ -204,7 +209,7 @@ class CurrencyTableViewController: UITableViewController,  GADBannerViewDelegate
                         if (pct.substring(to: index) == "-"){
                             cell?.deltaLabel.textColor = UIColor.red
                         } else {
-                            cell?.deltaLabel.textColor = UIColor.green
+                            cell?.deltaLabel.textColor =  UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
                         }
                         
                     }

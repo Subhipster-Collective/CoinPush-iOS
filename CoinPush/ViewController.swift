@@ -44,26 +44,49 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         hideAdvancedPush()
         updatePushStates()
         
-        //tag fields for distinguishing later
+        //setup picker and toolbar
         let fromPickerView = UIPickerView()
-        fromPickerView.tag = 1
-        
         let toPickerView = UIPickerView()
-        toPickerView.tag = 2
         
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
+        toolBar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(donePicker))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(donePicker))
+        
+        toolBar.setItems([spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        
+        
+        //setup tags
+        fromPickerView.tag = 1
+        toPickerView.tag = 2
+
         increaseLabel.tag = 1
         increaseValue.tag = 1
         decreaseLabel.tag = 2
         decreaseValue.tag = 2
+        fromTextField.tag = 3
+        toTextField.tag = 4
         
         //assign delegate
         fromPickerView.delegate = self
         toPickerView.delegate = self
         increaseValue.delegate = self
         decreaseValue.delegate = self
+        fromTextField.delegate = self
+        toTextField.delegate = self
         
+        //attach pickerview and toolbar to textfields
         fromTextField.inputView = fromPickerView
         toTextField.inputView = toPickerView
+        
+        fromTextField.inputAccessoryView = toolBar
+        toTextField.inputAccessoryView = toolBar
+        
     }
 
 
@@ -86,6 +109,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
         
+    }
+    
+    func donePicker (sender:UIBarButtonItem) {
+        view.endEditing(true)
     }
     
     
@@ -114,7 +141,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         
         // Set the meal to be passed to MealTableViewController after the unwind segue.
-        conversion = CurrencyConversion(fromTag: fromTag, toTag: toTag, pushEnabled: pushEnabled1, increaseValue: increase, decreaseValue: decrease)
+        conversion = CurrencyConversion(fromTag: fromTag!, toTag: toTag!, pushEnabled: pushEnabled1, increaseValue: increase, decreaseValue: decrease)
 
     }
     
@@ -129,6 +156,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             hideAdvancedPush()
         }
     }
+    
     
     
     //MARK: Private Functions
@@ -155,8 +183,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             pushLabel.isEnabled = enableBool
             saveButton.isEnabled = enableBool
             let currency = helper.getCurrencyIdentifier(rawText: fromTextField!.text!)
-            increaseLabel.text? = "When \(currency) increases by "
-            decreaseLabel.text? = "When \(currency) decreases by "
+            increaseLabel.text? = "When \(currency!) increases by "
+            decreaseLabel.text? = "When \(currency!) decreases by "
         }
         
     }
@@ -168,30 +196,41 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func textFieldDidEndEditing(_ textField: UITextField) {
         let value = textField.text!.components(separatedBy: "%")
         let numVal =  Float(value[0])
-        
-        if (numVal == 0 || numVal == nil) {
-            if (textField.tag == 1) {
-                increaseLabel.isEnabled = false
+        if textField.tag != 3 && textField.tag != 4 {
+            if (numVal == 0 || numVal == nil) {
+                if (textField.tag == 1) {
+                    increaseLabel.isEnabled = false
+                } else {
+                    decreaseLabel.isEnabled = false
+                }
+                textField.text? = "0.00%"
+                
             } else {
-                decreaseLabel.isEnabled = false
+                if (textField.tag == 1) {
+                    increaseLabel.isEnabled = true
+                } else {
+                    decreaseLabel.isEnabled = true
+                }
+                textField.text? += "%"
             }
-            textField.text? = "0.00%"
-            
-        } else {
-            if (textField.tag == 1) {
-                increaseLabel.isEnabled = true
-            } else {
-                decreaseLabel.isEnabled = true
-            }
-            textField.text? += "%"
         }
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if let data = textField.text{
-            var value = data.components(separatedBy: "%")
-            textField.text? = value[0]
+        if textField.tag != 3 && textField.tag != 4 {
+            if let data = textField.text{
+                var value = data.components(separatedBy: "%")
+                textField.text? = value[0]
+            }
         }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if (textField.tag == 3 || textField.tag == 4) {
+            return false
+        }
+        return true
     }
     
     
