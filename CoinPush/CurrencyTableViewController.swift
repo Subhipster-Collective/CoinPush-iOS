@@ -3,7 +3,7 @@
 //  CoinPush
 //
 //  Created by Bijan Massoumi on 7/13/17.
-//  Copyright © 2017 Goods and Services. All rights reserved.
+//  Copyright © 2017 Subhipster Collective. All rights reserved.
 //
 
 import UIKit
@@ -21,8 +21,7 @@ class CurrencyTableViewController: UITableViewController,  GADBannerViewDelegate
     var currencyPairs = [CurrencyConversion]() {
         didSet {
             if (currencyPairs.count > 0){
-                let request = structureRequest()
-                updatePriceLabels(request: request)
+                updatePriceLabels()
             }
         }
     }
@@ -32,7 +31,6 @@ class CurrencyTableViewController: UITableViewController,  GADBannerViewDelegate
         super.viewDidLoad()
         
         //Ad display
-
         bannerView = GADBannerView(adSize: kGADAdSizeFullBanner)
          screenOffset  = UIApplication.shared.statusBarFrame.height + (self.navigationController?.navigationBar.bounds.height)! + bannerView.frame.height
         print(UIScreen.main.bounds.height)
@@ -48,7 +46,6 @@ class CurrencyTableViewController: UITableViewController,  GADBannerViewDelegate
         request.testDevices = [ kGADSimulatorID]                    // All simulators
         bannerView.load(request)*/
         
-        
         navigationItem.leftBarButtonItem = editButtonItem
 
         // Load any saved pairs, otherwise load sample data.
@@ -58,9 +55,8 @@ class CurrencyTableViewController: UITableViewController,  GADBannerViewDelegate
         
         let ref = Database.database().reference()
         ref.child("conversionData").observe(.childChanged, with: { (snapShot) in
-            if (self.currencyPairs.count > 0){
-                let request = self.structureRequest()
-                self.updatePriceLabels(request: request)
+            if (self.currencyPairs.count > 0) {
+                self.updatePriceLabels()
             }
             
         })
@@ -90,6 +86,9 @@ class CurrencyTableViewController: UITableViewController,  GADBannerViewDelegate
                 if (conversionData.fromTag == pair.fromTag && conversionData.toTag == pair.toTag){
                     return
                 }
+            }
+            if (conversionData.fromTag == conversionData.toTag) {
+                return
             }
             //add a new conversion to list
             let newIndexPath = IndexPath(row: currencyPairs.count, section: 0)
@@ -176,45 +175,26 @@ class CurrencyTableViewController: UITableViewController,  GADBannerViewDelegate
     
     
     //MARK: private methods
-    private func updatePriceLabels(request: String){
-        Alamofire.request(request, method: .post, parameters: nil, encoding: JSONEncoding.default)
-            .responseJSON { response in
-                print(response)
-                //to get status code
-                if let status = response.response?.statusCode {
-                    switch(status){
-                    case 200:
-                        print("success")
-                    default:
-                        print("error with response status: \(status)")
-                    }
-                }
-                //to get JSON return value
-                if let result = response.result.value {
-                    let JSON = result as! NSDictionary
-                    let dataTree = JSON["RAW"] as! NSDictionary
-                    
-                    for (i, pair) in self.currencyPairs.enumerated(){
-                        let cell = self.tableView.cellForRow(at: IndexPath(row: i, section: 0)) as? CurrencyTableViewCell
-                        let toValues = (dataTree[pair.fromTag] as? NSDictionary)?[pair.toTag] as? NSDictionary!
-                        
-                         //update the labels
-                        cell?.priceLabel.text = helper.symbolDict[pair.toTag]! + "\(toValues!["PRICE"]!)"
-                        
-                        let pct = "\(toValues!["CHANGEPCT24HOUR"]!)"
-                        var index = pct.index(pct.startIndex, offsetBy: 5)
-                        cell?.deltaLabel.text =  pct.substring(to: index) + "%"
-                        
-                        index = pct.index(pct.startIndex, offsetBy: 1)
-                        if (pct.substring(to: index) == "-"){
-                            cell?.deltaLabel.textColor = UIColor.red
-                        } else {
-                            cell?.deltaLabel.textColor =  UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
-                        }
-                        
-                    }
+    private func updatePriceLabels(){
+        let ref = Database.database().reference()
+       for (i, pair) in self.currencyPairs.enumerated() {
+            let cell = self.tableView.cellForRow(at: IndexPath(row: i, section: 0)) as? CurrencyTableViewCell
+            ref.child("conversionData").child(pair.fromTag).child(pair.toTag).observeSingleEvent(of: .value, with: { (snapshot) in
+                let values = snapshot.value as? NSDictionary
                 
+                let pct = "\(values!["CHANGEPCT24HOUR"]!)"
+                var index = pct.index(pct.startIndex, offsetBy: 5)
+                cell?.priceLabel.text = helper.symbolDict[pair.toTag]! + "\(values!["PRICE"]!)"
+                cell?.deltaLabel.text = pct.substring(to: index) + "%"
+                
+                index = pct.index(pct.startIndex, offsetBy: 1)
+                if (pct.substring(to: index) == "-"){
+                    cell?.deltaLabel.textColor = UIColor.red
+                } else {
+                    cell?.deltaLabel.textColor =  UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
                 }
+
+            })
         }
         
     }

@@ -11,7 +11,7 @@ import FirebaseDatabase
 import GoogleMobileAds
 import os.log
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UITextFieldDelegate {
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UITextFieldDelegate,GADBannerViewDelegate {
     
     @IBOutlet weak var fromTextField: UITextField!
     @IBOutlet weak var toTextField: UITextField!
@@ -26,12 +26,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var decreaseValue: UITextField!
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
-        
+    
+    var bannerView: GADBannerView!
+    
     var conversion: CurrencyConversion?
     
-    let fromOptions = ["Bitcoin (BTC)","Ethereum (ETH)","Dash (DGB)","Ethereum Classic (ETC)", "Litecoin (LTC)"]
+    let fromOptions = ["Bitcoin (BTC)","Ethereum (ETH)","Dash (DASH)","Ethereum Classic (ETC)", "Litecoin (LTC)", "District0x Network Token (DNT)"]
     
-    let toOptions = ["🇺🇸 U.S Dollar (USD)", "🇪🇺 Euro (EUR)","🇨🇳 Chinese Yuan (CNY)","🇬🇧 British Pound (GBP)"]
+    let toOptions = ["🇺🇸 U.S Dollar (USD)", "🇪🇺 Euro (EUR)","🇨🇳 Chinese Yuan (CNY)","🇬🇧 British Pound (GBP)", "Bitcoin (BTC)","Ethereum (ETH)"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,6 +88,23 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         fromTextField.inputAccessoryView = toolBar
         toTextField.inputAccessoryView = toolBar
+        
+        
+        //Ad display
+        bannerView = GADBannerView(adSize: kGADAdSizeFullBanner)
+        var screenOffset  = UIApplication.shared.statusBarFrame.height + (self.navigationController?.navigationBar.bounds.height)! 
+        print(UIScreen.main.bounds.height)
+        bannerView.frame = CGRect(x: 0.0,
+                                  y: UIScreen.main.bounds.height - screenOffset ,
+                                  width: bannerView.frame.width,
+                                  height: bannerView.frame.height)
+        bannerView.delegate = self
+        self.view.addSubview(bannerView)
+        bannerView.adUnitID = Passwords.adMobAdID
+        bannerView.rootViewController = self
+        let request = GADRequest()
+         request.testDevices = [ kGADSimulatorID]                    // All simulators
+         bannerView.load(request)
         
     }
 
@@ -268,5 +287,18 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
 
+    //MARK: adDelegate
+    /// Tells the delegate an ad request loaded an ad.
+    
+    func adViewDidReceiveAd(_ bannerView: GADBannerView!) {
+        print("Banner loaded successfully")
+        
+    }
+    
+    /// Tells the delegate an ad request failed.
+    func adView(_ bannerView: GADBannerView,
+                didFailToReceiveAdWithError error: GADRequestError) {
+        print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
 }
 
