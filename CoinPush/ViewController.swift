@@ -31,7 +31,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     var conversion: CurrencyConversion?
     
-    let fromOptions = ["Bitcoin (BTC)","Ethereum (ETH)","Dash (DASH)","Ethereum Classic (ETC)", "Litecoin (LTC)", "District0x Network Token (DNT)"]
+    let fromOptions = ["Bitcoin (BTC)","Ethereum (ETH)","Dash (DASH)","Ethereum Classic (ETC)", "Litecoin (LTC)", "District0x Network Token (DNT)", "OmiseGo Token (OMG)", "0x Token (ZRX)"]
     
     let toOptions = ["🇺🇸 U.S Dollar (USD)", "🇪🇺 Euro (EUR)","🇨🇳 Chinese Yuan (CNY)","🇬🇧 British Pound (GBP)", "Bitcoin (BTC)","Ethereum (ETH)"]
     

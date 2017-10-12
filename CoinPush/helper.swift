@@ -26,7 +26,7 @@ extension String {
 
 class helper {
 
-    static var labelDict: [String:String] = ["ETH": "Ethereum","BTC": "Bitcoin", "ETC" :"Ethereum Classic", "DASH": "Dash" ,"LTC": "Litecoin","DNT" :"District0x Token"  ,"USD": "U.S Dollars", "EUR": "Euros", "CNY" : "Chinese Yuan", "GBP" : "Pounds"]
+    static var labelDict: [String:String] = ["ETH": "Ethereum","BTC": "Bitcoin", "ETC" :"Ethereum Classic", "DASH": "Dash" ,"LTC": "Litecoin","DNT" :"District0x Token"  ,"USD": "U.S Dollars", "EUR": "Euros", "CNY" : "Chinese Yuan", "GBP" : "Pounds", "OMG" : "OmiseGo Token", "ZRX" : "0x Token"]
     
     static var symbolDict: [String: String] = ["USD" : "$",  "EUR" : "€", "BTC" :"Ƀ", "ETH" : "Ξ","LTC" : "Ł","ETC" : "⟠", "CNY" : "¥", "GBP" : "£"]
     
@@ -46,6 +46,10 @@ class helper {
                 returnExpression = "LTC"
             case "District0x Network Token (DNT)":
                 returnExpression = "DNT"
+            case "OmiseGo Token (OMG)":
+                returnExpression = "OMG"
+            case "0x Token (ZRX)":
+                returnExpression = "ZRX"
             case "🇺🇸 U.S Dollar (USD)":
                 returnExpression = "USD"
             case "🇪🇺 Euro (EUR)":

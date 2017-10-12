@@ -181,7 +181,6 @@ class CurrencyTableViewController: UITableViewController,  GADBannerViewDelegate
             let cell = self.tableView.cellForRow(at: IndexPath(row: i, section: 0)) as? CurrencyTableViewCell
             ref.child("conversionData").child(pair.fromTag).child(pair.toTag).observeSingleEvent(of: .value, with: { (snapshot) in
                 let values = snapshot.value as? NSDictionary
-                
                 let pct = "\(values!["CHANGEPCT24HOUR"]!)"
                 var index = pct.index(pct.startIndex, offsetBy: 5)
                 cell?.priceLabel.text = helper.symbolDict[pair.toTag]! + "\(values!["PRICE"]!)"
